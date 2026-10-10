@@ -1,445 +1,974 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SH Global Solution</title>
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700,900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/hamburger.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SH Global Solution — fiber optic and civil engineering infrastructure for telecom operators, public agencies, and private enterprises in Kelantan and beyond.">
+  <meta name="theme-color" content="#0B1420">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SH Global Solution">
+  <meta property="og:description" content="Connecting the future, Building the network.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop">
+  <title>SH Global Solution</title>
+  <link rel="icon" href="images/logo.png">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0B1420;
+      --ink-2: #13202F;
+      --paper: #EDF1F5;
+      --paper-2: #E3E9EE;
+      --text: #F2F6F9;
+      --muted: #A7B6C3;
+      --text-dark: #0B1420;
+      --muted-dark: #4A5A68;
+      --signal: #0F5FE0;
+      --signal-hover: #0C4DBB;
+      --glow: #3E8BFF;
+      --fib-1: #1450D1;
+      --fib-2: #E8590C;
+      --fib-3: #198754;
+      --fib-4: #7A4B23;
+      --radius: 8px;
+      --container: 1140px;
+      --nav-h: 68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
+
+    body {
+      font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--text-dark);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    ul { list-style: none; }
+
+    :focus-visible {
+      outline: 2px solid var(--signal);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    .section--ink :focus-visible { outline-color: var(--glow); }
+
+    .container {
+      width: min(var(--container), calc(100% - 3rem));
+      margin-inline: auto;
+    }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -3.5rem;
+      z-index: 100;
+      background: var(--signal);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 700;
+      transition: top 0.15s ease;
+    }
+    .skip:focus { top: 0.75rem; }
+
+    /* ---------- Fiber strand motif ---------- */
+    .fib {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      width: 148px;
+      height: 4px;
+      margin-top: 1rem;
+    }
+    .fib span:nth-child(1) { background: var(--fib-1); }
+    .fib span:nth-child(2) { background: var(--fib-2); }
+    .fib span:nth-child(3) { background: var(--fib-3); }
+    .fib span:nth-child(4) { background: var(--fib-4); }
+
+    .fib-band {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      height: 4px;
+      width: 100%;
+    }
+    .fib-band span:nth-child(1) { background: var(--fib-1); }
+    .fib-band span:nth-child(2) { background: var(--fib-2); }
+    .fib-band span:nth-child(3) { background: var(--fib-3); }
+    .fib-band span:nth-child(4) { background: var(--fib-4); }
+
+    /* ---------- Nav ---------- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--nav-h);
+      background: rgba(237, 241, 245, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(11, 20, 32, 0.08);
+    }
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 900;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      color: var(--text-dark);
+      margin-right: auto;
+    }
+    .nav-logo img {
+      width: 40px;
+      height: 40px;
+      padding: 6px;
+      background: var(--ink);
+      border-radius: 9px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.98rem;
+      color: var(--muted-dark);
+      transition: color 0.15s ease;
+    }
+    .nav-links a:hover { color: var(--signal); }
+
+    .btn {
+      display: inline-block;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+      border: none;
+      border-radius: 6px;
+      padding: 0.85rem 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    .btn--primary { background: var(--signal); color: #fff; }
+    .btn--primary:hover { background: var(--signal-hover); }
+    .btn--invert { background: var(--text); color: var(--ink); }
+    .btn--invert:hover { background: #fff; }
+
+    .nav-cta { font-size: 0.95rem; padding: 0.7rem 1.2rem; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      background: none;
+      border: 1px solid rgba(11, 20, 32, 0.15);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: var(--ink);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ---------- Sections ---------- */
+    .section { padding: clamp(4rem, 9vw, 6.5rem) 0; }
+    .section--ink { background: var(--ink); color: var(--text); }
+    .section--paper { background: var(--paper); color: var(--text-dark); }
+
+    .section-title {
+      font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .section-intro {
+      max-width: 68ch;
+      margin-top: 1.25rem;
+      color: var(--muted-dark);
+      font-size: 1.1rem;
+    }
+    .section--ink .section-intro { color: var(--muted); }
+    .section-head { margin-bottom: clamp(2.25rem, 5vw, 3.5rem); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      background: radial-gradient(1400px 700px at 50% -10%, #17304B 0%, var(--ink) 62%);
+      color: var(--text);
+      min-height: calc(86vh - var(--nav-h));
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      text-align: center;
+      padding: clamp(4rem, 10vh, 7rem) 0;
+    }
+    .hero-fibers {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .hero-fibers .s {
+      fill: none;
+      stroke-width: 2;
+      stroke-dasharray: 2400;
+      stroke-dashoffset: 2400;
+      animation: strand-draw 1.8s ease-out forwards;
+    }
+    .hero-fibers .s1 { stroke: rgba(62, 139, 255, 0.5); animation-delay: 0.15s; }
+    .hero-fibers .s2 { stroke: rgba(232, 89, 12, 0.42); animation-delay: 0.35s; }
+    .hero-fibers .s3 { stroke: rgba(25, 135, 84, 0.45); animation-delay: 0.55s; }
+    .hero-fibers .sp {
+      fill: none;
+      stroke: #A9CCFF;
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-dasharray: 70 3000;
+      filter: drop-shadow(0 0 7px rgba(120, 180, 255, 0.95));
+      opacity: 0;
+    }
+    .hero-fibers .sp1 { animation: pulse-travel 2.6s 0.9s ease-in-out forwards; }
+    .hero-fibers .sp2 { animation: pulse-travel 2.6s 1.35s ease-in-out forwards; }
+    .hero-fibers .sp3 { animation: pulse-travel 2.6s 1.8s ease-in-out forwards; }
+
+    @keyframes strand-draw { to { stroke-dashoffset: 0; } }
+    @keyframes pulse-travel {
+      0% { stroke-dashoffset: 0; opacity: 1; }
+      92% { opacity: 1; }
+      100% { stroke-dashoffset: -1700; opacity: 0; }
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 {
+      font-size: clamp(3rem, 9vw, 6.75rem);
+      font-weight: 900;
+      line-height: 0.96;
+      letter-spacing: -0.03em;
+    }
+    .hero-tagline {
+      margin-top: 1.5rem;
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .hero .btn { margin-top: 2.25rem; }
+
+    .hero-band {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    /* ---------- Background ---------- */
+    .lede {
+      max-width: 74ch;
+      font-size: clamp(1.15rem, 1.9vw, 1.35rem);
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* ---------- Mission & Vision ---------- */
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    .mission-cards { display: grid; gap: 1.75rem; }
+    .mission-card h3 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+    }
+    .mission-card p { color: var(--muted-dark); max-width: 52ch; }
+    .mission-card .fib { margin-top: 0.85rem; margin-bottom: 1rem; }
+    .mission-img {
+      border-radius: var(--radius);
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    /* ---------- Services ---------- */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--ink-2);
+      border: 1px solid rgba(242, 246, 249, 0.07);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card::before {
+      content: "";
+      display: block;
+      height: 4px;
+      background: var(--card-accent, var(--fib-1));
+    }
+    .service-card:nth-child(6n + 1) { --card-accent: var(--fib-1); }
+    .service-card:nth-child(6n + 2) { --card-accent: var(--fib-2); }
+    .service-card:nth-child(6n + 3) { --card-accent: var(--fib-3); }
+    .service-card:nth-child(6n + 4) { --card-accent: var(--fib-4); }
+    .service-card:nth-child(6n + 5) { --card-accent: var(--fib-2); }
+    .service-card:nth-child(6n + 6) { --card-accent: var(--fib-1); }
+    .service-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover img { transform: scale(1.04); }
+    .service-body { padding: 1.4rem 1.4rem 1.6rem; }
+    .service-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .service-body p { font-size: 0.98rem; color: var(--muted); }
+
+    /* ---------- Core values ---------- */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(2rem, 4vw, 3rem);
+    }
+    .value-icon { font-size: 2rem; line-height: 1; }
+    .value h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0.9rem 0 0.5rem;
+    }
+    .value p { color: var(--muted-dark); font-size: 0.98rem; max-width: 34ch; }
+
+    /* ---------- Team ---------- */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .team-card {
+      background: var(--ink-2);
+      border: 1px solid rgba(242, 246, 249, 0.07);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .team-card img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      filter: grayscale(0.35);
+      transition: filter 0.25s ease;
+    }
+    .team-card:hover img { filter: grayscale(0); }
+    .team-info { padding: 1rem 1.1rem 1.2rem; }
+    .team-info h3 { font-size: 1.05rem; font-weight: 700; }
+    .team-info .role { font-size: 0.92rem; color: var(--glow); font-weight: 500; }
+
+    /* ---------- Gallery ---------- */
+    .gallery {
+      column-count: 3;
+      column-gap: 1.25rem;
+    }
+    .gallery img {
+      width: 100%;
+      margin-bottom: 1.25rem;
+      border-radius: var(--radius);
+      break-inside: avoid;
+    }
+
+    /* ---------- QSHE ---------- */
+    .qshe-list { display: grid; gap: clamp(1.5rem, 3vw, 2.25rem); }
+    .qshe-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: clamp(1.25rem, 3vw, 2.5rem);
+      align-items: baseline;
+      padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
+      border-bottom: 1px solid rgba(11, 20, 32, 0.1);
+    }
+    .qshe-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .qshe-num {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .qshe-item:nth-child(1) .qshe-num { color: var(--fib-1); }
+    .qshe-item:nth-child(2) .qshe-num { color: var(--fib-2); }
+    .qshe-item:nth-child(3) .qshe-num { color: var(--fib-3); }
+    .qshe-item:nth-child(4) .qshe-num { color: var(--fib-4); }
+    .qshe-item:nth-child(5) .qshe-num { color: var(--signal); }
+    .qshe-item h3 {
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .qshe-outro {
+      margin-top: clamp(2rem, 4vw, 3rem);
+      max-width: 68ch;
+      color: var(--muted-dark);
+      font-size: 1.1rem;
+    }
+
+    /* ---------- Milestones ---------- */
+    .milestones-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .milestone {
+      background: var(--ink-2);
+      border: 1px solid rgba(242, 246, 249, 0.07);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.6rem;
+    }
+    .milestone .stat {
+      display: block;
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--glow);
+    }
+    .milestone h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0.85rem 0 0.5rem;
+    }
+    .milestone p { font-size: 0.98rem; color: var(--muted); }
+
+    /* ---------- Contact ---------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: stretch;
+    }
+    .contact-info h3 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+    .contact-info > p { color: var(--muted-dark); margin-bottom: 1.75rem; }
+    .info-item {
+      margin-bottom: 1.25rem;
+      line-height: 1.55;
+    }
+    .info-item .info-label { font-weight: 700; display: block; }
+    .info-item a { color: var(--signal); font-weight: 500; }
+    .map {
+      border: none;
+      border-radius: var(--radius);
+      width: 100%;
+      min-height: 340px;
+      height: 100%;
+      background: var(--paper-2);
+    }
+
+    /* ---------- Summary & footer ---------- */
+    .summary {
+      max-width: 78ch;
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      line-height: 1.7;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .footer {
+      background: var(--ink);
+      color: var(--muted);
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1024px) {
+      .cards-grid, .values-grid, .milestones-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery { column-count: 2; }
+    }
+
+    @media (max-width: 900px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: var(--paper);
+        border-bottom: 1px solid rgba(11, 20, 32, 0.1);
+        padding: 0.5rem 1.5rem 1.25rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        width: 100%;
+        padding: 0.85rem 0;
+        font-size: 1.05rem;
+        color: var(--text-dark);
+        border-bottom: 1px solid rgba(11, 20, 32, 0.07);
+      }
+      .nav-links a:last-child { border-bottom: none; }
+      .mission-grid, .contact-grid { grid-template-columns: 1fr; }
+      .mission-img { order: -1; }
+    }
+
+    @media (max-width: 640px) {
+      .cards-grid, .values-grid, .team-grid, .milestones-grid { grid-template-columns: 1fr; }
+      .gallery { column-count: 1; }
+      .nav-cta { display: none; }
+      .container { width: calc(100% - 2rem); }
+      .qshe-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .hero-fibers .s { stroke-dashoffset: 0; }
+      .hero-fibers .sp { display: none; }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <nav>
-        <div class="logo"><img src="images/logo.png" alt="" srcset="" width="64" height="64"></div>
-        <div class="hamburger" id="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <div class="nav-links" id="nav-links">
-            <a href="#">Home</a>
-            <a href="#services">Services</a>
-            <a href="#team">Team</a> 
-            <a href="#qshe">QSHE</a>
-            <a href="#milestones">Milestones & Achievements</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <button class="btn-header"><a href="https://web.whatsapp.com/send?phone=60123456789">Request Quote</a></button>
-    </nav>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="#home">
+        <img src="images/logo.png" alt="" width="38" height="38">
+        SH Global Solution
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#qshe">QSHE</a></li>
+        <li><a href="#milestones">Milestones &amp; Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn--primary nav-cta" href="https://wa.me/601112987138">Request Quote</a>
+      <button class="hamburger" id="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-    <header class="hero">
-        <h1 data-aos="fade-up" data-aos-duration="1000">SH Global <br>Solution<br></h1>
-        <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">"Connecting the future, Building the network."</p>
-        <button class="btn-hero" data-aos="fade-up" data-aos-delay="600"><a href="#services">Explore Services</a></button>
+  <main id="main">
+    <!-- Hero -->
+    <header class="hero" id="home">
+      <svg class="hero-fibers" viewBox="0 0 1440 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <path class="s s1" d="M-40,330 C300,200 640,380 940,250 S1320,130 1480,210" />
+        <path class="s s2" d="M-40,390 C340,300 620,340 980,330 S1340,290 1480,360" />
+        <path class="s s3" d="M-40,270 C260,120 680,320 1000,190 S1360,90 1480,150" />
+        <path class="sp sp1" d="M-40,330 C300,200 640,380 940,250 S1320,130 1480,210" />
+        <path class="sp sp2" d="M-40,390 C340,300 620,340 980,330 S1340,290 1480,360" />
+        <path class="sp sp3" d="M-40,270 C260,120 680,320 1000,190 S1360,90 1480,150" />
+      </svg>
+      <div class="container hero-content">
+        <h1>SH Global<br>Solution</h1>
+        <p class="hero-tagline">"Connecting the future, Building the network."</p>
+        <a class="btn btn--invert" href="#services">Explore Services</a>
+      </div>
+      <div class="fib-band hero-band" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
     </header>
 
-    <section class="section" style="background:#0c1222">
-        <h2 data-aos="fade-down">Company Background</h2>
-        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Founded with the aim of bridging the digital divide and enabling smarter, more connected environments, SH Global Solution has become a trusted partner in the telecom industry. Over the years, we have successfully handled a wide variety of infrastructure projects, tailored to the evolving needs of telecom operators, public agencies, and provate enterprises. Our strength lies in our deep understanding of fiber optic systems, our experienced workforce, and our commitment to completing projects on time, within budget, and to the highest quality standards. As we continue to grow, we remain focused on innovation and sustainability.
-        </p>
+    <!-- Company Background -->
+    <section class="section section--ink" id="background" aria-labelledby="bg-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="bg-title">Company Background</h2>
+          <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        </div>
+        <p class="lede">Founded with the aim of bridging the digital divide and enabling smarter, more connected environments, SH Global Solution has become a trusted partner in the telecom industry. Over the years, we have successfully handled a wide variety of infrastructure projects, tailored to the evolving needs of telecom operators, public agencies, and private enterprises. Our strength lies in our deep understanding of fiber optic systems, our experienced workforce, and our commitment to completing projects on time, within budget, and to the highest quality standards. As we continue to grow, we remain focused on innovation and sustainability.</p>
+      </div>
     </section>
 
-    <section class="neo-mission-section">
-        <!-- <h2 class="neo-title" data-aos="fade-up">Core Principles</h2> -->
-    
-        <div class="neo-container">
-            <div class="text-side">
-                <div class="neo-card" data-aos="fade-right">
-                    <h3>Our Mission</h3>
-                    <p>Our mission is to design, build, and
-                    maintain advanced communication
-                    networks that empower communities,
-                    businesses, and governments. We strive
-                    to exceed our clients’ expectations
-                    through technical excellence, reliable
-                    execution, and a proactive, solutionsoriented approach.</p>
-                </div>
-                <div class="neo-card" data-aos="fade-right" data-aos-delay="200">
-                    <h3>Our Vision</h3>
-                    <p>To be recognized as a leading and
-                    reliable telecom infrastructure company
-                    that pioneers innovation, delivers
-                    superior quality, and contributes
-                    meaningfully to the digital
-                    transformation of societies and
-                    industries.</p>
-                </div>
+    <!-- Mission & Vision -->
+    <section class="section section--paper" id="mission" aria-labelledby="mv-title">
+      <div class="container mission-grid">
+        <div class="mission-cards">
+          <div>
+            <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="mission-card">
+              <h3 id="mv-title">Our Mission</h3>
+              <p>Our mission is to design, build, and maintain advanced communication networks that empower communities, businesses, and governments. We strive to exceed our clients' expectations through technical excellence, reliable execution, and a proactive, solutions-oriented approach.</p>
             </div>
-    
-            <div class="image-side">
-                <img src="images/2149212625.jpg"
-                    alt="Concrete Architecture" class="floating-image" data-aos="zoom-in" data-aos-delay="400">
-            </div>
+          </div>
+          <div class="mission-card">
+            <h3>Our Vision</h3>
+            <p>To be recognized as a leading and reliable telecom infrastructure company that pioneers innovation, delivers superior quality, and contributes meaningfully to the digital transformation of societies and industries.</p>
+          </div>
         </div>
+        <img class="mission-img" src="images/2149212625.jpg" alt="Fibers of light carrying data through an optical cable" loading="lazy" width="800" height="600">
+      </div>
     </section>
 
-    <section id="services" class="section" style="background:#0c1222">
-        <h2 data-aos="fade-down">Our Services</h2>
-        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Providing comprehensive fiber optic services including network design, structured cabling, splicing, testing, and
-        ongoing maintenance. We focus on precision, efficiency, and scalability to ensure your communication systems operate at
-        optimal performance with minimal downtime.</p>
-        <div class="grid-products">
-            <div class="product-card" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600" alt="Single-mode fiber" class="product-img">
-                <div class="product-content">
-                    <h3>FTTH (Fiber to the Home) Projects</h3>
-                    <p>We offer complete FTTH solutions, including network
-                    design, fiber laying, splicing, termination, and testing.
-                    Our projects ensure high-speed internet connectivity for
-                    residential, commercial, and institutional clients.</p>
-                    <!-- <a href="#" class="btn-view">View Details</a> -->
-                </div>
-            </div>
-            
-            <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?q=80&w=600" alt="Multi-mode fiber" class="product-img">
-                <div class="product-content">
-                    <h3>OSP & ODN Projects</h3>
-                    <p>Our outside plant and optical distribution network services
-                    include trenching, ducting, cable pulling, joint closures,
-                    and connectivity to end users. We provide end-to-end
-                    support from site survey to final commissioning.</p>
-                    <!-- <a href="#" class="btn-view">View Details</a> -->
-                </div>
-            </div>
-            
-            <div class="product-card" data-aos="zoom-in" data-aos-delay="400">
-                <img src="https://images.unsplash.com/photo-1771046831228-54766bba552b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Armored fiber" class="product-img">
-                <div class="product-content">
-                    <h3>CB & Titan Projects</h3>
-                    <p>We deliver high-capacity network solutions involving
-                    cable broadband and Titan infrastructure, integrating
-                    copper and fiber-based systems to serve high-density
-                    urban and suburban areas.</p>
-                    <!-- <a href="#" class="btn-view">View Details</a> -->
-                </div>
-            </div>
-
-            <div class="product-card" data-aos="zoom-in" data-aos-delay="400">
-                <img src="https://plus.unsplash.com/premium_photo-1723921279485-7c301ade629f?q=80&w=1008&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Armored fiber"
-                    class="product-img">
-                <div class="product-content">
-                    <h3>Network Maintenance Services</h3>
-                    <p>We provide comprehensive network maintenance programs,
-                    including preventive inspections, emergency repairs,
-                    service level agreements (SLAs), and system upgrades to
-                    ensure 24/7 reliability.</p>
-                    <!-- <a href="#" class="btn-view">View Details</a> -->
-                </div>
-            </div>
-
-            <div class="product-card" data-aos="zoom-in" data-aos-delay="400">
-                <img src="https://plus.unsplash.com/premium_photo-1681989499796-df9ee5ec9853?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Armored fiber"
-                    class="product-img">
-                <div class="product-content">
-                    <h3>Civil Engineering Works</h3>
-                    <p>Our civil work division handles the physical infrastructure,
-                    such as duct installations, pole erection, chamber
-                    construction, manholes, and concrete structures required
-                    for telecom networks.</p>
-                    <!-- <a href="#" class="btn-view">View Details</a> -->
-                </div>
-            </div>
-
-            <div class="product-card" data-aos="zoom-in" data-aos-delay="400">
-                <img src="https://plus.unsplash.com/premium_photo-1661628877080-da645b4ff7da?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Armored fiber"
-                    class="product-img">
-                <div class="product-content">
-                    <h3>Fiber Termination & Splicing</h3>
-                    <p>We carry out precise fiber optic splicing and termination using high-accuracy tools and certified technicians, ensuring seamless data transmission with minimal loss and maximum performance</p>
-                    <!-- <a href="#" class="btn-view">View Details</a> -->
-                </div>
-            </div>
+    <!-- Services -->
+    <section class="section section--ink" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="services-title">Our Services</h2>
+          <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <p class="section-intro">Providing comprehensive fiber optic services including network design, structured cabling, splicing, testing, and ongoing maintenance. We focus on precision, efficiency, and scalability to ensure your communication systems operate at optimal performance with minimal downtime.</p>
         </div>
+        <div class="cards-grid">
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600" alt="Single-mode fiber optic cabling" loading="lazy" width="600" height="375">
+            <div class="service-body">
+              <h3>FTTH (Fiber to the Home) Projects</h3>
+              <p>We offer complete FTTH solutions, including network design, fiber laying, splicing, termination, and testing. Our projects ensure high-speed internet connectivity for residential, commercial, and institutional clients.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?q=80&w=600" alt="Multi-mode fiber cables" loading="lazy" width="600" height="375">
+            <div class="service-body">
+              <h3>OSP &amp; ODN Projects</h3>
+              <p>Our outside plant and optical distribution network services include trenching, ducting, cable pulling, joint closures, and connectivity to end users. We provide end-to-end support from site survey to final commissioning.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1771046831228-54766bba552b?q=80&w=1170&auto=format&fit=crop" alt="Armored fiber optic cable" loading="lazy" width="600" height="375">
+            <div class="service-body">
+              <h3>CB &amp; Titan Projects</h3>
+              <p>We deliver high-capacity network solutions involving cable broadband and Titan infrastructure, integrating copper and fiber-based systems to serve high-density urban and suburban areas.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://plus.unsplash.com/premium_photo-1723921279485-7c301ade629f?q=80&w=1008&auto=format&fit=crop" alt="Network maintenance and inspection" loading="lazy" width="600" height="375">
+            <div class="service-body">
+              <h3>Network Maintenance Services</h3>
+              <p>We provide comprehensive network maintenance programs, including preventive inspections, emergency repairs, service level agreements (SLAs), and system upgrades to ensure 24/7 reliability.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://plus.unsplash.com/premium_photo-1681989499796-df9ee5ec9853?q=80&w=1170&auto=format&fit=crop" alt="Civil engineering construction work" loading="lazy" width="600" height="375">
+            <div class="service-body">
+              <h3>Civil Engineering Works</h3>
+              <p>Our civil work division handles the physical infrastructure, such as duct installations, pole erection, chamber construction, manholes, and concrete structures required for telecom networks.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://plus.unsplash.com/premium_photo-1661628877080-da645b4ff7da?q=80&w=1170&auto=format&fit=crop" alt="Fiber optic splicing tools and termination" loading="lazy" width="600" height="375">
+            <div class="service-body">
+              <h3>Fiber Termination &amp; Splicing</h3>
+              <p>We carry out precise fiber optic splicing and termination using high-accuracy tools and certified technicians, ensuring seamless data transmission with minimal loss and maximum performance.</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="section">
-        <h2 data-aos="fade-down">Our Core Values</h2>
-        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">At SH Global Solution, our values are at
-        the core of how we operate and grow.
-        They shape our company culture and
-        guide every interaction—with our clients,
-        partners, employees, and communities</p>
-        <div class="grid-solutions">
-            <div class="solution-card" data-aos="fade-up">
-                <div class="icon">👽</div>
-                <h3>Integrity</h3>
-                <p>We conduct our business honestly, transparently, and with strong ethical principles</p>
-            </div>
-            <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon">🎯</div>
-                <h3>Commitment</h3>
-                <p>We unhold the highest standards in workmanship, project planning, and execution</p>
-            </div>
-            <div class="solution-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="icon">💕</div>
-                <h3>Customer Centricity</h3>
-                <p>We prioritize our clients' needs and deliver tailored solutions that add value</p>
-            </div>
-            <div class="solution-card" data-aos="fade-up" data-aos-delay="600">
-                <div class="icon">👍</div>
-                <h3>Innovation</h3>
-                <p>We constantly seek better methods and advanced tools to improve efficiency and outcomes</p>
-            </div>
-            <div class="solution-card" data-aos="fade-up" data-aos-delay="600">
-                <div class="icon">👥</div>
-                <h3>Teamwork</h3>
-                <p>We believe that collaboration and mutual respect lead to the best results</p>
-            </div>
-            <div class="solution-card" data-aos="fade-up" data-aos-delay="600">
-                <div class="icon">🛟</div>
-                <h3>Safety</h3>
-                <p>We place the safety and well-being of out employees and the public above all else</p>
-            </div>
+    <!-- Core Values -->
+    <section class="section section--paper" id="values" aria-labelledby="values-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="values-title">Our Core Values</h2>
+          <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <p class="section-intro">At SH Global Solution, our values are at the core of how we operate and grow. They shape our company culture and guide every interaction—with our clients, partners, employees, and communities.</p>
         </div>
+        <div class="values-grid">
+          <div class="value">
+            <div class="value-icon" aria-hidden="true">👽</div>
+            <h3>Integrity</h3>
+            <p>We conduct our business honestly, transparently, and with strong ethical principles.</p>
+          </div>
+          <div class="value">
+            <div class="value-icon" aria-hidden="true">🎯</div>
+            <h3>Commitment</h3>
+            <p>We uphold the highest standards in workmanship, project planning, and execution.</p>
+          </div>
+          <div class="value">
+            <div class="value-icon" aria-hidden="true">💕</div>
+            <h3>Customer Centricity</h3>
+            <p>We prioritize our clients' needs and deliver tailored solutions that add value.</p>
+          </div>
+          <div class="value">
+            <div class="value-icon" aria-hidden="true">👍</div>
+            <h3>Innovation</h3>
+            <p>We constantly seek better methods and advanced tools to improve efficiency and outcomes.</p>
+          </div>
+          <div class="value">
+            <div class="value-icon" aria-hidden="true">👥</div>
+            <h3>Teamwork</h3>
+            <p>We believe that collaboration and mutual respect lead to the best results.</p>
+          </div>
+          <div class="value">
+            <div class="value-icon" aria-hidden="true">🛟</div>
+            <h3>Safety</h3>
+            <p>We place the safety and well-being of our employees and the public above all else.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="section" style="background:#0c1222">
-    <h2 data-aos="fade-down">Our Leadership Team</h2>
-    <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">The expert minds driving the future of connectivity.</p>
-
-    <div class="team-grid" id="team">
-        <div class="team-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="img-wrapper">
-                <img src="./images/bosmi.jpeg" alt="CEO" class="team-img">
-            </div>
-            <div class="team-info">
-                <h3>Syahmi Halim</h3>
-                <span class="position">Director</span>
-            </div>
+    <!-- Leadership Team -->
+    <section class="section section--ink" id="team" aria-labelledby="team-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="team-title">Our Leadership Team</h2>
+          <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <p class="section-intro">The expert minds driving the future of connectivity.</p>
         </div>
-
-        <div class="team-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="img-wrapper">
-                <img src="https://awsimages.detik.net.id/community/media/visual/2024/09/27/valentino-rossi-kw_169.jpeg?w=1200" alt="Director" class="team-img">
-            </div>
+        <div class="team-grid">
+          <article class="team-card">
+            <img src="images/bosmi.jpeg" alt="Syahmi Halim, Director" loading="lazy" width="400" height="500">
             <div class="team-info">
-                <h3>Mohd Lutpi</h3>
-                <span class="position">Chief Executive Officer</span>
+              <h3>Syahmi Halim</h3>
+              <p class="role">Director</p>
             </div>
-        </div>
-
-        <div class="team-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="img-wrapper">
-                <img src="https://static.wikia.nocookie.net/cartoons/images/4/41/Profile_-_Patrick_Star.png/revision/latest?cb=20230111062602" alt="Project Director" class="team-img">
-            </div>
+          </article>
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop" alt="Mohd Lutpi, Chief Executive Officer" loading="lazy" width="400" height="500">
             <div class="team-info">
-                <h3>Fahmi Izzudin</h3>
-                <span class="position">Project Director</span>
+              <h3>Mohd Lutpi</h3>
+              <p class="role">Chief Executive Officer</p>
             </div>
-        </div>
-
-        <div class="team-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="img-wrapper">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600" alt="Finance Manager" class="team-img">
-            </div>
+          </article>
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="Fahmi Izzudin, Project Director" loading="lazy" width="400" height="500">
             <div class="team-info">
-                <h3>Nurul Huda</h3>
-                <span class="position">Finance Manager</span>
+              <h3>Fahmi Izzudin</h3>
+              <p class="role">Project Director</p>
             </div>
-        </div>
-
-        <div class="team-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="img-wrapper">
-                <img src="https://image.tmdb.org/t/p/w500/9khvk5svs81TLqIGlI3ZJqYtqaY.jpg" alt="Finance Manager" class="team-img">
-            </div>
+          </article>
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop" alt="Nurul Huda, Finance Manager" loading="lazy" width="400" height="500">
             <div class="team-info">
-                <h3>Hanis Halim</h3>
-                <span class="position">Procurrement Manager</span>
+              <h3>Nurul Huda</h3>
+              <p class="role">Finance Manager</p>
             </div>
-        </div>
-
-        <div class="team-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="img-wrapper">
-                <img src="https://cdn.britannica.com/48/142848-050-2A6FC569/Ronaldo-2004.jpg?w=400&h=300&c=crop" alt="Finance Manager" class="team-img">
-            </div>
+          </article>
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop" alt="Hanis Halim, Procurement Manager" loading="lazy" width="400" height="500">
             <div class="team-info">
-                <h3>Mohd Faris</h3>
-                <span class="position">Wayleave Manager</span>
+              <h3>Hanis Halim</h3>
+              <p class="role">Procurement Manager</p>
             </div>
-        </div>
-
-        <div class="team-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="img-wrapper">
-                <img src="https://i.pinimg.com/474x/3d/8b/59/3d8b59f02dfa9c6c0022612a5f3d2d2b.jpg" alt="Finance Manager" class="team-img">
-            </div>
+          </article>
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop" alt="Mohd Faris, Wayleave Manager" loading="lazy" width="400" height="500">
             <div class="team-info">
-                <h3>Azrul</h3>
-                <span class="position">Planner</span>
+              <h3>Mohd Faris</h3>
+              <p class="role">Wayleave Manager</p>
             </div>
-        </div>
-
-        <div class="team-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="img-wrapper">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1PIowT_Uu_Ho5KYz_B2b_JGWgiQuKv6rhmw&s" alt="Finance Manager" class="team-img">
-            </div>
+          </article>
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop" alt="Azrul, Planner" loading="lazy" width="400" height="500">
             <div class="team-info">
-                <h3>Mohd Azhan</h3>
-                <span class="position">Project Manager</span>
+              <h3>Azrul</h3>
+              <p class="role">Planner</p>
             </div>
+          </article>
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=600&auto=format&fit=crop" alt="Mohd Azhan, Project Manager" loading="lazy" width="400" height="500">
+            <div class="team-info">
+              <h3>Mohd Azhan</h3>
+              <p class="role">Project Manager</p>
+            </div>
+          </article>
         </div>
-    </div>
+      </div>
     </section>
 
-    <section class="horizontal-section" style="background:#0c1222">
-        <h1 data-aos="fade-up" data-aos-delay="400">Our company is built on a strong foundation of teamwork, where collaboration, mutual respect, and shared goals drive
-        everything we do. We believe that a cohesive and empowered team is key to delivering meaningful results. With a
-        commitment to excellence, we have established a professional and trusted image, consistently providing reliable and
-        innovative solutions. As a forward-thinking organization, we continue to grow by adapting to changing needs while
-        maintaining the highest standards in every aspect of our work.</h1>
-        <div class="sticky-container">
-            <div class="horizontal-scroll">
-    
-                <div class="card"><img src="https://plus.unsplash.com/premium_photo-1661767467261-4a4bed92a507?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></div>
-                <div class="card"><img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></div>
-                <div class="card"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Ds"></div>
-                <div class="card"><img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></div>
-                <div class="card"><img src="https://images.unsplash.com/photo-1543269865-96ae30571b5a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></div>
-                <div class="card"><img src="https://plus.unsplash.com/premium_photo-1661759404487-083b4a9703e4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></div>
-                <div class="card"><img src="https://plus.unsplash.com/premium_photo-1661962229590-dd3986bc984e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></div>
-                <div class="card"><img
-                        src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                </div>
-                <div class="card"><img
-                        src="https://images.unsplash.com/photo-1758873269013-d914addd5d3b?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                </div>
-                <div class="card"><img
-                        src="https://plus.unsplash.com/premium_photo-1679429320552-ec9038ccd550?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                </div>
-            </div>
+    <!-- Teamwork Gallery -->
+    <section class="section section--ink" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="gallery-title">Built on Teamwork</h2>
+          <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <p class="section-intro">Our company is built on a strong foundation of teamwork, where collaboration, mutual respect, and shared goals drive everything we do. We believe that a cohesive and empowered team is key to delivering meaningful results. With a commitment to excellence, we have established a professional and trusted image, consistently providing reliable and innovative solutions. As a forward-thinking organization, we continue to grow by adapting to changing needs while maintaining the highest standards in every aspect of our work.</p>
         </div>
+        <div class="gallery">
+          <img src="https://plus.unsplash.com/premium_photo-1661767467261-4a4bed92a507?q=80&w=1170&auto=format&fit=crop" alt="Team collaborating on site planning" loading="lazy" width="1170" height="780">
+          <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1170&auto=format&fit=crop" alt="Colleagues joining hands in teamwork" loading="lazy" width="1170" height="780">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1170&auto=format&fit=crop" alt="Team working together at the office" loading="lazy" width="1170" height="780">
+          <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?q=80&w=1170&auto=format&fit=crop" alt="Group of professionals collaborating" loading="lazy" width="1170" height="780">
+          <img src="https://images.unsplash.com/photo-1543269865-96ae30571b5a?q=80&w=1170&auto=format&fit=crop" alt="Team meeting in progress" loading="lazy" width="1170" height="780">
+          <img src="https://plus.unsplash.com/premium_photo-1661759404487-083b4a9703e4?q=80&w=1170&auto=format&fit=crop" alt="Workers coordinating in the field" loading="lazy" width="1170" height="780">
+          <img src="https://plus.unsplash.com/premium_photo-1661962229590-dd3986bc984e?q=80&w=1170&auto=format&fit=crop" alt="Engineers reviewing project details" loading="lazy" width="1170" height="780">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1074&auto=format&fit=crop" alt="Team discussion around a table" loading="lazy" width="1074" height="716">
+          <img src="https://images.unsplash.com/photo-1758873269013-d914addd5d3b?q=80&w=1332&auto=format&fit=crop" alt="Colleagues working together outdoors" loading="lazy" width="1332" height="888">
+          <img src="https://plus.unsplash.com/premium_photo-1679429320552-ec9038ccd550?q=80&w=1169&auto=format&fit=crop" alt="Group of professionals collaborating" loading="lazy" width="1169" height="779">
+        </div>
+      </div>
     </section>
 
-    <section class="section" id="qshe">
-        <h2 data-aos="fade-down">Quality, Safety, Health, and Environment (QSHE)</h2>
-        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">SH Global Solution is committed to maintaining a safe and environmentally responsible work environment. All our operations are guided by strict QSHE standards.
-        </p>
-            <div class="qshe-container">
-                <div class="qshe-stack">
-                    <div class="qshe-item" data-aos="fade-down" data-aos-delay="200">
-                        <span class="step-num">01</span>
-                        <div class="content">
-                            <h3>Daily safety briefings and equipment inspections</h3>
-                        </div>
-                    </div>
-            
-                    <div class="qshe-item" data-aos="fade-down" data-aos-delay="200">
-                        <span class="step-num">02</span>
-                        <div class="content">
-                            <h3>Use of certified PPE (Personal Protective Equioment)</h3>
-                        </div>
-                    </div>
-            
-                    <div class="qshe-item" data-aos="fade-down" data-aos-delay="200">
-                        <span class="step-num">03</span>
-                        <div class="content">
-                            <h3>Environmental protection protocols at all project sites</h3>
-                        </div>
-                    </div>
-
-                    <div class="qshe-item" data-aos="fade-down" data-aos-delay="200">
-                        <span class="step-num">04</span>
-                        <div class="content">
-                            <h3>Internal and third-party audits for quality assurance</h3>
-                        </div>
-                    </div>
-
-                    <div class="qshe-item" data-aos="fade-down" data-aos-delay="200">
-                        <span class="step-num">05</span>
-                        <div class="content">
-                            <h3>OTDR and end-to-end testing for netwwork validation</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">We firmly believe that quality, safety, and environmental care are not just responsibilities — they are key to long-term success.</p>
+    <!-- QSHE -->
+    <section class="section section--paper" id="qshe" aria-labelledby="qshe-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="qshe-title">Quality, Safety, Health, and Environment (QSHE)</h2>
+          <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <p class="section-intro">SH Global Solution is committed to maintaining a safe and environmentally responsible work environment. All our operations are guided by strict QSHE standards.</p>
+        </div>
+        <ol class="qshe-list">
+          <li class="qshe-item">
+            <span class="qshe-num">01</span>
+            <h3>Daily safety briefings and equipment inspections</h3>
+          </li>
+          <li class="qshe-item">
+            <span class="qshe-num">02</span>
+            <h3>Use of certified PPE (Personal Protective Equipment)</h3>
+          </li>
+          <li class="qshe-item">
+            <span class="qshe-num">03</span>
+            <h3>Environmental protection protocols at all project sites</h3>
+          </li>
+          <li class="qshe-item">
+            <span class="qshe-num">04</span>
+            <h3>Internal and third-party audits for quality assurance</h3>
+          </li>
+          <li class="qshe-item">
+            <span class="qshe-num">05</span>
+            <h3>OTDR and end-to-end testing for network validation</h3>
+          </li>
+        </ol>
+        <p class="qshe-outro">We firmly believe that quality, safety, and environmental care are not just responsibilities — they are key to long-term success.</p>
+      </div>
     </section>
 
-        <!-- <section class="qshe-section">
-
-        </section> -->
-
-    <section class="section" id="milestones" style="background:#0c1222">
-    <h2 data-aos="fade-down">Milestones & Achievements</h2>
-    <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Over the years, SH Global Solution has accomplished several key milestones that demonstrate our growth, capability, and reliability.</p>
-
-    <div class="milestone-grid">
-        <div class="milestone-card" data-aos="fade-up" data-aos-delay="100">
+    <!-- Milestones -->
+    <section class="section section--ink" id="milestones" aria-labelledby="milestones-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="milestones-title">Milestones &amp; Achievements</h2>
+          <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <p class="section-intro">Over the years, SH Global Solution has accomplished several key milestones that demonstrate our growth, capability, and reliability.</p>
+        </div>
+        <div class="milestones-grid">
+          <article class="milestone">
             <span class="stat">200+ KM</span>
             <h3>Fiber Deployment</h3>
             <p>Successfully delivered over 200 km of FTTH and OSP fiber deployment in the last 3 years.</p>
-        </div>
-
-        <div class="milestone-card" data-aos="fade-up" data-aos-delay="200">
+          </article>
+          <article class="milestone">
             <span class="stat">99.9%</span>
             <h3>Network Uptime</h3>
             <p>Consistently achieved 99.9% uptime for maintenance clients across all service agreements.</p>
-        </div>
-
-        <div class="milestone-card" data-aos="fade-up" data-aos-delay="300">
-            <span class="stat">CB & Titan</span>
+          </article>
+          <article class="milestone">
+            <span class="stat">CB &amp; Titan</span>
             <h3>Strategic Projects</h3>
             <p>Completed multiple critical infrastructure projects in partnership with leading telecom providers.</p>
-        </div>
-
-        <div class="milestone-card" data-aos="fade-up" data-aos-delay="400">
+          </article>
+          <article class="milestone">
             <span class="stat">Complex</span>
             <h3>Civil Infrastructure</h3>
             <p>Managed large-scale civil work packages under tight deadlines and complex terrain conditions.</p>
-        </div>
-
-        <div class="milestone-card" data-aos="fade-up" data-aos-delay="500">
+          </article>
+          <article class="milestone">
             <span class="stat">High-Retention</span>
             <h3>Elite Technical Team</h3>
             <p>Built and retained a highly skilled technical workforce, ensuring deep knowledge retention and continuity.</p>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--paper" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="contact-title">Get In Touch</h2>
+          <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <p class="section-intro">Have questions about our fiber solutions? Let's connect.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Visit Our Office</h3>
+            <p>Our central hub for fiber innovation and client support.</p>
+            <div class="info-item">
+              <span class="info-label">📍 Address</span>
+              Lot 1806, Taman Mekasa, 17000 Pasir Mas, Kelantan
+            </div>
+            <div class="info-item">
+              <span class="info-label">📞 Phone</span>
+              <a href="tel:+601112987138">+60 111 2987 138</a>
+            </div>
+            <div class="info-item">
+              <span class="info-label">📧 Email</span>
+              <a href="mailto:shglobalsolution28@gmail.com">shglobalsolution28@gmail.com</a>
+            </div>
+          </div>
+          <iframe class="map" title="Map to the SH Global Solution office in Taman Mekasar, Kelantan" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126950.10829554437!2d102.0671408572774!3d6.104979479866142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b6a5b2860e18dd%3A0x8fe20f13492d53eb!2sBlok%20C%2C%20Taman%20Mekasar!5e0!3m2!1sen!2smy!4v1777295839058!5m2!1sen!2smy" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing summary -->
+    <section class="section section--ink" id="summary" aria-labelledby="summary-title">
+      <div class="container">
+        <h2 class="summary" id="summary-title">SH Global Solution is a growing and future-focused telecommunications infrastructure company, committed to delivering outstanding network solutions that enable seamless connectivity across urban and rural regions. With a strong track record in implementing fiber optic networks and civil engineering projects, we support the digital growth of cities, industries, and communities. Our services cover the full project life cycle—from design and planning to deployment, testing, maintenance, and long-term support. We approach every project with a focus on quality, efficiency, and client satisfaction, ensuring that our partners receive value-driven results.</h2>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="fib-band" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
     </div>
-    </section>
+    <p>&copy; 2026 SH Global Solution. All Rights Reserved.</p>
+  </footer>
 
-    <section class="section" id="contact">
-        <h2 data-aos="fade-down">Get In Touch</h2>
-        <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Have questions about our fiber solutions? Let’s connect.</p>
-    
-        <div class="contact-container">
-            <div class="contact-info" data-aos="fade-right">
-                <h3>Visit Our Office</h3>
-                <p style="margin-bottom: 25px; color: var(--text-muted);">Our central hub for fiber innovation and client
-                    support.</p>
-                <div class="info-item"><strong>📍 Address:</strong><br> Lot 1806, Taman Mekasa, 17000 Pasir Mas, Kelantan</div>
-                <div class="info-item"><strong>📞 Phone:</strong><br> +06 0111 2987 138</div>
-                <div class="info-item"><strong>📧 Email:</strong><br> shglobalsoution28@gmail.com</div>
-            </div>
-    
-            <div class="map-container" data-aos="fade-left">
-                <!-- <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093745!2d144.95373561531688!3d-37.8172097797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b34964d%3A0x2787834743c39634!2sFederation%20Square!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe> -->
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126950.10829554437!2d102.0671408572774!3d6.104979479866142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b6a5b2860e18dd%3A0x8fe20f13492d53eb!2sBlok%20C%2C%20Taman%20Mekasar!5e0!3m2!1sen!2smy!4v1777295839058!5m2!1sen!2smy"
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="summary">
-        <h1 data-aos="fade-down" data-aos-delay="100">SH Global Solution is a growing and future-focused telecommunications infrastructure company, committed to delivering outstanding network solutions that enable seamless connectivity across urban and rural regions. With a strong track record in implementing fiber optic networks and civil engineering projects, we support the digital growth of cities, industries, and communities. Our services cover the full project life cycle—from design and planning to deployment, testing, maintenance, and long-term support. We approach every project with a focus on quality, efficiency, and client satisfaction, ensuring that our partners receive value-driven results.</h1>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 SH Global Solution. Not All Rights Reserved.</p>
-    </footer>
-    <script src="js/mouse-hover.js"></script>
-    <script src="js/horizontal.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-                once: true, // Animation only happens once as you scroll down
-                duration: 800 // Default duration for all animations
-            });
-    </script>
+  <script>
+    (function () {
+      var btn = document.getElementById("menu-btn");
+      var menu = document.getElementById("nav-links");
+      function setOpen(open) {
+        menu.classList.toggle("open", open);
+        btn.setAttribute("aria-expanded", String(open));
+      }
+      btn.addEventListener("click", function () {
+        setOpen(!menu.classList.contains("open"));
+      });
+      menu.addEventListener("click", function (e) {
+        if (e.target.tagName === "A") setOpen(false);
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
+    })();
+  </script>
 </body>
 </html>
