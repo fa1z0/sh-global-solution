@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SH Global Solution — fiber optic and civil engineering infrastructure for telecom operators, developers, and governments. Established 2018, Pasir Mas, Kelantan.">
+  <meta name="description" content="SH Global Solution — fibre optic and civil infrastructure for Malaysia's telecom sector. Established 2018, Pasir Mas, Kelantan.">
   <meta name="theme-color" content="#04171B">
   <meta property="og:type" content="website">
   <meta property="og:title" content="SH Global Solution">
   <meta property="og:description" content="Connecting the future, Building the network.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop">
-  <title>SH Global Solution</title>
+  <title>SH Global Solution — Fibre & Civil Infrastructure, Malaysia</title>
   <link rel="icon" href="images/logo.png">
   <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,6 @@
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    /* ============ Tokens ============ */
     :root {
       --font-sans: "Satoshi", "Helvetica Neue", Arial, sans-serif;
       --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -34,22 +33,19 @@
       --on-accent: #04222A;
       --accent-2: #E06020;
       --violet: #23235F;
-      --shadow: 0 1px 0 rgba(255, 255, 255, 0.02);
 
       --fib-1: #2F6BD8;
       --fib-2: #E8590C;
       --fib-3: #1F9D63;
       --fib-4: #8A5A2B;
-
       --my-red: #CC0001;
       --my-blue: #010066;
 
       --radius: 12px;
       --radius-sm: 8px;
-      --container: 1160px;
+      --container: 1140px;
       --nav-h: 68px;
     }
-
     html[data-theme="light"] {
       color-scheme: light;
       --bg: #FFFFFF;
@@ -64,71 +60,36 @@
       --on-accent: #FFFFFF;
       --accent-2: #C24E14;
       --violet: #C9D2F2;
-      --shadow: 0 1px 2px rgba(6, 32, 42, 0.05);
     }
-
     html[data-theme="dark"] { color-scheme: dark; }
 
-    /* ============ Base ============ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
-
     body {
       font-family: var(--font-sans);
-      font-size: 1.0625rem;
-      line-height: 1.7;
-      color: var(--text);
-      background: var(--bg);
+      font-size: 1.0625rem; line-height: 1.7;
+      color: var(--text); background: var(--bg);
       -webkit-font-smoothing: antialiased;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-
     img { display: block; max-width: 100%; height: auto; }
     a { color: inherit; }
     ul, ol { list-style: none; }
     button { font-family: inherit; }
 
-    :focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-      border-radius: 3px;
-    }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
 
-    .container {
-      width: min(var(--container), calc(100% - 3rem));
-      margin-inline: auto;
-    }
-
-    .mono {
-      font-family: var(--font-mono);
-      font-weight: 500;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-    }
+    .container { width: min(var(--container), calc(100% - 3rem)); margin-inline: auto; }
+    .mono { font-family: var(--font-mono); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.04em; }
 
     .skip {
       position: absolute; left: 1rem; top: -3.5rem; z-index: 200;
       background: var(--accent); color: var(--on-accent);
-      padding: 0.5rem 1rem; border-radius: 6px; font-weight: 700;
-      transition: top 0.15s ease;
+      padding: 0.5rem 1rem; border-radius: 6px; font-weight: 700; transition: top 0.15s ease;
     }
     .skip:focus { top: 0.75rem; }
 
-    /* Malaysian whisper: thin red-over-blue rule */
-    .my-rule {
-      display: block;
-      width: 30px;
-      height: 5px;
-      background: linear-gradient(to bottom, var(--my-red) 0 50%, var(--my-blue) 50% 100%);
-      border-radius: 1px;
-    }
-
-    /* ============ Fiber identity motif ============ */
-    .fib {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
-      width: 128px; height: 4px; margin-top: 1.1rem;
-    }
+    .fib { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; width: 128px; height: 4px; margin-top: 1.1rem; }
     .fib span:nth-child(1) { background: var(--fib-1); }
     .fib span:nth-child(2) { background: var(--fib-2); }
     .fib span:nth-child(3) { background: var(--fib-3); }
@@ -139,16 +100,13 @@
     .fib-band span:nth-child(2) { background: var(--fib-2); }
     .fib-band span:nth-child(3) { background: var(--fib-3); }
     .fib-band span:nth-child(4) { background: var(--fib-4); }
-    .hero-band { position: absolute; bottom: 0; left: 0; }
 
-    /* ============ Buttons ============ */
     .btn {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.98rem; font-weight: 700; line-height: 1;
-      text-decoration: none; border: 1px solid transparent;
-      border-radius: var(--radius-sm);
-      padding: 0.8rem 1.35rem; cursor: pointer;
-      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+      font-size: 0.98rem; font-weight: 700; line-height: 1; text-decoration: none;
+      border: 1px solid transparent; border-radius: var(--radius-sm);
+      padding: 0.85rem 1.4rem; cursor: pointer;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     }
     .btn--primary { background: var(--accent); color: var(--on-accent); }
     .btn--primary:hover { background: var(--accent-hover); }
@@ -156,92 +114,57 @@
     .btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
     .btn--sm { padding: 0.62rem 1rem; font-size: 0.92rem; }
 
-    /* ============ Nav ============ */
+    /* Nav */
     .nav {
       position: sticky; top: 0; z-index: 100; height: var(--nav-h);
       background: color-mix(in srgb, var(--bg) 86%, transparent);
       backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      transition: background-color 0.3s ease, border-color 0.3s ease;
+      border-bottom: 1px solid var(--border); transition: background-color 0.3s ease, border-color 0.3s ease;
     }
-    .nav-inner { height: 100%; display: flex; align-items: center; gap: 1.5rem; }
-
+    .nav-inner { height: 100%; display: flex; align-items: center; gap: 1.25rem; }
     .brand {
-      display: flex; align-items: center; gap: 0.7rem;
-      text-decoration: none; color: var(--text);
+      display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: var(--text);
       font-weight: 900; font-size: 1.02rem; letter-spacing: -0.01em;
-      margin-right: auto;
+      flex: 1 1 0; min-width: 0;
     }
-    .brand img {
-      width: 38px; height: 38px; padding: 6px;
-      background: #06202A; border: 1px solid var(--border); border-radius: 9px;
-    }
-    .brand-name { display: flex; flex-direction: column; gap: 5px; }
-    .brand-name .my-rule { width: 26px; height: 4px; }
+    .brand img { width: 38px; height: 38px; padding: 6px; background: #06202A; border: 1px solid var(--border); border-radius: 9px; }
+    .brand-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-    .menu { display: flex; align-items: center; gap: 0.35rem; }
+    .menu { display: flex; align-items: center; gap: 0.2rem; flex: 0 0 auto; }
     .menu-item { position: relative; }
     .menu-link, .menu-trigger {
       display: inline-flex; align-items: center; gap: 0.35rem;
-      font-size: 0.95rem; font-weight: 500; color: var(--muted);
-      text-decoration: none; background: none; border: none; cursor: pointer;
-      padding: 0.55rem 0.75rem; border-radius: var(--radius-sm);
+      font-size: 0.95rem; font-weight: 500; color: var(--muted); text-decoration: none;
+      background: none; border: none; cursor: pointer; padding: 0.55rem 0.7rem; border-radius: var(--radius-sm);
       transition: color 0.15s ease, background-color 0.15s ease;
     }
-    .menu-link:hover, .menu-trigger:hover, .menu-trigger[aria-expanded="true"] {
-      color: var(--text); background: color-mix(in srgb, var(--text) 7%, transparent);
-    }
+    .menu-link:hover, .menu-trigger:hover, .menu-trigger[aria-expanded="true"] { color: var(--text); background: color-mix(in srgb, var(--text) 7%, transparent); }
     .menu-trigger .chev { width: 10px; height: 10px; transition: transform 0.2s ease; }
     .menu-trigger[aria-expanded="true"] .chev { transform: rotate(180deg); }
 
     .panel {
       position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(-6px);
-      width: min(760px, calc(100vw - 2rem));
-      background: var(--panel); border: 1px solid var(--border);
-      border-radius: var(--radius); box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.55);
-      padding: 1.5rem; opacity: 0; visibility: hidden; pointer-events: none;
-      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+      width: min(720px, calc(100vw - 2rem)); background: var(--panel); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.55); padding: 1.5rem;
+      opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
     }
     .menu-item.open .panel { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
-    .panel--contact { width: min(420px, calc(100vw - 2rem)); }
-
-    .panel-grid { display: grid; grid-template-columns: repeat(2, 1fr) 0.9fr; gap: 1.5rem; }
-    .panel-grid--plain { grid-template-columns: repeat(2, 1fr); }
-    .panel-col-title {
-      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
-      letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.75rem;
-    }
-    .panel-list { display: grid; gap: 0.15rem; }
-    .panel-list a {
-      display: block; text-decoration: none; font-size: 0.94rem; font-weight: 500;
-      color: var(--text); padding: 0.45rem 0.55rem; border-radius: 6px;
-      transition: background-color 0.15s ease, color 0.15s ease;
-    }
-    .panel-list a span { display: block; font-size: 0.82rem; font-weight: 400; color: var(--muted); }
+    .panel::before { content: ""; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
+    .panel-grid { display: grid; grid-template-columns: 1fr 1fr 0.9fr; gap: 1.5rem; }
+    .panel-grid--plain { grid-template-columns: 1fr 1fr; }
+    .panel-col-title { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.7rem; }
+    .panel-list { display: grid; gap: 0.1rem; }
+    .panel-list a { display: block; text-decoration: none; font-size: 0.94rem; font-weight: 500; color: var(--text); padding: 0.45rem 0.55rem; border-radius: 6px; transition: background-color 0.15s ease, color 0.15s ease; }
     .panel-list a:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--accent); }
-
-    .feature {
-      background: linear-gradient(150deg, color-mix(in srgb, var(--accent) 16%, transparent), color-mix(in srgb, var(--violet) 26%, transparent));
-      border: 1px solid var(--border); border-radius: var(--radius-sm);
-      padding: 1.25rem; display: flex; flex-direction: column; gap: 0.6rem;
-    }
+    .feature { background: linear-gradient(150deg, color-mix(in srgb, var(--accent) 16%, transparent), color-mix(in srgb, var(--violet) 26%, transparent)); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; }
     .feature h4 { font-size: 1.05rem; font-weight: 900; }
     .feature p { font-size: 0.88rem; color: var(--muted); flex: 1; }
 
-    .contact-card { display: grid; gap: 0.9rem; }
-    .contact-card .row { display: grid; gap: 0.1rem; }
-    .contact-card .k { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--muted); }
-    .contact-card a { color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.94rem; }
-    .contact-card a:hover { color: var(--accent); }
-
-    .nav-actions { display: flex; align-items: center; gap: 0.6rem; }
-
+    .nav-actions { display: flex; align-items: center; gap: 0.5rem; flex: 1 1 0; justify-content: flex-end; }
     .icon-btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 40px; height: 40px;
-      background: transparent; border: 1px solid var(--border); border-radius: var(--radius-sm);
-      color: var(--text); cursor: pointer;
-      transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+      display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+      background: transparent; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text); cursor: pointer;
+      transition: border-color 0.15s ease, color 0.15s ease;
     }
     .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
     .icon-btn svg { width: 18px; height: 18px; }
@@ -249,171 +172,99 @@
     html[data-theme="light"] .theme-toggle .sun { display: block; }
     html[data-theme="light"] .theme-toggle .moon { display: none; }
 
-    .hamburger {
-      display: none; flex-direction: column; justify-content: center; gap: 5px;
-      width: 40px; height: 40px; padding: 9px;
-      background: transparent; border: 1px solid var(--border);
-      border-radius: var(--radius-sm); cursor: pointer;
+    .lang { display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+    .lang-btn {
+      background: transparent; border: none; cursor: pointer; color: var(--muted);
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; padding: 0.55rem 0.7rem;
+      transition: background-color 0.15s ease, color 0.15s ease;
     }
+    .lang-btn[aria-pressed="true"] { background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--text); }
+    .lang-btn:hover { color: var(--text); }
+
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 9px; background: transparent; border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; }
     .hamburger span { display: block; height: 2px; width: 100%; background: var(--text); transition: transform 0.2s ease, opacity 0.2s ease; }
 
-    /* ============ Mobile overlay menu ============ */
+    /* Mobile overlay */
     .mobile-nav {
-      position: fixed; inset: var(--nav-h) 0 0 0; z-index: 90;
-      background: var(--bg); border-top: 1px solid var(--border);
-      overflow-y: auto; padding: 1.5rem 1.5rem 3rem;
-      transform: translateY(-8px); opacity: 0; visibility: hidden;
-      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+      position: fixed; inset: var(--nav-h) 0 0 0; z-index: 90; background: var(--bg);
+      border-top: 1px solid var(--border); overflow-y: auto; padding: 1.5rem 1.5rem 3rem;
+      transform: translateY(-8px); opacity: 0; visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
     }
     .mobile-nav.open { transform: none; opacity: 1; visibility: visible; }
     .mobile-group { border-bottom: 1px solid var(--border); padding: 1rem 0; }
-    .mobile-group h3 {
-      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
-      letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.6rem;
-    }
-    .mobile-group a {
-      display: block; text-decoration: none; color: var(--text);
-      font-size: 1.05rem; font-weight: 500; padding: 0.5rem 0;
-    }
+    .mobile-group h3 { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.5rem; }
+    .mobile-group a { display: block; text-decoration: none; color: var(--text); font-size: 1.05rem; font-weight: 500; padding: 0.5rem 0; }
     .mobile-group a:hover { color: var(--accent); }
     .mobile-cta { margin-top: 1.5rem; }
     .mobile-cta .btn { width: 100%; justify-content: center; }
 
-    /* ============ Sections ============ */
-    .section { padding: clamp(4.5rem, 9vw, 7.5rem) 0; }
-    .section--tight { padding: clamp(3rem, 5vw, 4rem) 0; }
+    /* Sections */
+    .section { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+    .section--tight { padding: clamp(2.5rem, 4vw, 3.25rem) 0; }
     .section--alt { background: var(--bg-2); transition: background-color 0.3s ease; }
+    .section-title { font-size: clamp(1.8rem, 3.3vw, 2.6rem); font-weight: 900; line-height: 1.12; letter-spacing: -0.02em; }
+    .section-intro { max-width: 66ch; margin-top: 1.2rem; color: var(--muted); font-size: 1.08rem; }
+    .section-head { margin-bottom: clamp(2rem, 4.5vw, 3rem); }
+    .section-index { font-family: var(--font-mono); font-size: 0.76rem; font-weight: 500; letter-spacing: 0.06em; color: var(--accent); display: block; margin-bottom: 0.8rem; }
 
-    .section-title {
-      font-size: clamp(1.9rem, 3.4vw, 2.75rem);
-      font-weight: 900; line-height: 1.1; letter-spacing: -0.02em;
-    }
-    .section-intro { max-width: 68ch; margin-top: 1.4rem; color: var(--muted); font-size: 1.1rem; }
-    .section-head { margin-bottom: clamp(2.5rem, 5vw, 3.75rem); }
-    .section-index {
-      font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500;
-      letter-spacing: 0.08em; color: var(--accent); display: block; margin-bottom: 0.9rem;
-    }
-
-    /* ============ Hero ============ */
+    /* Hero */
     .hero {
       position: relative; overflow: hidden; text-align: center;
-      padding: clamp(3.5rem, 8vh, 5.5rem) 0 clamp(2.5rem, 5vh, 3.5rem);
+      padding: clamp(3rem, 7vh, 4.5rem) 0 clamp(2rem, 4vh, 3rem);
       background:
         radial-gradient(1200px 640px at 50% -12%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 62%),
         radial-gradient(900px 700px at 82% 8%, color-mix(in srgb, var(--violet) 42%, transparent), transparent 70%),
         var(--bg);
       transition: background-color 0.3s ease;
     }
+    .hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; display: none; }
+    .hero.webgl .hero-canvas { display: block; }
     .hero-fibers { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-
-    .hero-fibers .s {
-      fill: none; stroke-width: 2; stroke-dasharray: 2400; stroke-dashoffset: 2400;
-      animation: strand-draw 1.8s ease-out forwards;
-    }
+    .hero.webgl .hero-fibers { display: none; }
+    .hero-fibers .s { fill: none; stroke-width: 2; stroke-dasharray: 2400; stroke-dashoffset: 2400; animation: strand-draw 1.8s ease-out forwards; }
     .hero-fibers .s1 { stroke: color-mix(in srgb, var(--fib-1) 55%, transparent); animation-delay: 0.15s; }
     .hero-fibers .s2 { stroke: color-mix(in srgb, var(--fib-2) 45%, transparent); animation-delay: 0.35s; }
     .hero-fibers .s3 { stroke: color-mix(in srgb, var(--fib-3) 48%, transparent); animation-delay: 0.55s; }
-
-    .hero-fibers .sp {
-      fill: none; stroke: color-mix(in srgb, var(--accent) 70%, white);
-      stroke-width: 3.4; stroke-linecap: round; stroke-dasharray: 64 3200;
-      filter: drop-shadow(0 0 7px color-mix(in srgb, var(--accent) 80%, transparent));
-      opacity: 0;
-    }
-    .hero-fibers .sp1 { animation: travel 2.4s 0.9s ease-in-out forwards; }
-    .hero-fibers .sp2 { animation: travel 2.4s 1.3s ease-in-out forwards; }
-    .hero-fibers .sp3 { animation: travel 2.4s 1.7s ease-in-out forwards; }
-
-    .hero-fibers .lp {
-      fill: none; stroke: color-mix(in srgb, var(--accent) 60%, transparent);
-      stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 30 3600; opacity: 0;
-      animation: travel 11s linear infinite;
-    }
+    .hero-fibers .lp { fill: none; stroke: color-mix(in srgb, var(--accent) 60%, transparent); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 30 3600; opacity: 0; animation: travel 11s linear infinite; }
     .hero-fibers .lp2 { animation-delay: 3.5s; stroke: color-mix(in srgb, var(--fib-2) 55%, transparent); }
-    .hero-fibers .lp3 { animation-delay: 7s; stroke: color-mix(in srgb, var(--fib-3) 55%, transparent); }
-
-    .hero-fibers .nd {
-      fill: none; stroke: color-mix(in srgb, var(--accent) 75%, transparent); stroke-width: 2;
-      transform-box: fill-box; transform-origin: center;
-      animation: node-pulse 5s ease-in-out infinite;
-    }
-    .hero-fibers .nd2 { animation-delay: 1.6s; }
-    .hero-fibers .nd3 { animation-delay: 3.2s; }
-
     @keyframes strand-draw { to { stroke-dashoffset: 0; } }
-    @keyframes travel {
-      0% { stroke-dashoffset: 0; opacity: 0; }
-      10% { opacity: 1; }
-      88% { opacity: 1; }
-      100% { stroke-dashoffset: -1900; opacity: 0; }
-    }
-    @keyframes node-pulse {
-      0%, 100% { transform: scale(0.7); opacity: 0.25; }
-      50% { transform: scale(1.7); opacity: 0.9; }
-    }
+    @keyframes travel { 0% { stroke-dashoffset: 0; opacity: 0; } 10% { opacity: 1; } 88% { opacity: 1; } 100% { stroke-dashoffset: -1900; opacity: 0; } }
     @keyframes rise { to { transform: translateY(0); } }
 
-    .hero-inner { position: relative; z-index: 1; }
-
-    .hero-title {
-      font-size: clamp(2.9rem, 8.5vw, 6.25rem);
-      font-weight: 900; line-height: 0.98; letter-spacing: -0.03em;
-    }
+    .hero-inner { position: relative; z-index: 2; }
+    .hero-title { font-size: clamp(2.3rem, 6.2vw, 4.6rem); font-weight: 900; line-height: 1.04; letter-spacing: -0.03em; max-width: 18ch; margin-inline: auto; }
     .hero-title .line { display: block; overflow: hidden; }
-    .hero-title .line > span { display: block; transform: translateY(110%); animation: rise 1s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
-    .hero-title .line:nth-child(1) > span { animation-delay: 0.15s; }
-    .hero-title .line:nth-child(2) > span { animation-delay: 0.32s; }
-
-    .hero-rule { margin: 1.6rem auto 1.5rem; }
-    .hero-tagline {
-      font-size: clamp(1.1rem, 2.2vw, 1.35rem); font-weight: 500; color: var(--muted);
-    }
-    .hero-note {
-      display: block; margin-top: 1.1rem; color: var(--muted);
-    }
-    .hero .btn { margin-top: 2.1rem; }
+    .hero-title .line > span { display: block; transform: translateY(110%); animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+    .hero-title .line:nth-child(1) > span { animation-delay: 0.12s; }
+    .hero-title .line:nth-child(2) > span { animation-delay: 0.26s; }
+    .hero-sub { max-width: 60ch; margin: 1.4rem auto 0; color: var(--muted); font-size: clamp(1.02rem, 1.6vw, 1.16rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 1.6rem; }
 
     .facts {
-      position: relative; z-index: 1;
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
-      margin-top: clamp(3rem, 7vh, 4.5rem); padding-top: 2rem;
-      border-top: 1px solid var(--border); text-align: left;
+      position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+      margin-top: clamp(2.5rem, 6vh, 3.75rem); padding-top: 1.75rem; border-top: 1px solid var(--border); text-align: left;
     }
     .facts li { display: flex; flex-direction: column; gap: 0.15rem; }
-    .facts strong { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.01em; }
-    .facts strong .u { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 500; color: var(--muted); }
-    .facts span { font-size: 0.95rem; color: var(--muted); }
+    .facts strong { font-size: 1.45rem; font-weight: 900; letter-spacing: -0.01em; }
+    .facts span { font-size: 0.92rem; color: var(--muted); }
 
-    /* ============ Clients & partners ============ */
-    .trust-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 1.75rem; }
-    .trust { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); }
-    .trust-label { font-size: 0.95rem; font-weight: 700; color: var(--muted); margin-bottom: 1rem; }
-    .trust-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-    .trust-tiles li {
-      border: 1px solid var(--border); background: var(--card); border-radius: var(--radius-sm);
-      padding: 1rem 1.1rem; font-size: 0.98rem; font-weight: 500;
-      transition: border-color 0.15s ease, background-color 0.3s ease;
-    }
+    /* Trust strip */
+    .trust-title { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; }
+    .trust-cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1.5rem, 4vw, 3rem); }
+    .trust-label { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.75rem; }
+    .trust-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+    .trust-tiles li { border: 1px solid var(--border); background: var(--card); border-radius: var(--radius-sm); padding: 0.85rem 1rem; font-size: 0.94rem; font-weight: 500; transition: border-color 0.15s ease; }
     .trust-tiles li:hover { border-color: var(--accent); }
 
-    /* ============ Background ============ */
-    .lede { max-width: 72ch; font-size: clamp(1.15rem, 1.8vw, 1.3rem); line-height: 1.7; color: var(--muted); }
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+    .about-copy p { color: var(--muted); font-size: clamp(1.06rem, 1.6vw, 1.2rem); line-height: 1.75; }
+    .about-copy p + p { margin-top: 1.1rem; }
+    .about-img { border-radius: var(--radius); width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid var(--border); }
 
-    /* ============ Mission & Vision ============ */
-    .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
-    .mission-cards { display: grid; gap: 2rem; }
-    .mission-card h3 { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.01em; margin-bottom: 0.75rem; }
-    .mission-card p { color: var(--muted); max-width: 52ch; }
-    .mission-img { border-radius: var(--radius); width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid var(--border); }
-
-    /* ============ Services ============ */
-    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .service-card {
-      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      overflow: hidden; display: flex; flex-direction: column;
-      transition: border-color 0.18s ease, background-color 0.3s ease, transform 0.18s ease;
-    }
+    /* Services */
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .service-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.18s ease, transform 0.18s ease; }
     .service-card:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); transform: translateY(-3px); }
     .service-card::before { content: ""; display: block; height: 3px; background: var(--card-accent, var(--fib-1)); }
     .service-card:nth-child(6n + 1) { --card-accent: var(--fib-1); }
@@ -423,17 +274,14 @@
     .service-card:nth-child(6n + 5) { --card-accent: var(--fib-2); }
     .service-card:nth-child(6n + 6) { --card-accent: var(--fib-1); }
     .service-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform 0.3s ease; }
-    .service-card:hover img { transform: scale(1.04); }
-    .service-body { padding: 1.4rem 1.4rem 1.6rem; }
-    .service-body h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.6rem; }
-    .service-body p { font-size: 0.97rem; color: var(--muted); }
+    .service-card:hover img { transform: scale(1.03); }
+    .service-body { padding: 1.25rem 1.3rem 1.4rem; }
+    .service-body h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .service-body p { font-size: 0.95rem; color: var(--muted); }
 
-    /* ============ Why choose us ============ */
-    .reasons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem clamp(1.5rem, 4vw, 3rem); }
-    .reason {
-      display: grid; grid-template-columns: auto 1fr; gap: 0.9rem; align-items: start;
-      padding-bottom: 1.25rem; border-bottom: 1px solid var(--border);
-    }
+    /* Why + stats */
+    .reasons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem clamp(1.25rem, 3vw, 2.5rem); margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+    .reason { display: grid; grid-template-columns: auto 1fr; gap: 0.8rem; align-items: start; }
     .tick { width: 12px; height: 12px; margin-top: 0.45rem; border-radius: 3px; background: var(--reason-accent, var(--fib-1)); }
     .reason:nth-child(6n + 1) { --reason-accent: var(--fib-1); }
     .reason:nth-child(6n + 2) { --reason-accent: var(--fib-2); }
@@ -441,297 +289,199 @@
     .reason:nth-child(6n + 4) { --reason-accent: var(--fib-4); }
     .reason:nth-child(6n + 5) { --reason-accent: var(--fib-2); }
     .reason:nth-child(6n + 6) { --reason-accent: var(--fib-1); }
-    .reason p { font-size: 1.02rem; }
+    .reason p { font-size: 1rem; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; padding-top: clamp(1.5rem, 3vw, 2rem); border-top: 1px solid var(--border); }
+    .stats .stat { display: block; font-size: clamp(1.7rem, 3vw, 2.35rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; color: var(--accent); }
+    .stats h3 { font-size: 1rem; font-weight: 700; margin: 0.6rem 0 0.35rem; }
+    .stats p { font-size: 0.92rem; color: var(--muted); }
 
-    /* ============ Delivery commitments ============ */
-    .sla-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-    .sla-item { border-top: 2px solid var(--border); padding-top: 1.25rem; }
-    .sla-item .stat {
-      display: block; font-size: clamp(1.9rem, 3.2vw, 2.6rem); font-weight: 900;
-      letter-spacing: -0.02em; line-height: 1.05; color: var(--accent);
-    }
-    .sla-item h3 { font-size: 1.05rem; font-weight: 700; margin: 0.7rem 0 0.4rem; }
-    .sla-item p { font-size: 0.95rem; color: var(--muted); }
-
-    /* ============ Core values ============ */
-    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(2rem, 4vw, 3rem); }
-    .value-mark { display: block; width: 16px; height: 16px; border-radius: 4px; background: var(--value-accent, var(--fib-1)); }
-    .value:nth-child(6n + 1) { --value-accent: var(--fib-1); }
-    .value:nth-child(6n + 2) { --value-accent: var(--fib-2); }
-    .value:nth-child(6n + 3) { --value-accent: var(--fib-3); }
-    .value:nth-child(6n + 4) { --value-accent: var(--fib-4); }
-    .value:nth-child(6n + 5) { --value-accent: var(--fib-2); }
-    .value:nth-child(6n + 6) { --value-accent: var(--fib-1); }
-    .value h3 { font-size: 1.15rem; font-weight: 700; margin: 0.95rem 0 0.5rem; }
-    .value p { color: var(--muted); font-size: 0.97rem; max-width: 34ch; }
-
-    /* ============ Team ============ */
-    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-    .team-card {
-      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      overflow: hidden; transition: border-color 0.18s ease, background-color 0.3s ease;
-    }
+    /* Team */
+    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .team-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.18s ease; }
     .team-card:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
     .team-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(0.4); transition: filter 0.25s ease; }
     .team-card:hover img { filter: grayscale(0); }
-    .team-info { padding: 1rem 1.1rem 1.2rem; }
-    .team-info h3 { font-size: 1.05rem; font-weight: 700; }
-    .team-info .role { font-size: 0.9rem; color: var(--accent); font-weight: 500; }
+    .team-info { padding: 0.9rem 1rem 1.05rem; }
+    .team-info h3 { font-size: 1rem; font-weight: 700; }
+    .team-info .role { font-size: 0.88rem; color: var(--accent); font-weight: 500; }
 
-    /* ============ Gallery ============ */
-    .gallery { column-count: 3; column-gap: 1.25rem; }
-    .gallery img { width: 100%; margin-bottom: 1.25rem; border-radius: var(--radius-sm); break-inside: avoid; border: 1px solid var(--border); }
+    /* Quality & safety */
+    .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .quality-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.35rem; transition: border-color 0.18s ease; }
+    .quality-item:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
+    .quality-item .tick { margin: 0 0 0.85rem; }
+    .quality-item h3 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .quality-item p { font-size: 0.93rem; color: var(--muted); }
 
-    /* ============ Compliance ============ */
-    .compliance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-    .compliance-item {
-      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1.6rem 1.5rem; transition: border-color 0.18s ease, background-color 0.3s ease;
-    }
-    .compliance-item:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
-    .compliance-item .tick { margin: 0 0 1rem; }
-    .compliance-item h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .compliance-item p { font-size: 0.95rem; color: var(--muted); }
-
-    /* ============ QSHE ============ */
-    .qshe-list { display: grid; gap: clamp(1.25rem, 3vw, 1.75rem); }
-    .qshe-item {
-      display: grid; grid-template-columns: auto 1fr; gap: clamp(1.25rem, 3vw, 2.5rem);
-      align-items: baseline; padding-bottom: clamp(1.25rem, 3vw, 1.75rem);
-      border-bottom: 1px solid var(--border);
-    }
-    .qshe-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .qshe-num { font-family: var(--font-mono); font-weight: 500; font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -0.02em; line-height: 1; }
-    .qshe-item:nth-child(1) .qshe-num { color: var(--fib-1); }
-    .qshe-item:nth-child(2) .qshe-num { color: var(--fib-2); }
-    .qshe-item:nth-child(3) .qshe-num { color: var(--fib-3); }
-    .qshe-item:nth-child(4) .qshe-num { color: var(--fib-4); }
-    .qshe-item:nth-child(5) .qshe-num { color: var(--accent); }
-    .qshe-item h3 { font-size: clamp(1.1rem, 1.9vw, 1.35rem); font-weight: 700; line-height: 1.35; }
-    .qshe-outro { margin-top: clamp(2rem, 4vw, 3rem); max-width: 68ch; color: var(--muted); font-size: 1.1rem; }
-
-    /* ============ Milestones ============ */
-    .milestones-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .milestone {
-      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1.75rem 1.6rem; transition: border-color 0.18s ease, background-color 0.3s ease;
-    }
+    /* Milestones */
+    .milestones-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .milestone { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.4rem; transition: border-color 0.18s ease; }
     .milestone:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
-    .milestone .stat { display: block; font-size: clamp(1.9rem, 3.2vw, 2.6rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; color: var(--accent); }
-    .milestone h3 { font-size: 1.1rem; font-weight: 700; margin: 0.85rem 0 0.5rem; }
-    .milestone p { font-size: 0.97rem; color: var(--muted); }
+    .milestone .stat { display: block; font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1.08; color: var(--accent); }
+    .milestone h3 { font-size: 1.02rem; font-weight: 700; margin: 0.7rem 0 0.4rem; }
+    .milestone p { font-size: 0.93rem; color: var(--muted); }
 
-    /* ============ Contact ============ */
+    /* Org chart */
+    .orgchart { overflow-x: auto; padding-bottom: 0.5rem; }
+    .orgchart-inner { min-width: 900px; padding: 0.5rem 0; }
+    .org-tree { display: flex; justify-content: center; }
+    .org-tree ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; }
+    .org-tree ul ul { position: relative; padding-top: 1.4rem; }
+    .org-tree li { position: relative; display: flex; flex-direction: column; align-items: center; padding: 1.4rem 0.5rem 0; }
+    .org-tree li::before, .org-tree li::after { content: ""; position: absolute; top: 0; right: 50%; width: 50%; height: 1.4rem; border-top: 2px solid var(--border); }
+    .org-tree li::after { right: auto; left: 50%; border-left: 2px solid var(--border); }
+    .org-tree li:only-child::after, .org-tree li:only-child::before { display: none; }
+    .org-tree li:only-child { padding-top: 0; }
+    .org-tree li:first-child::before, .org-tree li:last-child::after { border: 0 none; }
+    .org-tree li:last-child::before { border-right: 2px solid var(--border); border-radius: 0 6px 0 0; }
+    .org-tree li:first-child::after { border-radius: 6px 0 0 0; }
+    .org-tree ul ul::before { content: ""; position: absolute; top: 0; left: 50%; width: 0; height: 1.4rem; border-left: 2px solid var(--border); }
+
+    .org-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.7rem 0.95rem; text-align: center; min-width: 128px; transition: border-color 0.15s ease; }
+    .org-card:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
+    .org-role { display: block; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 0.2rem; }
+    .org-card strong { font-size: 0.92rem; font-weight: 700; }
+    .org-team { display: block; margin-top: 0.3rem; font-family: var(--font-mono); font-size: 0.66rem; color: var(--accent); }
+    .org-card--lead { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+    .org-hint { display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--muted); }
+    @media (max-width: 900px) { .org-hint { display: block; } }
+
+    .subsection-title { font-size: clamp(1.3rem, 2.2vw, 1.7rem); font-weight: 900; letter-spacing: -0.01em; margin-top: clamp(3rem, 6vw, 4.5rem); }
+    .subsection-intro { max-width: 66ch; margin-top: 0.7rem; margin-bottom: clamp(1.75rem, 3vw, 2.5rem); color: var(--muted); font-size: 1.02rem; }
+
+    /* Contact */
     .contact-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(2rem, 5vw, 4rem); align-items: stretch; }
-    .contact-info h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 0.5rem; }
-    .contact-info > p { color: var(--muted); margin-bottom: 1.75rem; }
-    .info-item { margin-bottom: 1.25rem; line-height: 1.55; }
-    .info-item .info-label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; font-weight: 500; display: block; color: var(--muted); margin-bottom: 0.15rem; }
+    .contact-info h3 { font-size: 1.4rem; font-weight: 900; margin-bottom: 0.5rem; }
+    .contact-info > p { color: var(--muted); margin-bottom: 1.5rem; }
+    .info-item { margin-bottom: 1.1rem; line-height: 1.55; }
+    .info-item .info-label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; font-weight: 500; display: block; color: var(--muted); margin-bottom: 0.12rem; }
     .info-item a { color: var(--accent); font-weight: 500; text-decoration: none; }
     .info-item a:hover { text-decoration: underline; }
-    .map { border: 1px solid var(--border); border-radius: var(--radius); width: 100%; min-height: 340px; height: 100%; background: var(--bg-2); }
+    .contact-cta { margin-top: 1.5rem; }
+    .map { border: 1px solid var(--border); border-radius: var(--radius); width: 100%; min-height: 320px; height: 100%; background: var(--bg-2); }
 
-    /* ============ Summary & footer ============ */
-    .summary { max-width: 76ch; font-size: clamp(1.2rem, 2.1vw, 1.5rem); line-height: 1.7; font-weight: 500; }
-
+    /* Footer */
     .footer { background: var(--bg-2); border-top: 1px solid var(--border); transition: background-color 0.3s ease; }
-    .footer-top { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 2rem; padding: clamp(3rem, 6vw, 4.5rem) 0 2.5rem; }
-    .footer-brand .brand { margin-bottom: 1rem; }
-    .footer-brand p { color: var(--muted); font-size: 0.95rem; max-width: 30ch; margin-bottom: 1.25rem; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 2rem; padding: clamp(2.5rem, 5vw, 3.5rem) 0 2rem; }
+    .footer-brand .brand { margin-bottom: 0.9rem; }
+    .footer-brand p { color: var(--muted); font-size: 0.94rem; max-width: 32ch; margin-bottom: 1.1rem; }
     .footer-social { display: flex; gap: 0.6rem; }
-    .footer-col h3 { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 1rem; }
-    .footer-col ul { display: grid; gap: 0.5rem; }
-    .footer-col a, .footer-col span { color: var(--text); text-decoration: none; font-size: 0.94rem; }
+    .footer-col h3 { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.9rem; }
+    .footer-col ul { display: grid; gap: 0.45rem; }
+    .footer-col a, .footer-col span { color: var(--text); text-decoration: none; font-size: 0.92rem; }
     .footer-col a:hover { color: var(--accent); }
     .footer-col .muted { color: var(--muted); }
-    .footer-bottom {
-      display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem;
-      padding: 1.5rem 0 2rem; border-top: 1px solid var(--border);
-      color: var(--muted); font-size: 0.9rem;
-    }
+    .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.25rem; padding: 1.4rem 0 1.9rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.88rem; }
     .footer-bottom .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--border); }
 
     .to-top {
-      position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 80;
-      width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center;
-      background: var(--card); border: 1px solid var(--border); border-radius: 50%;
-      color: var(--text); cursor: pointer;
-      opacity: 0; visibility: hidden; transform: translateY(8px);
-      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s, border-color 0.15s ease;
+      position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 80; width: 44px; height: 44px;
+      display: inline-flex; align-items: center; justify-content: center; background: var(--card);
+      border: 1px solid var(--border); border-radius: 50%; color: var(--text); cursor: pointer;
+      opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s, border-color 0.15s ease;
     }
     .to-top.show { opacity: 1; visibility: visible; transform: none; }
     .to-top:hover { border-color: var(--accent); color: var(--accent); }
     .to-top svg { width: 18px; height: 18px; }
 
-    /* ============ Responsive ============ */
     @media (max-width: 1024px) {
-      .cards-grid, .values-grid, .milestones-grid { grid-template-columns: repeat(2, 1fr); }
+      .cards-grid, .quality-grid { grid-template-columns: repeat(2, 1fr); }
+      .reasons { grid-template-columns: repeat(2, 1fr); }
       .team-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery { column-count: 2; }
-      .sla-grid, .compliance-grid { grid-template-columns: repeat(2, 1fr); }
-      .reasons { grid-template-columns: 1fr; }
+      .milestones-grid, .stats { grid-template-columns: repeat(2, 1fr); }
       .footer-top { grid-template-columns: repeat(2, 1fr); }
       .footer-brand { grid-column: 1 / -1; }
     }
-
     @media (max-width: 1023px) {
       .menu { display: none; }
       .hamburger { display: flex; }
       .nav-cta { display: none; }
     }
-
     @media (max-width: 900px) {
-      .mission-grid, .contact-grid, .trust { grid-template-columns: 1fr; }
-      .mission-img { order: -1; }
+      .about-grid, .contact-grid, .trust-cols { grid-template-columns: 1fr; }
+      .about-img { order: -1; }
       .facts { grid-template-columns: repeat(2, 1fr); gap: 1.25rem 1.5rem; }
     }
-
     @media (max-width: 640px) {
-      .cards-grid, .values-grid, .team-grid, .milestones-grid, .sla-grid, .compliance-grid { grid-template-columns: 1fr; }
-      .gallery { column-count: 1; }
+      .cards-grid, .quality-grid, .team-grid, .milestones-grid, .stats { grid-template-columns: 1fr; }
+      .reasons { grid-template-columns: 1fr; }
       .trust-tiles { grid-template-columns: 1fr; }
       .container { width: calc(100% - 2rem); }
-      .qshe-item { grid-template-columns: 1fr; gap: 0.5rem; }
       .footer-top { grid-template-columns: 1fr; }
+      .nav-inner { gap: 0.5rem; }
+      .brand { font-size: 0.9rem; gap: 0.5rem; }
+      .brand-name { white-space: nowrap; }
+      .brand img { width: 34px; height: 34px; padding: 5px; }
+      .lang-btn { padding: 0.5rem 0.55rem; }
+      .nav-actions { gap: 0.4rem; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.001ms !important;
-      }
+      *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
       .hero-fibers .s { stroke-dashoffset: 0; }
-      .hero-fibers .sp, .hero-fibers .lp, .hero-fibers .nd { display: none; }
+      .hero-fibers .lp { display: none; }
       .hero-title .line > span { transform: none; }
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
   <nav class="nav" aria-label="Main">
     <div class="container nav-inner">
       <a class="brand" href="#home">
         <img src="images/logo.png" alt="" width="38" height="38">
-        <span class="brand-name">
-          SH Global Solution
-          <span class="my-rule" aria-hidden="true"></span>
-        </span>
+        <span class="brand-name">SH Global Solution</span>
       </a>
 
       <ul class="menu">
-        <li class="menu-item"><a class="menu-link" href="#home">Home</a></li>
-
+        <li class="menu-item"><a class="menu-link" href="#about" data-i18n="nav.about">About</a></li>
         <li class="menu-item" data-menu>
           <button class="menu-trigger" aria-expanded="false" aria-controls="panel-services">
-            Services
+            <span data-i18n="nav.services">Services</span>
             <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
           <div class="panel" id="panel-services" role="region" aria-label="Services">
             <div class="panel-grid">
               <div>
-                <p class="panel-col-title">Fiber &amp; network</p>
+                <p class="panel-col-title" data-i18n="svc.col.fiber">Fiber &amp; network</p>
                 <div class="panel-list">
-                  <a href="#services">FTTH Projects</a>
-                  <a href="#services">OSP &amp; ODN Projects</a>
-                  <a href="#services">Fiber Termination &amp; Splicing</a>
+                  <a href="#services" data-i18n="svc.1.title">FTTH Projects</a>
+                  <a href="#services" data-i18n="svc.2.title">OSP &amp; ODN Projects</a>
+                  <a href="#services" data-i18n="svc.6.title">Fiber Termination &amp; Splicing</a>
                 </div>
               </div>
               <div>
-                <p class="panel-col-title">Infrastructure</p>
+                <p class="panel-col-title" data-i18n="svc.col.infra">Infrastructure</p>
                 <div class="panel-list">
-                  <a href="#services">CB &amp; Titan Projects</a>
-                  <a href="#services">Civil Engineering Works</a>
-                  <a href="#services">Network Maintenance</a>
+                  <a href="#services" data-i18n="svc.3.title">CB &amp; Titan Projects</a>
+                  <a href="#services" data-i18n="svc.5.title">Civil Engineering Works</a>
+                  <a href="#services" data-i18n="svc.4.title">Network Maintenance</a>
                 </div>
               </div>
               <div class="feature">
-                <h4>Request a quote</h4>
-                <p>Tell us about your site and scope. We respond with a plan and timeline.</p>
-                <a class="btn btn--primary btn--sm" href="https://wa.me/601112987138">Start on WhatsApp</a>
+                <h4 data-i18n="quote.title">Request a quote</h4>
+                <p data-i18n="quote.body">Tell us your site and scope — we'll come back with a plan and timeline.</p>
+                <a class="btn btn--primary btn--sm" href="https://wa.me/601112987138" data-i18n="quote.cta">Start on WhatsApp</a>
               </div>
             </div>
           </div>
         </li>
-
-        <li class="menu-item" data-menu>
-          <button class="menu-trigger" aria-expanded="false" aria-controls="panel-company">
-            Company
-            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </button>
-          <div class="panel" id="panel-company" role="region" aria-label="Company">
-            <div class="panel-grid panel-grid--plain">
-              <div>
-                <p class="panel-col-title">About</p>
-                <div class="panel-list">
-                  <a href="#background">Company Background</a>
-                  <a href="#mission">Mission &amp; Vision</a>
-                  <a href="#why">Why Clients Choose Us</a>
-                </div>
-              </div>
-              <div>
-                <p class="panel-col-title">People</p>
-                <div class="panel-list">
-                  <a href="#team">Leadership Team</a>
-                  <a href="#gallery">Built on Teamwork</a>
-                  <a href="#clients">Clients &amp; Partners</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <li class="menu-item" data-menu>
-          <button class="menu-trigger" aria-expanded="false" aria-controls="panel-trust">
-            Trust &amp; Compliance
-            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </button>
-          <div class="panel" id="panel-trust" role="region" aria-label="Trust and compliance">
-            <div class="panel-grid panel-grid--plain">
-              <div>
-                <p class="panel-col-title">Assurance</p>
-                <div class="panel-list">
-                  <a href="#sla">Delivery Commitments</a>
-                  <a href="#compliance">Quality &amp; Compliance</a>
-                  <a href="#qshe">QSHE</a>
-                </div>
-              </div>
-              <div>
-                <p class="panel-col-title">Proof</p>
-                <div class="panel-list">
-                  <a href="#milestones">Milestones &amp; Achievements</a>
-                  <a href="#clients">Our Clientele</a>
-                  <a href="#contact">Talk to Us</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <li class="menu-item" data-menu>
-          <button class="menu-trigger" aria-expanded="false" aria-controls="panel-contact">
-            Contact
-            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </button>
-          <div class="panel panel--contact" id="panel-contact" role="region" aria-label="Contact">
-            <div class="contact-card">
-              <div class="row"><span class="k">Office</span><span>Lot 1806, Taman Mekasa, 17000 Pasir Mas, Kelantan</span></div>
-              <div class="row"><span class="k">Phone</span><a href="tel:+601112987138">+60 111 2987 138</a></div>
-              <div class="row"><span class="k">Email</span><a href="mailto:shglobalsolution28@gmail.com">shglobalsolution28@gmail.com</a></div>
-              <a class="btn btn--primary btn--sm" href="https://wa.me/601112987138">Chat on WhatsApp</a>
-            </div>
-          </div>
-        </li>
+        <li class="menu-item"><a class="menu-link" href="#why" data-i18n="nav.why">Why us</a></li>
+        <li class="menu-item"><a class="menu-link" href="#qshe" data-i18n="nav.quality">Quality</a></li>
+        <li class="menu-item"><a class="menu-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
+        <div class="lang" role="group" aria-label="Language / Bahasa">
+          <button class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+          <button class="lang-btn" data-lang="ms" aria-pressed="false">BM</button>
+        </div>
         <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Switch colour theme" aria-pressed="true">
           <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
           <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         </button>
-        <a class="btn btn--primary btn--sm nav-cta" href="https://wa.me/601112987138">Request Quote</a>
+        <a class="btn btn--primary btn--sm nav-cta" href="https://wa.me/601112987138" data-i18n="nav.quote">Request a quote</a>
         <button class="hamburger" id="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
           <span></span><span></span><span></span>
         </button>
@@ -739,390 +489,302 @@
     </div>
   </nav>
 
-  <!-- Mobile overlay menu -->
   <div class="mobile-nav" id="mobile-nav" aria-label="Mobile menu">
     <div class="mobile-group">
-      <h3>Menu</h3>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#why">Why Clients Choose Us</a>
-      <a href="#team">Leadership Team</a>
+      <h3 data-i18n="mob.navigate">Navigate</h3>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#why" data-i18n="nav.why">Why us</a>
+      <a href="#team" data-i18n="nav.team">Team</a>
+      <a href="#qshe" data-i18n="nav.quality">Quality</a>
+      <a href="#milestones" data-i18n="nav.milestones">Milestones</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </div>
     <div class="mobile-group">
-      <h3>Trust &amp; compliance</h3>
-      <a href="#clients">Clients &amp; Partners</a>
-      <a href="#sla">Delivery Commitments</a>
-      <a href="#compliance">Quality &amp; Compliance</a>
-      <a href="#qshe">QSHE</a>
-      <a href="#milestones">Milestones &amp; Achievements</a>
-    </div>
-    <div class="mobile-group">
-      <h3>Contact</h3>
-      <a href="#contact">Visit Our Office</a>
+      <h3 data-i18n="mob.contact">Contact</h3>
       <a href="tel:+601112987138">+60 111 2987 138</a>
       <a href="mailto:shglobalsolution28@gmail.com">shglobalsolution28@gmail.com</a>
     </div>
     <div class="mobile-cta">
-      <a class="btn btn--primary" href="https://wa.me/601112987138">Request Quote</a>
+      <a class="btn btn--primary" href="https://wa.me/601112987138" data-i18n="nav.quote">Request a quote</a>
     </div>
   </div>
 
   <main id="main">
     <!-- Hero -->
     <header class="hero" id="home">
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
       <svg class="hero-fibers" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
         <path class="s s1" d="M-40,330 C300,200 640,380 940,250 S1320,130 1480,210" />
         <path class="s s2" d="M-40,390 C340,300 620,340 980,330 S1340,290 1480,360" />
         <path class="s s3" d="M-40,270 C260,120 680,320 1000,190 S1360,90 1480,150" />
-        <path class="sp sp1" d="M-40,330 C300,200 640,380 940,250 S1320,130 1480,210" />
-        <path class="sp sp2" d="M-40,390 C340,300 620,340 980,330 S1340,290 1480,360" />
-        <path class="sp sp3" d="M-40,270 C260,120 680,320 1000,190 S1360,90 1480,150" />
         <path class="lp lp1" d="M-40,330 C300,200 640,380 940,250 S1320,130 1480,210" />
         <path class="lp lp2" d="M-40,390 C340,300 620,340 980,330 S1340,290 1480,360" />
-        <path class="lp lp3" d="M-40,270 C260,120 680,320 1000,190 S1360,90 1480,150" />
-        <circle class="nd nd1" cx="940" cy="250" r="3.4" />
-        <circle class="nd nd2" cx="980" cy="330" r="3.4" />
-        <circle class="nd nd3" cx="1000" cy="190" r="3.4" />
       </svg>
       <div class="container hero-inner">
         <h1 class="hero-title">
-          <span class="line"><span>SH Global</span></span>
-          <span class="line"><span>Solution</span></span>
+          <span class="line"><span data-i18n="hero.title1">Fibre infrastructure</span></span>
+          <span class="line"><span data-i18n="hero.title2">for a connected Malaysia</span></span>
         </h1>
-        <span class="my-rule hero-rule" aria-hidden="true"></span>
-        <p class="hero-tagline">"Connecting the future, Building the network."</p>
-        <p class="hero-note mono">Proudly Malaysian, based in Pasir Mas, Kelantan</p>
-        <a class="btn btn--ghost" href="#services">Explore Services</a>
+        <p class="hero-sub" data-i18n="hero.sub">We design, build, and maintain the fibre and civil networks that carry Malaysia's connectivity — delivered on time, to spec, and safely.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="https://wa.me/601112987138" data-i18n="hero.cta1">Request a quote</a>
+          <a class="btn btn--ghost" href="#services" data-i18n="hero.cta2">Explore services</a>
+        </div>
         <ul class="facts">
-          <li><strong>2018</strong><span>Established</span></li>
-          <li><strong>100<span class="u">+</span></strong><span>Professionals and field experts</span></li>
-          <li><strong>National</strong><span>Projects in cities and rural regions</span></li>
-          <li><strong>Kelantan</strong><span>Headquartered in Pasir Mas</span></li>
+          <li><strong>100+</strong><span data-i18n="fact.team">Professionals &amp; field experts</span></li>
+          <li><strong>200+ km</strong><span data-i18n="fact.km">Fibre deployed in 3 years</span></li>
+          <li><strong>99.9%</strong><span data-i18n="fact.uptime">Network uptime</span></li>
+          <li><strong data-i18n="fact.coverage">National</strong><span data-i18n="fact.coverage.sub">Cities and rural regions</span></li>
         </ul>
       </div>
-      <div class="fib-band hero-band" aria-hidden="true">
-        <span></span><span></span><span></span><span></span>
-      </div>
+      <div class="fib-band" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
     </header>
 
-    <!-- Clients & Partners -->
+    <!-- Trust strip -->
     <section class="section section--tight" id="clients" aria-labelledby="clients-title">
       <div class="container">
-        <h2 class="trust-title" id="clients-title">Trusted by clients and partners across the telecom sector</h2>
-        <div class="trust">
+        <h2 class="trust-title" id="clients-title" data-i18n="trust.title">Trusted by clients and partners across Malaysia's telecom sector</h2>
+        <div class="trust-cols">
           <div>
-            <p class="trust-label">Our clientele includes</p>
+            <p class="trust-label" data-i18n="trust.clients">CLIENTELE</p>
             <ul class="trust-tiles">
-              <li>National Telco Carriers</li>
-              <li>Infrastructure Developers</li>
-              <li>Municipal Governments</li>
-              <li>Enterprise Customers</li>
+              <li data-i18n="trust.c1">National telco carriers</li>
+              <li data-i18n="trust.c2">Infrastructure developers</li>
+              <li data-i18n="trust.c3">Municipal governments</li>
+              <li data-i18n="trust.c4">Enterprise customers</li>
             </ul>
           </div>
           <div>
-            <p class="trust-label">Strategic partnerships</p>
+            <p class="trust-label" data-i18n="trust.partners">PARTNERS</p>
             <ul class="trust-tiles">
-              <li>Fiber Cable Manufacturers</li>
-              <li>Civil &amp; Electrical Engineering Firms</li>
-              <li>IT &amp; Network Design Consultants</li>
-              <li>International Equipment Vendors</li>
+              <li data-i18n="trust.p1">Fibre cable manufacturers</li>
+              <li data-i18n="trust.p2">Civil &amp; electrical engineering firms</li>
+              <li data-i18n="trust.p3">IT &amp; network design consultants</li>
+              <li data-i18n="trust.p4">International equipment vendors</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Company Background -->
-    <section class="section section--alt" id="background" aria-labelledby="bg-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-index">01</span>
-          <h2 class="section-title" id="bg-title">Company Background</h2>
+    <!-- About -->
+    <section class="section section--alt" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <span class="section-index" data-i18n="about.index">01</span>
+          <h2 class="section-title" id="about-title" data-i18n="about.title">About us</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <p style="margin-top:1.4rem" data-i18n="about.body1">Founded in 2018 in Pasir Mas, Kelantan, SH Global Solution builds fibre-optic and civil infrastructure for telecom operators, developers, and governments across Malaysia.</p>
+          <p data-i18n="about.body2">Our mission is to design, build, and maintain advanced communication networks that empower communities, businesses, and governments — on time, within budget, and to the highest quality standards.</p>
         </div>
-        <p class="lede">Founded with the aim of bridging the digital divide and enabling smarter, more connected environments, SH Global Solution has become a trusted partner in the telecom industry. Over the years, we have successfully handled a wide variety of infrastructure projects, tailored to the evolving needs of telecom operators, public agencies, and private enterprises. Our strength lies in our deep understanding of fiber optic systems, our experienced workforce, and our commitment to completing projects on time, within budget, and to the highest quality standards. As we continue to grow, we remain focused on innovation and sustainability.</p>
-      </div>
-    </section>
-
-    <!-- Mission & Vision -->
-    <section class="section" id="mission" aria-labelledby="mv-title">
-      <div class="container mission-grid">
-        <div class="mission-cards">
-          <div>
-            <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-            <div class="mission-card">
-              <h3 id="mv-title">Our Mission</h3>
-              <p>Our mission is to design, build, and maintain advanced communication networks that empower communities, businesses, and governments. We strive to exceed our clients' expectations through technical excellence, reliable execution, and a proactive, solutions-oriented approach.</p>
-            </div>
-          </div>
-          <div class="mission-card">
-            <h3>Our Vision</h3>
-            <p>To be recognized as a leading and reliable telecom infrastructure company that pioneers innovation, delivers superior quality, and contributes meaningfully to the digital transformation of societies and industries.</p>
-          </div>
-        </div>
-        <img class="mission-img" src="images/2149212625.jpg" alt="Fibers of light carrying data through an optical cable" loading="lazy" width="800" height="600">
+        <img class="about-img" src="images/2149212625.jpg" alt="Fibres of light carrying data through an optical cable" loading="lazy" width="800" height="600">
       </div>
     </section>
 
     <!-- Services -->
-    <section class="section section--alt" id="services" aria-labelledby="services-title">
+    <section class="section" id="services" aria-labelledby="services-title">
       <div class="container">
         <div class="section-head">
-          <span class="section-index">02</span>
-          <h2 class="section-title" id="services-title">Our Services</h2>
+          <span class="section-index" data-i18n="services.index">02</span>
+          <h2 class="section-title" id="services-title" data-i18n="services.title">What we do</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          <p class="section-intro">Providing comprehensive fiber optic services including network design, structured cabling, splicing, testing, and ongoing maintenance. We focus on precision, efficiency, and scalability to ensure your communication systems operate at optimal performance with minimal downtime.</p>
+          <p class="section-intro" data-i18n="services.intro">End-to-end fibre and civil works — from network design and cable laying to splicing, testing, and long-term maintenance — built for performance with minimal downtime.</p>
         </div>
         <div class="cards-grid">
           <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600" alt="Single-mode fiber optic cabling" loading="lazy" width="600" height="375">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600" alt="Single-mode fibre optic cabling" loading="lazy" width="600" height="375">
             <div class="service-body">
-              <h3>FTTH (Fiber to the Home) Projects</h3>
-              <p>We offer complete FTTH solutions, including network design, fiber laying, splicing, termination, and testing. Our projects ensure high-speed internet connectivity for residential, commercial, and institutional clients.</p>
+              <h3 data-i18n="svc.1.title">FTTH (Fiber to the Home) Projects</h3>
+              <p data-i18n="svc.1.desc">We offer complete FTTH solutions, including network design, fiber laying, splicing, termination, and testing. Our projects ensure high-speed internet connectivity for residential, commercial, and institutional clients.</p>
             </div>
           </article>
           <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?q=80&w=600" alt="Multi-mode fiber cables" loading="lazy" width="600" height="375">
+            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?q=80&w=600" alt="Multi-mode fibre cables" loading="lazy" width="600" height="375">
             <div class="service-body">
-              <h3>OSP &amp; ODN Projects</h3>
-              <p>Our outside plant and optical distribution network services include trenching, ducting, cable pulling, joint closures, and connectivity to end users. We provide end-to-end support from site survey to final commissioning.</p>
+              <h3 data-i18n="svc.2.title">OSP &amp; ODN Projects</h3>
+              <p data-i18n="svc.2.desc">Our outside plant and optical distribution network services include trenching, ducting, cable pulling, joint closures, and connectivity to end users. We provide end-to-end support from site survey to final commissioning.</p>
             </div>
           </article>
           <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1771046831228-54766bba552b?q=80&w=1170&auto=format&fit=crop" alt="Armored fiber optic cable" loading="lazy" width="600" height="375">
+            <img src="https://images.unsplash.com/photo-1771046831228-54766bba552b?q=80&w=1170&auto=format&fit=crop" alt="Armoured fibre optic cable" loading="lazy" width="600" height="375">
             <div class="service-body">
-              <h3>CB &amp; Titan Projects</h3>
-              <p>We deliver high-capacity network solutions involving cable broadband and Titan infrastructure, integrating copper and fiber-based systems to serve high-density urban and suburban areas.</p>
+              <h3 data-i18n="svc.3.title">CB &amp; Titan Projects</h3>
+              <p data-i18n="svc.3.desc">We deliver high-capacity network solutions involving cable broadband and Titan infrastructure, integrating copper and fiber-based systems to serve high-density urban and suburban areas.</p>
             </div>
           </article>
           <article class="service-card">
             <img src="https://plus.unsplash.com/premium_photo-1723921279485-7c301ade629f?q=80&w=1008&auto=format&fit=crop" alt="Network maintenance and inspection" loading="lazy" width="600" height="375">
             <div class="service-body">
-              <h3>Network Maintenance Services</h3>
-              <p>We provide comprehensive network maintenance programs, including preventive inspections, emergency repairs, service level agreements (SLAs), and system upgrades to ensure 24/7 reliability.</p>
+              <h3 data-i18n="svc.4.title">Network Maintenance Services</h3>
+              <p data-i18n="svc.4.desc">We provide comprehensive network maintenance programs, including preventive inspections, emergency repairs, service level agreements (SLAs), and system upgrades to ensure 24/7 reliability.</p>
             </div>
           </article>
           <article class="service-card">
             <img src="https://plus.unsplash.com/premium_photo-1681989499796-df9ee5ec9853?q=80&w=1170&auto=format&fit=crop" alt="Civil engineering construction work" loading="lazy" width="600" height="375">
             <div class="service-body">
-              <h3>Civil Engineering Works</h3>
-              <p>Our civil work division handles the physical infrastructure, such as duct installations, pole erection, chamber construction, manholes, and concrete structures required for telecom networks.</p>
+              <h3 data-i18n="svc.5.title">Civil Engineering Works</h3>
+              <p data-i18n="svc.5.desc">Our civil work division handles the physical infrastructure, such as duct installations, pole erection, chamber construction, manholes, and concrete structures required for telecom networks.</p>
             </div>
           </article>
           <article class="service-card">
-            <img src="https://plus.unsplash.com/premium_photo-1661628877080-da645b4ff7da?q=80&w=1170&auto=format&fit=crop" alt="Fiber optic splicing tools and termination" loading="lazy" width="600" height="375">
+            <img src="https://plus.unsplash.com/premium_photo-1661628877080-da645b4ff7da?q=80&w=1170&auto=format&fit=crop" alt="Fibre optic splicing tools and termination" loading="lazy" width="600" height="375">
             <div class="service-body">
-              <h3>Fiber Termination &amp; Splicing</h3>
-              <p>We carry out precise fiber optic splicing and termination using high-accuracy tools and certified technicians, ensuring seamless data transmission with minimal loss and maximum performance.</p>
+              <h3 data-i18n="svc.6.title">Fiber Termination &amp; Splicing</h3>
+              <p data-i18n="svc.6.desc">We carry out precise fiber optic splicing and termination using high-accuracy tools and certified technicians, ensuring seamless data transmission with minimal loss and maximum performance.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Why clients choose us -->
-    <section class="section" id="why" aria-labelledby="why-title">
+    <!-- Why us + stats -->
+    <section class="section section--alt" id="why" aria-labelledby="why-title">
       <div class="container">
         <div class="section-head">
-          <span class="section-index">03</span>
-          <h2 class="section-title" id="why-title">Why Clients Choose Us</h2>
+          <span class="section-index" data-i18n="why.index">03</span>
+          <h2 class="section-title" id="why-title" data-i18n="why.title">Why clients choose us</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          <p class="section-intro">Clients choose SH Global Solution because we combine technical competence with strong project management, delivering solutions that are practical, scalable, and built for long-term success.</p>
+          <p class="section-intro" data-i18n="why.intro">Technical depth plus disciplined project management — practical, scalable solutions built for long-term success.</p>
         </div>
         <div class="reasons">
-          <div class="reason"><span class="tick" aria-hidden="true"></span><p>Complete, end-to-end infrastructure services, tailored to each client's goals.</p></div>
-          <div class="reason"><span class="tick" aria-hidden="true"></span><p>Highly trained engineering and field teams, experienced in large-scale network deployments.</p></div>
-          <div class="reason"><span class="tick" aria-hidden="true"></span><p>Strict quality control and safety practices at every stage of a project.</p></div>
-          <div class="reason"><span class="tick" aria-hidden="true"></span><p>Project timelines consistently met, even in challenging environments.</p></div>
-          <div class="reason"><span class="tick" aria-hidden="true"></span><p>Financial standing that supports multiple concurrent projects with ease.</p></div>
-          <div class="reason"><span class="tick" aria-hidden="true"></span><p>A client-focused, solution-driven approach that makes us a dependable partner.</p></div>
+          <div class="reason"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r1">End-to-end delivery — one partner from survey to handover.</p></div>
+          <div class="reason"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r2">Trained engineering and field teams for large-scale deployments.</p></div>
+          <div class="reason"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r3">Strict quality control and safety on every site.</p></div>
+          <div class="reason"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r4">Timelines met, even in challenging terrain.</p></div>
+          <div class="reason"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r5">Financial strength to run several projects at once.</p></div>
+          <div class="reason"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r6">Client-focused, solution-driven, and accountable.</p></div>
+        </div>
+        <div class="stats">
+          <div><span class="stat">99.9%</span><h3 data-i18n="stats.1.t">Network uptime</h3><p data-i18n="stats.1.d">Across all maintenance service agreements.</p></div>
+          <div><span class="stat">200+ km</span><h3 data-i18n="stats.2.t">Fibre deployed</h3><p data-i18n="stats.2.d">FTTH and OSP fibre in the last three years.</p></div>
+          <div><span class="stat">24/7</span><h3 data-i18n="stats.3.t">Maintenance</h3><p data-i18n="stats.3.d">Inspections, emergency repairs, and upgrades.</p></div>
+          <div><span class="stat" data-i18n="stats.4.s">End-to-end</span><h3 data-i18n="stats.4.t">Project delivery</h3><p data-i18n="stats.4.d">Survey and design through to long-term support.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- Delivery commitments -->
-    <section class="section section--alt" id="sla" aria-labelledby="sla-title">
+    <!-- Team & organisation -->
+    <section class="section" id="team" aria-labelledby="team-title">
       <div class="container">
         <div class="section-head">
-          <span class="section-index">04</span>
-          <h2 class="section-title" id="sla-title">Our Delivery Commitments</h2>
+          <span class="section-index" data-i18n="team.index">04</span>
+          <h2 class="section-title" id="team-title" data-i18n="team.title">Our team</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <p class="section-intro" data-i18n="team.intro">The expert minds driving the future of connectivity.</p>
         </div>
-        <div class="sla-grid">
-          <div class="sla-item">
-            <span class="stat">99.9%</span>
-            <h3>Network uptime</h3>
-            <p>Consistently achieved for maintenance clients across all service agreements.</p>
+<div class="team-grid">
+          <article class="team-card"><img src="images/bosmi.jpeg" alt="Syahmi Halim" loading="lazy" width="400" height="500"><div class="team-info"><h3>Syahmi Halim</h3><p class="role" data-i18n="role.director">Director</p></div></article>
+          <article class="team-card"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop" alt="Mohd Lutpi" loading="lazy" width="400" height="500"><div class="team-info"><h3>Mohd Lutpi</h3><p class="role" data-i18n="role.ceo">Chief Executive Officer</p></div></article>
+          <article class="team-card"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="Fahmi Izzudin" loading="lazy" width="400" height="500"><div class="team-info"><h3>Fahmi Izzudin</h3><p class="role" data-i18n="role.projdir">Project Director</p></div></article>
+          <article class="team-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop" alt="Nurul Huda" loading="lazy" width="400" height="500"><div class="team-info"><h3>Nurul Huda</h3><p class="role" data-i18n="role.finance">Finance Manager</p></div></article>
+          <article class="team-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop" alt="Hanis Halim" loading="lazy" width="400" height="500"><div class="team-info"><h3>Hanis Halim</h3><p class="role" data-i18n="role.procurement">Procurement Manager</p></div></article>
+          <article class="team-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop" alt="Mohd Faris" loading="lazy" width="400" height="500"><div class="team-info"><h3>Mohd Faris</h3><p class="role" data-i18n="role.wayleave">Wayleave Manager</p></div></article>
+          <article class="team-card"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop" alt="Azrul" loading="lazy" width="400" height="500"><div class="team-info"><h3>Azrul</h3><p class="role" data-i18n="role.planner">Planner</p></div></article>
+          <article class="team-card"><img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=600&auto=format&fit=crop" alt="Mohd Azhan" loading="lazy" width="400" height="500"><div class="team-info"><h3>Mohd Azhan</h3><p class="role" data-i18n="role.pm">Project Manager</p></div></article>
+        </div>
+
+        <h3 class="subsection-title" data-i18n="org.title">Organisation chart</h3>
+        <p class="subsection-intro" data-i18n="org.intro">Leadership, project delivery, and four field teams — the structure behind every project we deliver.</p>
+<div class="orgchart">
+          <div class="orgchart-inner">
+            <div class="org-tree">
+              <ul>
+                <li>
+                  <div class="org-card org-card--lead"><span class="org-role" data-i18n="org.director">Director</span><strong>Syahmi Halim</strong></div>
+                  <ul>
+                    <li>
+                      <div class="org-card org-card--lead"><span class="org-role" data-i18n="org.ceo">Chief Executive Officer</span><strong>Mohd Lutpi</strong></div>
+                      <ul>
+                        <li>
+                          <div class="org-card"><span class="org-role" data-i18n="org.projdir">Project Director</span><strong>Fahmi Izzudin</strong></div>
+                          <ul>
+                            <li><div class="org-card"><span class="org-role" data-i18n="org.wayleave">Wayleave Manager</span><strong>Mohd Faris</strong></div></li>
+                            <li><div class="org-card"><span class="org-role" data-i18n="org.planner">Planner</span><strong>Azrul</strong></div></li>
+                            <li>
+                              <div class="org-card"><span class="org-role" data-i18n="org.pm">Project Manager</span><strong>Mohd Azhan</strong></div>
+                              <ul>
+                                <li><div class="org-card"><span class="org-role" data-i18n="org.supervisor">Site Supervisor</span><strong>Adam Fitri</strong><span class="org-team" data-i18n="org.team1">Team 1 · 7</span></div></li>
+                                <li><div class="org-card"><span class="org-role" data-i18n="org.supervisor">Site Supervisor</span><strong>Amin Rosli</strong><span class="org-team" data-i18n="org.team2">Team 2 · 7</span></div></li>
+                                <li><div class="org-card"><span class="org-role" data-i18n="org.supervisor">Site Supervisor</span><strong>Mohd Fadli</strong><span class="org-team" data-i18n="org.team3">Team 3 · 7</span></div></li>
+                                <li><div class="org-card"><span class="org-role" data-i18n="org.supervisor">Site Supervisor</span><strong>Mohd Zaini</strong><span class="org-team" data-i18n="org.team4">Team 4 · 7</span></div></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><div class="org-card"><span class="org-role" data-i18n="org.finance">Finance Manager</span><strong>Nurul Huda</strong></div></li>
+                        <li><div class="org-card"><span class="org-role" data-i18n="org.procurement">Procurement Manager</span><strong>Hanis Halim</strong></div></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="sla-item">
-            <span class="stat">200+ km</span>
-            <h3>Fiber deployed</h3>
-            <p>FTTH and OSP fiber delivered in the last three years.</p>
-          </div>
-          <div class="sla-item">
-            <span class="stat">24/7</span>
-            <h3>Maintenance cover</h3>
-            <p>Preventive inspections, emergency repairs, and system upgrades.</p>
-          </div>
-          <div class="sla-item">
-            <span class="stat">End-to-end</span>
-            <h3>Project delivery</h3>
-            <p>From site survey and design to commissioning and long-term support.</p>
-          </div>
         </div>
+<p class="org-hint" data-i18n="org.hint">Scroll sideways to see the full chart.</p>
       </div>
     </section>
 
-    <!-- Core values -->
-    <section class="section" id="values" aria-labelledby="values-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-index">05</span>
-          <h2 class="section-title" id="values-title">Our Core Values</h2>
-          <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          <p class="section-intro">At SH Global Solution, our values are at the core of how we operate and grow. They shape our company culture and guide every interaction—with our clients, partners, employees, and communities.</p>
-        </div>
-        <div class="values-grid">
-          <div class="value"><span class="value-mark" aria-hidden="true"></span><h3>Integrity</h3><p>We conduct our business honestly, transparently, and with strong ethical principles.</p></div>
-          <div class="value"><span class="value-mark" aria-hidden="true"></span><h3>Commitment</h3><p>We uphold the highest standards in workmanship, project planning, and execution.</p></div>
-          <div class="value"><span class="value-mark" aria-hidden="true"></span><h3>Customer Centricity</h3><p>We prioritize our clients' needs and deliver tailored solutions that add value.</p></div>
-          <div class="value"><span class="value-mark" aria-hidden="true"></span><h3>Innovation</h3><p>We constantly seek better methods and advanced tools to improve efficiency and outcomes.</p></div>
-          <div class="value"><span class="value-mark" aria-hidden="true"></span><h3>Teamwork</h3><p>We believe that collaboration and mutual respect lead to the best results.</p></div>
-          <div class="value"><span class="value-mark" aria-hidden="true"></span><h3>Safety</h3><p>We place the safety and well-being of our employees and the public above all else.</p></div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Leadership team -->
-    <section class="section section--alt" id="team" aria-labelledby="team-title">
+    <!-- Quality & safety -->
+    <section class="section section--alt" id="qshe" aria-labelledby="qshe-title">
       <div class="container">
         <div class="section-head">
-          <span class="section-index">06</span>
-          <h2 class="section-title" id="team-title">Our Leadership Team</h2>
+          <span class="section-index" data-i18n="qshe.index">05</span>
+          <h2 class="section-title" id="qshe-title" data-i18n="qshe.title">Quality &amp; safety</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          <p class="section-intro">The expert minds driving the future of connectivity.</p>
+          <p class="section-intro" data-i18n="qshe.intro">Every project runs under documented quality, safety, and environmental controls — because how we build matters as much as what we build.</p>
         </div>
-        <div class="team-grid">
-          <article class="team-card"><img src="images/bosmi.jpeg" alt="Syahmi Halim, Director" loading="lazy" width="400" height="500"><div class="team-info"><h3>Syahmi Halim</h3><p class="role">Director</p></div></article>
-          <article class="team-card"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop" alt="Mohd Lutpi, Chief Executive Officer" loading="lazy" width="400" height="500"><div class="team-info"><h3>Mohd Lutpi</h3><p class="role">Chief Executive Officer</p></div></article>
-          <article class="team-card"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="Fahmi Izzudin, Project Director" loading="lazy" width="400" height="500"><div class="team-info"><h3>Fahmi Izzudin</h3><p class="role">Project Director</p></div></article>
-          <article class="team-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop" alt="Nurul Huda, Finance Manager" loading="lazy" width="400" height="500"><div class="team-info"><h3>Nurul Huda</h3><p class="role">Finance Manager</p></div></article>
-          <article class="team-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop" alt="Hanis Halim, Procurement Manager" loading="lazy" width="400" height="500"><div class="team-info"><h3>Hanis Halim</h3><p class="role">Procurement Manager</p></div></article>
-          <article class="team-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop" alt="Mohd Faris, Wayleave Manager" loading="lazy" width="400" height="500"><div class="team-info"><h3>Mohd Faris</h3><p class="role">Wayleave Manager</p></div></article>
-          <article class="team-card"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop" alt="Azrul, Planner" loading="lazy" width="400" height="500"><div class="team-info"><h3>Azrul</h3><p class="role">Planner</p></div></article>
-          <article class="team-card"><img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=600&auto=format&fit=crop" alt="Mohd Azhan, Project Manager" loading="lazy" width="400" height="500"><div class="team-info"><h3>Mohd Azhan</h3><p class="role">Project Manager</p></div></article>
+        <div class="quality-grid">
+          <div class="quality-item"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.1.t">Daily safety briefings</h3><p data-i18n="q.1.d">Briefings and equipment inspections before work starts on site.</p></div>
+          <div class="quality-item"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.2.t">Certified PPE</h3><p data-i18n="q.2.d">Certified personal protective equipment in use on every site.</p></div>
+          <div class="quality-item"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.3.t">Certified technicians</h3><p data-i18n="q.3.d">Splicing and termination by certified technicians using calibrated tools.</p></div>
+          <div class="quality-item"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.4.t">Independent audits</h3><p data-i18n="q.4.d">Internal and third-party audits verify quality at each stage.</p></div>
+          <div class="quality-item"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.5.t">Validated networks</h3><p data-i18n="q.5.d">OTDR and end-to-end testing confirm performance before handover.</p></div>
+          <div class="quality-item"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.6.t">Environmental care</h3><p data-i18n="q.6.d">Protection protocols at all project sites, from start to finish.</p></div>
         </div>
-      </div>
-    </section>
-
-    <!-- Teamwork gallery -->
-    <section class="section" id="gallery" aria-labelledby="gallery-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-index">07</span>
-          <h2 class="section-title" id="gallery-title">Built on Teamwork</h2>
-          <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          <p class="section-intro">Our company is built on a strong foundation of teamwork, where collaboration, mutual respect, and shared goals drive everything we do. We believe that a cohesive and empowered team is key to delivering meaningful results. With a commitment to excellence, we have established a professional and trusted image, consistently providing reliable and innovative solutions. As a forward-thinking organization, we continue to grow by adapting to changing needs while maintaining the highest standards in every aspect of our work.</p>
-        </div>
-        <div class="gallery">
-          <img src="https://plus.unsplash.com/premium_photo-1661767467261-4a4bed92a507?q=80&w=1170&auto=format&fit=crop" alt="Team collaborating on site planning" loading="lazy" width="1170" height="780">
-          <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1170&auto=format&fit=crop" alt="Colleagues joining hands in teamwork" loading="lazy" width="1170" height="780">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1170&auto=format&fit=crop" alt="Team working together at the office" loading="lazy" width="1170" height="780">
-          <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?q=80&w=1170&auto=format&fit=crop" alt="Group of professionals collaborating" loading="lazy" width="1170" height="780">
-          <img src="https://images.unsplash.com/photo-1543269865-96ae30571b5a?q=80&w=1170&auto=format&fit=crop" alt="Team meeting in progress" loading="lazy" width="1170" height="780">
-          <img src="https://plus.unsplash.com/premium_photo-1661759404487-083b4a9703e4?q=80&w=1170&auto=format&fit=crop" alt="Workers coordinating in the field" loading="lazy" width="1170" height="780">
-          <img src="https://plus.unsplash.com/premium_photo-1661962229590-dd3986bc984e?q=80&w=1170&auto=format&fit=crop" alt="Engineers reviewing project details" loading="lazy" width="1170" height="780">
-          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1074&auto=format&fit=crop" alt="Team discussion around a table" loading="lazy" width="1074" height="716">
-          <img src="https://images.unsplash.com/photo-1758873269013-d914addd5d3b?q=80&w=1332&auto=format&fit=crop" alt="Colleagues working together outdoors" loading="lazy" width="1332" height="888">
-          <img src="https://plus.unsplash.com/premium_photo-1679429320552-ec9038ccd550?q=80&w=1169&auto=format&fit=crop" alt="Group of professionals collaborating" loading="lazy" width="1169" height="779">
-        </div>
-      </div>
-    </section>
-
-    <!-- Quality & Compliance -->
-    <section class="section section--alt" id="compliance" aria-labelledby="compliance-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-index">08</span>
-          <h2 class="section-title" id="compliance-title">Quality &amp; Compliance</h2>
-          <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          <p class="section-intro">Every project is delivered under documented quality, safety, and compliance controls.</p>
-        </div>
-        <div class="compliance-grid">
-          <div class="compliance-item"><span class="tick" aria-hidden="true"></span><h3>Certified technicians</h3><p>Splicing and termination carried out by certified technicians using calibrated tools.</p></div>
-          <div class="compliance-item"><span class="tick" aria-hidden="true"></span><h3>Certified equipment</h3><p>Certified PPE and tested equipment in use on every project site.</p></div>
-          <div class="compliance-item"><span class="tick" aria-hidden="true"></span><h3>Third-party audits</h3><p>Internal and independent audits verify quality at each stage of delivery.</p></div>
-          <div class="compliance-item"><span class="tick" aria-hidden="true"></span><h3>Validated networks</h3><p>OTDR and end-to-end testing confirm performance before handover.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- QSHE -->
-    <section class="section" id="qshe" aria-labelledby="qshe-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-index">09</span>
-          <h2 class="section-title" id="qshe-title">Quality, Safety, Health, and Environment (QSHE)</h2>
-          <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          <p class="section-intro">SH Global Solution is committed to maintaining a safe and environmentally responsible work environment. All our operations are guided by strict QSHE standards.</p>
-        </div>
-        <ol class="qshe-list">
-          <li class="qshe-item"><span class="qshe-num">01</span><h3>Daily safety briefings and equipment inspections</h3></li>
-          <li class="qshe-item"><span class="qshe-num">02</span><h3>Use of certified PPE (Personal Protective Equipment)</h3></li>
-          <li class="qshe-item"><span class="qshe-num">03</span><h3>Environmental protection protocols at all project sites</h3></li>
-          <li class="qshe-item"><span class="qshe-num">04</span><h3>Internal and third-party audits for quality assurance</h3></li>
-          <li class="qshe-item"><span class="qshe-num">05</span><h3>OTDR and end-to-end testing for network validation</h3></li>
-        </ol>
-        <p class="qshe-outro">We firmly believe that quality, safety, and environmental care are not just responsibilities — they are key to long-term success.</p>
       </div>
     </section>
 
     <!-- Milestones -->
-    <section class="section section--alt" id="milestones" aria-labelledby="milestones-title">
+    <section class="section" id="milestones" aria-labelledby="milestones-title">
       <div class="container">
         <div class="section-head">
-          <span class="section-index">10</span>
-          <h2 class="section-title" id="milestones-title">Milestones &amp; Achievements</h2>
+          <span class="section-index" data-i18n="ms.index">06</span>
+          <h2 class="section-title" id="milestones-title" data-i18n="ms.title">Track record</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          <p class="section-intro">Over the years, SH Global Solution has accomplished several key milestones that demonstrate our growth, capability, and reliability.</p>
         </div>
         <div class="milestones-grid">
-          <article class="milestone"><span class="stat">200+ KM</span><h3>Fiber Deployment</h3><p>Successfully delivered over 200 km of FTTH and OSP fiber deployment in the last 3 years.</p></article>
-          <article class="milestone"><span class="stat">99.9%</span><h3>Network Uptime</h3><p>Consistently achieved 99.9% uptime for maintenance clients across all service agreements.</p></article>
-          <article class="milestone"><span class="stat">CB &amp; Titan</span><h3>Strategic Projects</h3><p>Completed multiple critical infrastructure projects in partnership with leading telecom providers.</p></article>
-          <article class="milestone"><span class="stat">Complex</span><h3>Civil Infrastructure</h3><p>Managed large-scale civil work packages under tight deadlines and complex terrain conditions.</p></article>
-          <article class="milestone"><span class="stat">High-Retention</span><h3>Elite Technical Team</h3><p>Built and retained a highly skilled technical workforce, ensuring deep knowledge retention and continuity.</p></article>
+          <article class="milestone"><span class="stat">200+ km</span><h3 data-i18n="ms.1.t">Fibre deployed</h3><p data-i18n="ms.1.d">FTTH and OSP fibre delivered in the last three years.</p></article>
+          <article class="milestone"><span class="stat">99.9%</span><h3 data-i18n="ms.2.t">Network uptime</h3><p data-i18n="ms.2.d">Across all maintenance service agreements.</p></article>
+          <article class="milestone"><span class="stat">CB &amp; Titan</span><h3 data-i18n="ms.3.t">Strategic projects</h3><p data-i18n="ms.3.d">Delivered with leading telecom providers.</p></article>
+          <article class="milestone"><span class="stat" data-i18n="ms.4.s">Low turnover</span><h3 data-i18n="ms.4.t">Retained expertise</h3><p data-i18n="ms.4.d">A skilled technical team that stays, so knowledge stays.</p></article>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section class="section" id="contact" aria-labelledby="contact-title">
+    <section class="section section--alt" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="section-head">
-          <span class="section-index">11</span>
-          <h2 class="section-title" id="contact-title">Get In Touch</h2>
+          <span class="section-index" data-i18n="contact.index">07</span>
+          <h2 class="section-title" id="contact-title" data-i18n="contact.title">Get in touch</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          <p class="section-intro">Have questions about our fiber solutions? Let's connect.</p>
+          <p class="section-intro" data-i18n="contact.intro">Let's talk about your project. We'll respond with a plan and timeline.</p>
         </div>
         <div class="contact-grid">
           <div class="contact-info">
-            <h3>Visit Our Office</h3>
-            <p>Our central hub for fiber innovation and client support.</p>
-            <div class="info-item"><span class="info-label">Address</span>Lot 1806, Taman Mekasa, 17000 Pasir Mas, Kelantan</div>
-            <div class="info-item"><span class="info-label">Phone</span><a href="tel:+601112987138">+60 111 2987 138</a></div>
-            <div class="info-item"><span class="info-label">Email</span><a href="mailto:shglobalsolution28@gmail.com">shglobalsolution28@gmail.com</a></div>
+            <h3 data-i18n="contact.office">Visit our office</h3>
+            <p data-i18n="contact.office.sub">Our central hub for fibre engineering and client support.</p>
+            <div class="info-item"><span class="info-label" data-i18n="contact.address">ADDRESS</span>Lot 1806, Taman Mekasa, 17000 Pasir Mas, Kelantan</div>
+            <div class="info-item"><span class="info-label" data-i18n="contact.phone">PHONE</span><a href="tel:+601112987138">+60 111 2987 138</a></div>
+            <div class="info-item"><span class="info-label" data-i18n="contact.email">EMAIL</span><a href="mailto:shglobalsolution28@gmail.com">shglobalsolution28@gmail.com</a></div>
             <div class="info-item"><span class="info-label">Facebook</span><a href="https://www.facebook.com/share/15ZDBGQLBR/">SH Global Solution</a></div>
+            <div class="contact-cta"><a class="btn btn--primary" href="https://wa.me/601112987138" data-i18n="contact.cta">Chat on WhatsApp</a></div>
           </div>
           <iframe class="map" title="Map to the SH Global Solution office in Taman Mekasar, Kelantan" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126950.10829554437!2d102.0671408572774!3d6.104979479866142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b6a5b2860e18dd%3A0x8fe20f13492d53eb!2sBlok%20C%2C%20Taman%20Mekasar!5e0!3m2!1sen!2smy!4v1777295839058!5m2!1sen!2smy" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
-      </div>
-    </section>
-
-    <!-- Closing summary -->
-    <section class="section section--alt" id="summary" aria-labelledby="summary-title">
-      <div class="container">
-        <h2 class="summary" id="summary-title">SH Global Solution is a growing and future-focused telecommunications infrastructure company, committed to delivering outstanding network solutions that enable seamless connectivity across urban and rural regions. With a strong track record in implementing fiber optic networks and civil engineering projects, we support the digital growth of cities, industries, and communities. Our services cover the full project life cycle—from design and planning to deployment, testing, maintenance, and long-term support. We approach every project with a focus on quality, efficiency, and client satisfaction, ensuring that our partners receive value-driven results.</h2>
       </div>
     </section>
   </main>
@@ -1134,9 +796,9 @@
         <div class="footer-brand">
           <a class="brand" href="#home">
             <img src="images/logo.png" alt="" width="38" height="38">
-            <span class="brand-name">SH Global Solution<span class="my-rule" aria-hidden="true"></span></span>
+            <span class="brand-name">SH Global Solution</span>
           </a>
-          <p>Fiber optic and civil engineering infrastructure for telecom operators, developers, and governments.</p>
+          <p data-i18n="footer.tagline">Fibre optic and civil infrastructure for Malaysia's telecom sector. Proudly built in Kelantan since 2018.</p>
           <div class="footer-social">
             <a class="icon-btn" href="https://www.facebook.com/share/15ZDBGQLBR/" aria-label="Facebook">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5V7c0-.8.2-1.2 1.3-1.2H17V3h-2.4C12.3 3 11 4.3 11 6.6v1.9H9V11h2v9h3v-9h2.2l.4-2.5H14z" fill="currentColor"/></svg>
@@ -1146,58 +808,37 @@
             </a>
           </div>
         </div>
-
         <div class="footer-col">
-          <h3>Company</h3>
+          <h3 data-i18n="footer.company">COMPANY</h3>
           <ul>
-            <li><a href="#background">Company Background</a></li>
-            <li><a href="#mission">Mission &amp; Vision</a></li>
-            <li><a href="#why">Why Clients Choose Us</a></li>
-            <li><a href="#team">Leadership Team</a></li>
-            <li><a href="#gallery">Built on Teamwork</a></li>
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#why" data-i18n="nav.why">Why us</a></li>
+            <li><a href="#team" data-i18n="nav.team">Team</a></li>
+            <li><a href="#milestones" data-i18n="nav.milestones">Milestones</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
-          <h3>Services</h3>
+          <h3 data-i18n="footer.services">SERVICES</h3>
           <ul>
-            <li><a href="#services">FTTH Projects</a></li>
-            <li><a href="#services">OSP &amp; ODN Projects</a></li>
-            <li><a href="#services">CB &amp; Titan Projects</a></li>
-            <li><a href="#services">Network Maintenance</a></li>
-            <li><a href="#services">Civil Engineering Works</a></li>
-            <li><a href="#services">Fiber Termination &amp; Splicing</a></li>
+            <li><a href="#services" data-i18n="svc.1.title">FTTH Projects</a></li>
+            <li><a href="#services" data-i18n="svc.2.title">OSP &amp; ODN Projects</a></li>
+            <li><a href="#services" data-i18n="svc.3.title">CB &amp; Titan Projects</a></li>
+            <li><a href="#services" data-i18n="svc.5.title">Civil Engineering Works</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
-          <h3>Trust &amp; compliance</h3>
-          <ul>
-            <li><a href="#clients">Clients &amp; Partners</a></li>
-            <li><a href="#sla">Delivery Commitments</a></li>
-            <li><a href="#compliance">Quality &amp; Compliance</a></li>
-            <li><a href="#qshe">QSHE</a></li>
-            <li><a href="#milestones">Milestones &amp; Achievements</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3>Contact</h3>
+          <h3 data-i18n="footer.contact">CONTACT</h3>
           <ul>
             <li><span class="muted">Lot 1806, Taman Mekasa,<br>17000 Pasir Mas, Kelantan</span></li>
             <li><a href="tel:+601112987138">+60 111 2987 138</a></li>
             <li><a href="mailto:shglobalsolution28@gmail.com">shglobalsolution28@gmail.com</a></li>
-            <li><a href="https://wa.me/601112987138">WhatsApp</a></li>
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <span>&copy; 2026 SH Global Solution. All Rights Reserved.</span>
+        <span data-i18n="legal.copy">© 2026 SH Global Solution. All Rights Reserved.</span>
         <span class="sep" aria-hidden="true"></span>
-        <span>Registered in Malaysia · Pasir Mas, Kelantan</span>
-        <span class="sep" aria-hidden="true"></span>
-        <span class="mono">Est. 2018</span>
+        <span data-i18n="legal.reg">Registered in Malaysia · Pasir Mas, Kelantan</span>
       </div>
     </div>
   </footer>
@@ -1210,31 +851,216 @@
     (function () {
       var root = document.documentElement;
 
-      /* Theme: dark-first, persisted */
+      /* ---------- Theme ---------- */
       var themeBtn = document.getElementById("theme-toggle");
       var metaTheme = document.querySelector('meta[name="theme-color"]');
       function applyTheme(theme) {
         root.setAttribute("data-theme", theme);
         themeBtn.setAttribute("aria-pressed", String(theme === "dark"));
         if (metaTheme) metaTheme.setAttribute("content", theme === "dark" ? "#04171B" : "#FFFFFF");
+        document.dispatchEvent(new CustomEvent("themechange", { detail: theme }));
       }
-      var stored = null;
-      try { stored = localStorage.getItem("theme"); } catch (e) {}
-      applyTheme(stored === "light" ? "light" : "dark");
+      var storedTheme = null;
+      try { storedTheme = localStorage.getItem("theme"); } catch (e) {}
+      applyTheme(storedTheme === "light" ? "light" : "dark");
       themeBtn.addEventListener("click", function () {
         var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
         applyTheme(next);
         try { localStorage.setItem("theme", next); } catch (e) {}
       });
 
-      /* Mega-menu */
+      /* ---------- Language (EN / BM) ---------- */
+      var I18N = {
+        en: {
+          "a11y.skip": "Skip to content",
+          "nav.about": "About", "nav.services": "Services", "nav.why": "Why us", "nav.quality": "Quality",
+          "nav.team": "Team", "nav.milestones": "Milestones", "nav.contact": "Contact", "nav.quote": "Request a quote",
+          "mob.navigate": "NAVIGATE", "mob.contact": "CONTACT",
+          "hero.eyebrow": "Est. 2018 · Pasir Mas, Kelantan",
+          "hero.title1": "Fibre infrastructure", "hero.title2": "for a connected Malaysia",
+          "hero.sub": "We design, build, and maintain the fibre and civil networks that carry Malaysia's connectivity — delivered on time, to spec, and safely.",
+          "hero.cta1": "Request a quote", "hero.cta2": "Explore services",
+          "fact.team": "Professionals & field experts", "fact.km": "Fibre deployed in 3 years",
+          "fact.uptime": "Network uptime", "fact.coverage": "National", "fact.coverage.sub": "Cities and rural regions",
+          "trust.title": "Trusted by clients and partners across Malaysia's telecom sector",
+          "trust.clients": "CLIENTELE", "trust.partners": "PARTNERS",
+          "trust.c1": "National telco carriers", "trust.c2": "Infrastructure developers",
+          "trust.c3": "Municipal governments", "trust.c4": "Enterprise customers",
+          "trust.p1": "Fibre cable manufacturers", "trust.p2": "Civil & electrical engineering firms",
+          "trust.p3": "IT & network design consultants", "trust.p4": "International equipment vendors",
+          "about.index": "01", "about.title": "About us",
+          "about.body1": "Founded in 2018 in Pasir Mas, Kelantan, SH Global Solution builds fibre-optic and civil infrastructure for telecom operators, developers, and governments across Malaysia.",
+          "about.body2": "Our mission is to design, build, and maintain advanced communication networks that empower communities, businesses, and governments — on time, within budget, and to the highest quality standards.",
+          "services.index": "02", "services.title": "What we do",
+          "services.intro": "End-to-end fibre and civil works — from network design and cable laying to splicing, testing, and long-term maintenance — built for performance with minimal downtime.",
+          "svc.col.fiber": "FIBER & NETWORK", "svc.col.infra": "INFRASTRUCTURE",
+          "svc.1.title": "FTTH (Fiber to the Home) Projects",
+          "svc.1.desc": "We offer complete FTTH solutions, including network design, fiber laying, splicing, termination, and testing. Our projects ensure high-speed internet connectivity for residential, commercial, and institutional clients.",
+          "svc.2.title": "OSP & ODN Projects",
+          "svc.2.desc": "Our outside plant and optical distribution network services include trenching, ducting, cable pulling, joint closures, and connectivity to end users. We provide end-to-end support from site survey to final commissioning.",
+          "svc.3.title": "CB & Titan Projects",
+          "svc.3.desc": "We deliver high-capacity network solutions involving cable broadband and Titan infrastructure, integrating copper and fiber-based systems to serve high-density urban and suburban areas.",
+          "svc.4.title": "Network Maintenance Services",
+          "svc.4.desc": "We provide comprehensive network maintenance programs, including preventive inspections, emergency repairs, service level agreements (SLAs), and system upgrades to ensure 24/7 reliability.",
+          "svc.5.title": "Civil Engineering Works",
+          "svc.5.desc": "Our civil work division handles the physical infrastructure, such as duct installations, pole erection, chamber construction, manholes, and concrete structures required for telecom networks.",
+          "svc.6.title": "Fiber Termination & Splicing",
+          "svc.6.desc": "We carry out precise fiber optic splicing and termination using high-accuracy tools and certified technicians, ensuring seamless data transmission with minimal loss and maximum performance.",
+          "why.index": "03", "why.title": "Why clients choose us",
+          "why.intro": "Technical depth plus disciplined project management — practical, scalable solutions built for long-term success.",
+          "why.r1": "End-to-end delivery — one partner from survey to handover.",
+          "why.r2": "Trained engineering and field teams for large-scale deployments.",
+          "why.r3": "Strict quality control and safety on every site.",
+          "why.r4": "Timelines met, even in challenging terrain.",
+          "why.r5": "Financial strength to run several projects at once.",
+          "why.r6": "Client-focused, solution-driven, and accountable.",
+          "stats.1.t": "Network uptime", "stats.1.d": "Across all maintenance service agreements.",
+          "stats.2.t": "Fibre deployed", "stats.2.d": "FTTH and OSP fibre in the last three years.",
+          "stats.3.t": "Maintenance", "stats.3.d": "Inspections, emergency repairs, and upgrades.",
+          "stats.4.s": "End-to-end", "stats.4.t": "Project delivery", "stats.4.d": "Survey and design through to long-term support.",
+          "team.index": "04", "team.title": "Our team", "team.intro": "The expert minds driving the future of connectivity.",
+          "role.director": "Director", "role.ceo": "Chief Executive Officer", "role.projdir": "Project Director",
+          "role.finance": "Finance Manager", "role.procurement": "Procurement Manager", "role.wayleave": "Wayleave Manager",
+          "role.planner": "Planner", "role.pm": "Project Manager",
+          "org.index": "05", "org.title": "Organisation chart",
+          "org.intro": "Leadership, project delivery, and four field teams — the structure behind every project we deliver.",
+          "org.director": "Director", "org.ceo": "Chief Executive Officer", "org.projdir": "Project Director",
+          "org.wayleave": "Wayleave Manager", "org.planner": "Planner", "org.pm": "Project Manager",
+          "org.finance": "Finance Manager", "org.procurement": "Procurement Manager", "org.supervisor": "Site Supervisor",
+          "org.team1": "Team 1 · 7", "org.team2": "Team 2 · 7", "org.team3": "Team 3 · 7", "org.team4": "Team 4 · 7",
+          "org.hint": "Scroll sideways to see the full chart.",
+          "qshe.index": "05", "qshe.title": "Quality & safety",
+          "qshe.intro": "Every project runs under documented quality, safety, and environmental controls — because how we build matters as much as what we build.",
+          "q.1.t": "Daily safety briefings", "q.1.d": "Briefings and equipment inspections before work starts on site.",
+          "q.2.t": "Certified PPE", "q.2.d": "Certified personal protective equipment in use on every site.",
+          "q.3.t": "Certified technicians", "q.3.d": "Splicing and termination by certified technicians using calibrated tools.",
+          "q.4.t": "Independent audits", "q.4.d": "Internal and third-party audits verify quality at each stage.",
+          "q.5.t": "Validated networks", "q.5.d": "OTDR and end-to-end testing confirm performance before handover.",
+          "q.6.t": "Environmental care", "q.6.d": "Protection protocols at all project sites, from start to finish.",
+          "ms.index": "06", "ms.title": "Track record",
+          "ms.1.t": "Fibre deployed", "ms.1.d": "FTTH and OSP fibre delivered in the last three years.",
+          "ms.2.t": "Network uptime", "ms.2.d": "Across all maintenance service agreements.",
+          "ms.3.t": "Strategic projects", "ms.3.d": "Delivered with leading telecom providers.",
+          "ms.4.s": "Low turnover", "ms.4.t": "Retained expertise", "ms.4.d": "A skilled technical team that stays, so knowledge stays.",
+          "contact.index": "07", "contact.title": "Get in touch",
+          "contact.intro": "Let's talk about your project. We'll respond with a plan and timeline.",
+          "contact.office": "Visit our office", "contact.office.sub": "Our central hub for fibre engineering and client support.",
+          "contact.address": "ADDRESS", "contact.phone": "PHONE", "contact.email": "EMAIL", "contact.cta": "Chat on WhatsApp",
+          "quote.title": "Request a quote", "quote.body": "Tell us your site and scope — we'll come back with a plan and timeline.", "quote.cta": "Start on WhatsApp",
+          "footer.tagline": "Fibre optic and civil infrastructure for Malaysia's telecom sector. Proudly built in Kelantan since 2018.",
+          "footer.company": "COMPANY", "footer.services": "SERVICES", "footer.contact": "CONTACT",
+          "legal.copy": "© 2026 SH Global Solution. All Rights Reserved.",
+          "legal.reg": "Registered in Malaysia · Pasir Mas, Kelantan"
+        },
+        ms: {
+          "a11y.skip": "Langkau ke kandungan",
+          "nav.about": "Perihal", "nav.services": "Perkhidmatan", "nav.why": "Kenapa kami", "nav.quality": "Kualiti",
+          "nav.team": "Pasukan", "nav.milestones": "Pencapaian", "nav.contact": "Hubungi", "nav.quote": "Minta sebut harga",
+          "mob.navigate": "NAVIGASI", "mob.contact": "HUBUNGI",
+          "hero.eyebrow": "Ditubuhkan 2018 · Pasir Mas, Kelantan",
+          "hero.title1": "Infrastruktur fiber", "hero.title2": "untuk Malaysia yang terhubung",
+          "hero.sub": "Kami merekabentuk, membina dan menyelenggara rangkaian fiber dan kerja awam yang menyokong konektiviti Malaysia — siap tepat pada masa, mengikut spesifikasi, dan selamat.",
+          "hero.cta1": "Minta sebut harga", "hero.cta2": "Lihat perkhidmatan",
+          "fact.team": "Profesional & pakar lapangan", "fact.km": "Fiber dipasang dalam 3 tahun",
+          "fact.uptime": "Masa operasi rangkaian", "fact.coverage": "Seluruh negara", "fact.coverage.sub": "Bandar dan luar bandar",
+          "trust.title": "Dipercayai oleh pelanggan dan rakan kongsi dalam sektor telekomunikasi Malaysia",
+          "trust.clients": "PELANGGAN", "trust.partners": "RAKAN KONGSI",
+          "trust.c1": "Pengendali telekomunikasi nasional", "trust.c2": "Pemaju infrastruktur",
+          "trust.c3": "Kerajaan tempatan", "trust.c4": "Pelanggan korporat",
+          "trust.p1": "Pengeluar kabel fiber", "trust.p2": "Firma kejuruteraan awam & elektrik",
+          "trust.p3": "Perunding IT & reka bentuk rangkaian", "trust.p4": "Vendor peralatan antarabangsa",
+          "about.index": "01", "about.title": "Tentang kami",
+          "about.body1": "Ditubuhkan pada 2018 di Pasir Mas, Kelantan, SH Global Solution membina infrastruktur fiber optik dan kerja awam untuk pengendali telekomunikasi, pemaju dan kerajaan di seluruh Malaysia.",
+          "about.body2": "Misi kami adalah merekabentuk, membina dan menyelenggara rangkaian komunikasi termaju yang memperkasa komuniti, perniagaan dan kerajaan — tepat pada masa, dalam bajet, dan pada standard kualiti tertinggi.",
+          "services.index": "02", "services.title": "Apa yang kami lakukan",
+          "services.intro": "Kerja fiber dan awam hujung-ke-hujung — dari reka bentuk rangkaian dan penggelaran kabel hingga penyambungan, ujian dan penyelenggaraan jangka panjang — dibina untuk prestasi dengan masa henti minimum.",
+          "svc.col.fiber": "FIBER & RANGKAIAN", "svc.col.infra": "INFRASTRUKTUR",
+          "svc.1.title": "Projek FTTH (Fiber ke Rumah)",
+          "svc.1.desc": "Kami menawarkan penyelesaian FTTH lengkap, termasuk reka bentuk rangkaian, penggelaran fiber, penyambungan, pengakhiran dan ujian. Projek kami memastikan konektiviti internet berkelajuan tinggi untuk pelanggan kediaman, komersial dan institusi.",
+          "svc.2.title": "Projek OSP & ODN",
+          "svc.2.desc": "Perkhidmatan outside plant dan rangkaian pengedaran optik kami merangkumi penggalian, pendukaan, penarikan kabel, penutupan sambungan dan sambungan ke pengguna akhir. Kami menyediakan sokongan hujung-ke-hujung dari tinjauan tapak hingga pentauliahan akhir.",
+          "svc.3.title": "Projek CB & Titan",
+          "svc.3.desc": "Kami menyampaikan penyelesaian rangkaian berkapasiti tinggi yang melibatkan cable broadband dan infrastruktur Titan, menggabungkan sistem tembaga dan fiber untuk kawasan bandar dan pinggir bandar yang padat.",
+          "svc.4.title": "Perkhidmatan Penyelenggaraan Rangkaian",
+          "svc.4.desc": "Kami menyediakan program penyelenggaraan rangkaian menyeluruh, termasuk pemeriksaan pencegahan, pembaikan kecemasan, perjanjian tahap perkhidmatan (SLA) dan naik taraf sistem bagi memastikan kebolehpercayaan 24/7.",
+          "svc.5.title": "Kerja Kejuruteraan Awam",
+          "svc.5.desc": "Bahagian kerja awam kami mengendalikan infrastruktur fizikal seperti pemasangan dukt, pendirian tiang, pembinaan kebuk, lubang pemeriksaan dan struktur konkrit yang diperlukan untuk rangkaian telekomunikasi.",
+          "svc.6.title": "Pengakhiran & Penyambungan Fiber",
+          "svc.6.desc": "Kami menjalankan penyambungan dan pengakhiran fiber optik yang tepat menggunakan alat berketepatan tinggi dan juruteknik bertauliah, memastikan penghantaran data lancar dengan kehilangan minimum dan prestasi maksimum.",
+          "why.index": "03", "why.title": "Kenapa pelanggan memilih kami",
+          "why.intro": "Kedalaman teknikal serta pengurusan projek yang berdisiplin — penyelesaian praktikal dan berskala untuk kejayaan jangka panjang.",
+          "why.r1": "Penghantaran hujung-ke-hujung — satu rakan kongsi dari tinjauan hingga penyerahan.",
+          "why.r2": "Pasukan kejuruteraan dan lapangan terlatih untuk projek berskala besar.",
+          "why.r3": "Kawalan kualiti dan keselamatan yang ketat di setiap tapak.",
+          "why.r4": "Jadual dipatuhi, walaupun di medan yang mencabar.",
+          "why.r5": "Kedudukan kewangan kukuh untuk menjalankan beberapa projek serentak.",
+          "why.r6": "Fokus kepada pelanggan, berasaskan penyelesaian dan bertanggungjawab.",
+          "stats.1.t": "Masa operasi rangkaian", "stats.1.d": "Merentasi semua perjanjian penyelenggaraan.",
+          "stats.2.t": "Fiber dipasang", "stats.2.d": "Fiber FTTH dan OSP dalam tiga tahun lepas.",
+          "stats.3.t": "Penyelenggaraan", "stats.3.d": "Pemeriksaan, pembaikan kecemasan dan naik taraf.",
+          "stats.4.s": "Hujung-ke-hujung", "stats.4.t": "Penghantaran projek", "stats.4.d": "Tinjauan dan reka bentuk hingga sokongan jangka panjang.",
+          "team.index": "04", "team.title": "Pasukan kami", "team.intro": "Pemikir pakar yang memacu masa depan konektiviti.",
+          "role.director": "Pengarah", "role.ceo": "Ketua Pegawai Eksekutif", "role.projdir": "Pengarah Projek",
+          "role.finance": "Pengurus Kewangan", "role.procurement": "Pengurus Perolehan", "role.wayleave": "Pengurus Wayleave",
+          "role.planner": "Perancang", "role.pm": "Pengurus Projek",
+          "org.index": "05", "org.title": "Carta organisasi",
+          "org.intro": "Kepimpinan, penyampaian projek dan empat pasukan lapangan — struktur di sebalik setiap projek yang kami laksanakan.",
+          "org.director": "Pengarah", "org.ceo": "Ketua Pegawai Eksekutif", "org.projdir": "Pengarah Projek",
+          "org.wayleave": "Pengurus Wayleave", "org.planner": "Perancang", "org.pm": "Pengurus Projek",
+          "org.finance": "Pengurus Kewangan", "org.procurement": "Pengurus Perolehan", "org.supervisor": "Penyelia Tapak",
+          "org.team1": "Pasukan 1 · 7", "org.team2": "Pasukan 2 · 7", "org.team3": "Pasukan 3 · 7", "org.team4": "Pasukan 4 · 7",
+          "org.hint": "Tatal ke sisi untuk melihat carta penuh.",
+          "qshe.index": "05", "qshe.title": "Kualiti & keselamatan",
+          "qshe.intro": "Setiap projek dijalankan di bawah kawalan kualiti, keselamatan dan alam sekitar yang terdokumentasi — kerana cara kami membina sama penting dengan apa yang kami bina.",
+          "q.1.t": "Taklimat keselamatan harian", "q.1.d": "Taklimat dan pemeriksaan peralatan sebelum kerja bermula di tapak.",
+          "q.2.t": "PPE bertauliah", "q.2.d": "Peralatan perlindungan diri bertauliah digunakan di setiap tapak.",
+          "q.3.t": "Juruteknik bertauliah", "q.3.d": "Penyambungan dan pengakhiran oleh juruteknik bertauliah menggunakan alat yang ditentukur.",
+          "q.4.t": "Audit bebas", "q.4.d": "Audit dalaman dan pihak ketiga mengesahkan kualiti pada setiap peringkat.",
+          "q.5.t": "Rangkaian divalidasi", "q.5.d": "Ujian OTDR dan hujung-ke-hujung mengesahkan prestasi sebelum penyerahan.",
+          "q.6.t": "Penjagaan alam sekitar", "q.6.d": "Protokol perlindungan di semua tapak projek, dari mula hingga akhir.",
+          "ms.index": "06", "ms.title": "Rekod pencapaian",
+          "ms.1.t": "Fiber dipasang", "ms.1.d": "Fiber FTTH dan OSP dihantar dalam tiga tahun lepas.",
+          "ms.2.t": "Masa operasi rangkaian", "ms.2.d": "Merentasi semua perjanjian penyelenggaraan.",
+          "ms.3.t": "Projek strategik", "ms.3.d": "Dilaksanakan bersama pengendali telekomunikasi terkemuka.",
+          "ms.4.s": "Pusing ganti rendah", "ms.4.t": "Kepakaran dikekalkan", "ms.4.d": "Pasukan teknikal mahir yang kekal, jadi pengetahuan kekal.",
+          "contact.index": "07", "contact.title": "Hubungi kami",
+          "contact.intro": "Mari bincangkan projek anda. Kami akan membalas dengan pelan dan jadual.",
+          "contact.office": "Lawati pejabat kami", "contact.office.sub": "Hab utama kami untuk kejuruteraan fiber dan sokongan pelanggan.",
+          "contact.address": "ALAMAT", "contact.phone": "TELEFON", "contact.email": "E-MEL", "contact.cta": "Sembang di WhatsApp",
+          "quote.title": "Minta sebut harga", "quote.body": "Beritahu kami tapak dan skop anda — kami akan balas dengan pelan dan jadual.", "quote.cta": "Mula di WhatsApp",
+          "footer.tagline": "Infrastruktur fiber optik dan kerja awam untuk sektor telekomunikasi Malaysia. Dibina dengan bangga di Kelantan sejak 2018.",
+          "footer.company": "SYARIKAT", "footer.services": "PERKHIDMATAN", "footer.contact": "HUBUNGI",
+          "legal.copy": "© 2026 SH Global Solution. Hak cipta terpelihara.",
+          "legal.reg": "Berdaftar di Malaysia · Pasir Mas, Kelantan"
+        }
+      };
+      var langBtns = Array.prototype.slice.call(document.querySelectorAll(".lang-btn"));
+      function applyLang(lang) {
+        var dict = I18N[lang] || I18N.en;
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (dict[key] != null) el.textContent = dict[key];
+        });
+        root.setAttribute("lang", lang === "ms" ? "ms" : "en");
+        langBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+      }
+      var storedLang = null;
+      try { storedLang = localStorage.getItem("lang"); } catch (e) {}
+      applyLang(storedLang === "ms" ? "ms" : "en");
+      langBtns.forEach(function (b) {
+        b.addEventListener("click", function () {
+          applyLang(b.dataset.lang);
+          try { localStorage.setItem("lang", b.dataset.lang); } catch (e) {}
+        });
+      });
+
+      /* ---------- Mega-menu ---------- */
       var menuItems = Array.prototype.slice.call(document.querySelectorAll("[data-menu]"));
       function closeMenus(except) {
         menuItems.forEach(function (item) {
           if (item === except) return;
           item.classList.remove("open");
-          var t = item.querySelector(".menu-trigger");
-          if (t) t.setAttribute("aria-expanded", "false");
+          var t = item.querySelector(".menu-trigger"); if (t) t.setAttribute("aria-expanded", "false");
         });
       }
       menuItems.forEach(function (item) {
@@ -1247,20 +1073,13 @@
           trigger.setAttribute("aria-expanded", String(willOpen));
         });
         if (window.matchMedia("(hover: hover)").matches) {
-          item.addEventListener("mouseenter", function () {
-            closeMenus(item);
-            item.classList.add("open");
-            trigger.setAttribute("aria-expanded", "true");
-          });
-          item.addEventListener("mouseleave", function () {
-            item.classList.remove("open");
-            trigger.setAttribute("aria-expanded", "false");
-          });
+          item.addEventListener("mouseenter", function () { closeMenus(item); item.classList.add("open"); trigger.setAttribute("aria-expanded", "true"); });
+          item.addEventListener("mouseleave", function () { item.classList.remove("open"); trigger.setAttribute("aria-expanded", "false"); });
         }
       });
       document.addEventListener("click", function () { closeMenus(null); });
 
-      /* Mobile menu */
+      /* ---------- Mobile menu ---------- */
       var menuBtn = document.getElementById("menu-btn");
       var mobileNav = document.getElementById("mobile-nav");
       function setMobile(open) {
@@ -1271,13 +1090,9 @@
       }
       menuBtn.addEventListener("click", function () { setMobile(!mobileNav.classList.contains("open")); });
       mobileNav.addEventListener("click", function (e) { if (e.target.tagName === "A") setMobile(false); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closeMenus(null); setMobile(false); } });
 
-      /* Escape closes menu / overlays */
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") { closeMenus(null); setMobile(false); }
-      });
-
-      /* Back to top */
+      /* ---------- Back to top ---------- */
       var toTop = document.getElementById("to-top");
       function onScroll() { toTop.classList.toggle("show", window.scrollY > 700); }
       window.addEventListener("scroll", onScroll, { passive: true });
@@ -1287,6 +1102,178 @@
         window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
       });
     })();
+  </script>
+
+  <script type="module">
+    /* Hero: Three.js node-network animation. Falls back to the CSS/SVG strands. */
+    const hero = document.querySelector(".hero");
+    const canvas = document.getElementById("hero-canvas");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function webglOK() {
+      try {
+        const c = document.createElement("canvas");
+        return !!(window.WebGLRenderingContext && (c.getContext("webgl") || c.getContext("experimental-webgl")));
+      } catch (e) { return false; }
+    }
+
+    function themeColors() {
+      const light = document.documentElement.getAttribute("data-theme") === "light";
+      return light
+        ? { line: 0x9fb8bf, lineOp: 0.5, node: 0x007C8C, node2: 0xC24E14, pulse: 0x0b5f6b }
+        : { line: 0x1f6d78, lineOp: 0.5, node: 0x00B0C0, node2: 0xE06020, pulse: 0xa9ecf5 };
+    }
+
+    if (canvas && webglOK()) {
+      import("https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js").then((THREE) => {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 120);
+        camera.position.set(0, 0, 16);
+
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+        renderer.setClearColor(0x000000, 0);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        // Nodes
+        const N = 84, SPREAD = 11, DEPTH = 6.5;
+        const pts = [];
+        for (let i = 0; i < N; i++) {
+          pts.push(new THREE.Vector3(
+            (Math.random() - 0.5) * SPREAD * 2,
+            (Math.random() - 0.5) * SPREAD * 1.1,
+            (Math.random() - 0.5) * DEPTH
+          ));
+        }
+
+        // Edges between nearby nodes
+        const edges = [];
+        const MAXD = 3.6;
+        for (let i = 0; i < N; i++) {
+          for (let j = i + 1; j < N; j++) {
+            if (pts[i].distanceTo(pts[j]) < MAXD) edges.push([i, j]);
+          }
+        }
+
+        const linePos = new Float32Array(edges.length * 6);
+        edges.forEach((e, k) => {
+          linePos.set([pts[e[0]].x, pts[e[0]].y, pts[e[0]].z, pts[e[1]].x, pts[e[1]].y, pts[e[1]].z], k * 6);
+        });
+        const lineGeo = new THREE.BufferGeometry();
+        lineGeo.setAttribute("position", new THREE.BufferAttribute(linePos, 3));
+        let col = themeColors();
+        const lineMat = new THREE.LineBasicMaterial({ color: col.line, transparent: true, opacity: col.lineOp });
+        group.add(new THREE.LineSegments(lineGeo, lineMat));
+
+        // Node sprites (canvas glow texture)
+        function glowTexture() {
+          const s = 64, cv = document.createElement("canvas");
+          cv.width = cv.height = s;
+          const ctx = cv.getContext("2d");
+          const g = ctx.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
+          g.addColorStop(0, "rgba(255,255,255,1)");
+          g.addColorStop(0.35, "rgba(255,255,255,0.7)");
+          g.addColorStop(1, "rgba(255,255,255,0)");
+          ctx.fillStyle = g; ctx.fillRect(0, 0, s, s);
+          return new THREE.CanvasTexture(cv);
+        }
+        const tex = glowTexture();
+        const nodePos = new Float32Array(N * 3);
+        const nodeCol = new Float32Array(N * 3);
+        const cA = new THREE.Color(col.node), cB = new THREE.Color(col.node2);
+        pts.forEach((p, i) => {
+          nodePos.set([p.x, p.y, p.z], i * 3);
+          const c = Math.random() < 0.22 ? cB : cA;
+          nodeCol.set([c.r, c.g, c.b], i * 3);
+        });
+        const nodeGeo = new THREE.BufferGeometry();
+        nodeGeo.setAttribute("position", new THREE.BufferAttribute(nodePos, 3));
+        nodeGeo.setAttribute("color", new THREE.BufferAttribute(nodeCol, 3));
+        const nodeMat = new THREE.PointsMaterial({ size: 0.55, map: tex, vertexColors: true, transparent: true, opacity: 0.95, depthWrite: false, blending: THREE.AdditiveBlending });
+        group.add(new THREE.Points(nodeGeo, nodeMat));
+
+        // Travelling pulses
+        const PULSES = 14;
+        const pulses = [];
+        const pulseMat = new THREE.PointsMaterial({ size: 0.5, map: tex, color: col.pulse, transparent: true, opacity: 0.95, depthWrite: false, blending: THREE.AdditiveBlending });
+        const pulsePos = new Float32Array(PULSES * 3);
+        for (let i = 0; i < PULSES; i++) {
+          const e = edges.length ? edges[(Math.random() * edges.length) | 0] : [0, 0];
+          pulses.push({ a: e[0], b: e[1], t: Math.random(), speed: 0.35 + Math.random() * 0.5 });
+        }
+        const pulseGeo = new THREE.BufferGeometry();
+        pulseGeo.setAttribute("position", new THREE.BufferAttribute(pulsePos, 3));
+        group.add(new THREE.Points(pulseGeo, pulseMat));
+
+        function resize() {
+          const w = hero.clientWidth, h = hero.clientHeight;
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+          renderer.setSize(w, h, false);
+          camera.aspect = w / h;
+          camera.updateProjectionMatrix();
+        }
+        resize();
+        window.addEventListener("resize", resize);
+        hero.classList.add("webgl");
+
+        const pointer = { x: 0, y: 0 };
+        window.addEventListener("pointermove", (e) => {
+          pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
+          pointer.y = (e.clientY / window.innerHeight) * 2 - 1;
+        });
+
+        function recolor() {
+          col = themeColors();
+          lineMat.color.setHex(col.line);
+          lineMat.opacity = col.lineOp;
+          cA.setHex(col.node); cB.setHex(col.node2); pulseMat.color.setHex(col.pulse);
+          const arr = nodeGeo.attributes.color.array;
+          pts.forEach((p, i) => {
+            const c = (i % 5 === 0) ? cB : cA;
+            arr[i * 3] = c.r; arr[i * 3 + 1] = c.g; arr[i * 3 + 2] = c.b;
+          });
+          nodeGeo.attributes.color.needsUpdate = true;
+        }
+        document.addEventListener("themechange", recolor);
+
+        function frame(dt) {
+          group.rotation.y += dt * 0.06;
+          group.rotation.x = Math.sin(performance.now() * 0.00012) * 0.08;
+          camera.position.x += (pointer.x * 1.6 - camera.position.x) * 0.04;
+          camera.position.y += (-pointer.y * 1.0 - camera.position.y) * 0.04;
+          camera.lookAt(0, 0, 0);
+          const parr = pulseGeo.attributes.position.array;
+          pulses.forEach((p, i) => {
+            p.t += dt * p.speed;
+            if (p.t > 1) { p.t = 0; const e = edges[(Math.random() * edges.length) | 0]; p.a = e[0]; p.b = e[1]; }
+            const a = pts[p.a], b = pts[p.b];
+            parr[i * 3] = a.x + (b.x - a.x) * p.t;
+            parr[i * 3 + 1] = a.y + (b.y - a.y) * p.t;
+            parr[i * 3 + 2] = a.z + (b.z - a.z) * p.t;
+          });
+          pulseGeo.attributes.position.needsUpdate = true;
+          renderer.render(scene, camera);
+        }
+
+        if (reduce) {
+          frame(0);
+        } else {
+          let last = performance.now(), running = true;
+          const loop = (now) => {
+            if (!running) return;
+            const dt = Math.min((now - last) / 1000, 0.05); last = now;
+            frame(dt);
+            requestAnimationFrame(loop);
+          };
+          requestAnimationFrame(loop);
+          document.addEventListener("visibilitychange", () => {
+            if (document.hidden) { running = false; }
+            else if (!running) { running = true; last = performance.now(); requestAnimationFrame(loop); }
+          });
+        }
+      }).catch(() => { /* keep CSS/SVG fallback */ });
+    }
   </script>
 </body>
 </html>
