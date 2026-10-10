@@ -207,12 +207,20 @@
     .section-head { margin-bottom: clamp(2rem, 4.5vw, 3rem); }
     .section-index { font-family: var(--font-mono); font-size: 0.76rem; font-weight: 500; letter-spacing: 0.06em; color: var(--accent); display: block; margin-bottom: 0.8rem; }
 
-    /* Hero */
+    /* Hero — blueprint grid backdrop */
     .hero {
-      position: relative; text-align: center;
-      padding: clamp(3.5rem, 8vh, 5rem) 0 clamp(2.5rem, 5vh, 3.5rem);
-      background: var(--bg);
+      position: relative; text-align: center; overflow: hidden;
+      padding: clamp(4rem, 9vh, 6rem) 0 clamp(3.5rem, 7vh, 5rem);
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(color-mix(in srgb, var(--text) 8%, transparent) 1px, transparent 1px),
+        linear-gradient(90deg, color-mix(in srgb, var(--text) 8%, transparent) 1px, transparent 1px);
+      background-size: 48px 48px;
       transition: background-color 0.3s ease;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(62% 62% at 50% 42%, transparent 0%, var(--bg) 100%);
     }
     .hero-inner { position: relative; z-index: 2; }
     .hero-title { font-size: clamp(2.3rem, 6.2vw, 4.6rem); font-weight: 900; line-height: 1.06; letter-spacing: -0.03em; max-width: 20ch; margin-inline: auto; }
@@ -495,7 +503,6 @@
           <li><strong data-i18n="fact.coverage">National</strong><span data-i18n="fact.coverage.sub">Cities and rural regions</span></li>
         </ul>
       </div>
-      <div class="fib-band" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
     </header>
 
     <!-- Trust strip -->
