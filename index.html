@@ -242,41 +242,48 @@
     .facts strong { font-size: 1.45rem; font-weight: 900; letter-spacing: -0.01em; }
     .facts span { font-size: 0.92rem; color: var(--muted); }
 
-    /* Trust strip */
-    .trust-title { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; }
+    /* Trust strip — reads as a row of ports, not a wall of cards. */
+    .trust-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 1.5rem; max-width: 54ch; }
     .trust-cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1.5rem, 4vw, 3rem); }
-    .trust-label { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.75rem; }
-    .trust-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
-    .trust-tiles li { border: 1px solid var(--border); background: var(--card); border-radius: var(--radius-sm); padding: 0.85rem 1rem; font-size: 0.94rem; font-weight: 500; transition: border-color 0.15s ease; }
-    .trust-tiles li:hover { border-color: var(--accent); }
+    .trust-label { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.6rem; }
+    .trust-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 1.5rem; }
+    .trust-tiles li { display: flex; align-items: center; gap: 0.65rem; border-top: 1px solid var(--border); padding: 0.7rem 0; font-size: 0.94rem; font-weight: 500; }
+    .trust-tiles li::before { content: ""; flex: 0 0 auto; width: 9px; height: 9px; border-radius: 2px; background: var(--fib-1); }
+    .trust-tiles li:nth-child(4n + 2)::before { background: var(--fib-2); }
+    .trust-tiles li:nth-child(4n + 3)::before { background: var(--fib-3); }
+    .trust-tiles li:nth-child(4n + 4)::before { background: var(--fib-4); }
 
     /* About */
     .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
     .about-copy p { color: var(--muted); font-size: clamp(1.06rem, 1.6vw, 1.2rem); line-height: 1.75; }
     .about-copy p + p { margin-top: 1.1rem; }
-    .about-img { border-radius: var(--radius); width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid var(--border); }
+    .about-img { width: 100%; aspect-ratio: 4 / 3; }
+    /* Parallax frame — a slightly taller image inside a fixed-ratio window. */
+    .par-frame { position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-2); }
+    .par-frame > img { width: 100%; height: 116%; object-fit: cover; display: block; }
 
-    /* Services */
-    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    .service-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.18s ease, transform 0.18s ease; }
-    .service-card:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); transform: translateY(-3px); }
-    .service-card::before { content: ""; display: block; height: 3px; background: var(--card-accent, var(--fib-1)); }
+    /* Services — image-led, no card chrome: the photographs carry the structure. */
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.75rem, 3.5vw, 2.75rem) clamp(1.25rem, 3vw, 2rem); }
+    .service-card { display: flex; flex-direction: column; }
     .service-card:nth-child(6n + 1) { --card-accent: var(--fib-1); }
     .service-card:nth-child(6n + 2) { --card-accent: var(--fib-2); }
     .service-card:nth-child(6n + 3) { --card-accent: var(--fib-3); }
     .service-card:nth-child(6n + 4) { --card-accent: var(--fib-4); }
     .service-card:nth-child(6n + 5) { --card-accent: var(--fib-2); }
     .service-card:nth-child(6n + 6) { --card-accent: var(--fib-1); }
-    .service-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform 0.3s ease; }
-    .service-card:hover img { transform: scale(1.03); }
-    .service-body { padding: 1.25rem 1.3rem 1.4rem; }
-    .service-body h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .svc-media { position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-2); transition: border-color 0.35s ease; }
+    .svc-media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1); }
+    .service-card:hover .svc-media { border-color: color-mix(in srgb, var(--card-accent, var(--fib-1)) 60%, var(--border)); }
+    .service-card:hover .svc-media img { transform: scale(1.05); }
+    .svc-bar { height: 3px; margin: 1.15rem 0 0.9rem; background: var(--card-accent, var(--fib-1)); }
+    .service-body { padding: 0; }
+    .service-body h3 { font-size: 1.14rem; font-weight: 900; letter-spacing: -0.01em; margin-bottom: 0.45rem; }
     .service-body p { font-size: 0.95rem; color: var(--muted); }
 
     /* Why us — sticky media panel beside the scrolling reasons */
     .why-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
-    .why-media { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); background: var(--card); }
-    .why-media img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+    .why-media { aspect-ratio: 3 / 2; }
+    .why-media img { width: 100%; }
     .why-media .badge {
       position: absolute; left: 0.9rem; bottom: 0.9rem; font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500;
       letter-spacing: 0.06em; color: #E6EEF0; padding: 0.32rem 0.72rem; border-radius: 999px;
@@ -305,21 +312,15 @@
     .stats p { font-size: 0.92rem; color: var(--muted); }
 
 
-    /* Quality & safety */
-    .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    .quality-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.35rem; transition: border-color 0.18s ease; }
-    .quality-item:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
+    /* Quality & safety — a spec sheet rather than a wall of identical boxes. */
+    .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--border); }
+    .quality-item { padding: 1.5rem 1.5rem 1.5rem 0; border-bottom: 1px solid var(--border); }
+    .quality-item:not(:nth-child(3n)) { padding-right: 2rem; }
     .quality-item .tick { margin: 0 0 0.85rem; }
     .quality-item h3 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.4rem; }
     .quality-item p { font-size: 0.93rem; color: var(--muted); }
 
-    /* Milestones */
-    .milestones-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
-    .milestone { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.4rem; transition: border-color 0.18s ease; }
-    .milestone:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
-    .milestone .stat { display: block; font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1.08; color: var(--accent); }
-    .milestone h3 { font-size: 1.02rem; font-weight: 700; margin: 0.7rem 0 0.4rem; }
-    .milestone p { font-size: 0.93rem; color: var(--muted); }
+    /* Track record now lives in a full-bleed band (see .band) */
 
     /* Org chart */
     .orgchart { overflow-x: auto; padding-bottom: 0.5rem; }
@@ -386,9 +387,110 @@
     .to-top:hover { border-color: var(--accent); color: var(--accent); }
     .to-top svg { width: 18px; height: 18px; }
 
+    /* Route — the scroll progress strand that runs the length of the page.
+       `--route` (0→1) is written by the motion script. */
+    .route {
+      position: fixed; left: 0; right: 0; top: var(--nav-h); z-index: 89; height: 2px;
+      pointer-events: none; background: color-mix(in srgb, var(--text) 9%, transparent);
+    }
+    .route-fill {
+      position: absolute; inset: 0; transform-origin: 0 50%; transform: scaleX(var(--route, 0));
+      background: linear-gradient(90deg, var(--fib-1), var(--fib-2), var(--fib-3), var(--fib-4));
+    }
+    .route-spark {
+      position: absolute; top: -4px; left: 0; width: 96px; height: 10px; margin-left: -48px;
+      transform: translateX(calc(var(--route, 0) * 100vw));
+      background: radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, #FFFFFF 85%, var(--accent)) 0%, transparent 72%);
+    }
+
+    /* Waypoint rail — one node per numbered section, in the left gutter. */
+    .rail { display: none; }
+    .rail-name {
+      position: absolute; top: 50%; left: 46px; white-space: nowrap; font-size: 0.76rem; font-weight: 500; color: var(--text);
+      background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 0.2rem 0.55rem;
+      opacity: 0; transform: translate(-4px, -50%); pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    /* Photo band — a full-bleed breath between sections. */
+    .band { position: relative; overflow: hidden; padding: clamp(3.5rem, 9vw, 6.5rem) 0; }
+    .band-bg { position: absolute; inset: 0; }
+    .band-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .band-bg::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg,
+        color-mix(in srgb, var(--bg) 97%, transparent) 0%,
+        color-mix(in srgb, var(--bg) 90%, transparent) 52%,
+        color-mix(in srgb, var(--bg) 74%, transparent) 100%);
+    }
+    .band > .container { position: relative; z-index: 1; }
+    .band .section-title { font-size: clamp(2rem, 4vw, 3.1rem); max-width: 20ch; }
+    .band-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: clamp(2rem, 4vw, 3rem); padding-top: clamp(1.25rem, 2.5vw, 1.75rem); border-top: 1px solid var(--border); }
+    .band-stats .stat { display: block; font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; color: var(--text); }
+    .band-stats h3 { font-size: 0.98rem; font-weight: 700; margin: 0.5rem 0 0.3rem; }
+    .band-stats p { font-size: 0.9rem; color: var(--muted); }
+
+    @media (min-width: 1280px) {
+      .rail { display: block; position: fixed; z-index: 70; top: 50%; transform: translateY(-50%); left: max(1.5rem, calc((100vw - var(--container)) / 2 - 3.75rem)); }
+      .rail-track, .rail-fill { position: absolute; left: 24px; width: 2px; top: 5px; bottom: 5px; }
+      .rail-track { background: color-mix(in srgb, var(--text) 12%, transparent); }
+      .rail-fill {
+        transform-origin: 50% 0; transform: scaleY(var(--route, 0));
+        background: linear-gradient(180deg, var(--fib-1), var(--fib-2), var(--fib-3), var(--fib-4));
+      }
+      .rail ul { display: grid; gap: 1.7rem; }
+      .rail a { position: relative; display: flex; align-items: center; text-decoration: none; }
+      .rail-idx {
+        font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.04em; color: var(--muted);
+        width: 20px; opacity: 0.5; transition: opacity 0.3s ease, color 0.3s ease;
+      }
+      .rail-dot {
+        width: 10px; height: 10px; border-radius: 50%; background: var(--bg);
+        border: 2px solid color-mix(in srgb, var(--text) 28%, transparent);
+        transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+      }
+      .rail a:hover .rail-idx, .rail a.is-current .rail-idx { opacity: 1; color: var(--text); }
+      .rail a:hover .rail-dot { border-color: var(--accent); }
+      .rail a.is-current .rail-dot { border-color: var(--accent); background: var(--accent); transform: scale(1.25); }
+      .rail a:hover .rail-name, .rail a:focus-visible .rail-name { opacity: 1; transform: translate(0, -50%); }
+    }
+
+    /* Motion — every effect below is gated on `html.motion`, which the head
+       script only sets when the visitor has not asked for reduced motion. */
+    @keyframes spark-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.85; } }
+    html.motion .route-spark { animation: spark-pulse 3.4s ease-in-out infinite; }
+    @keyframes node-pulse {
+      0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent); }
+      70%, 100% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 0%, transparent); }
+    }
+    html.motion .rail a.is-current .rail-dot { animation: node-pulse 2.6s ease-out infinite; }
+
+    /* Signal reveal — content powers on as the route reaches it. */
+    html.motion .sig {
+      opacity: 0; transform: translateY(14px);
+      transition: opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    html.motion .sig.in { opacity: 1; transform: none; }
+    /* …and the fibre strand under each heading draws itself in, segment by segment. */
+    html.motion .sig .fib span, html.motion .sig .svc-bar {
+      transform: scaleX(0); transform-origin: 0 50%;
+      transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    html.motion .sig .fib span:nth-child(2) { transition-delay: 0.08s; }
+    html.motion .sig .fib span:nth-child(3) { transition-delay: 0.16s; }
+    html.motion .sig .fib span:nth-child(4) { transition-delay: 0.24s; }
+    html.motion .sig.in .fib span, html.motion .sig.in .svc-bar { transform: none; }
+    /* Groups stagger rather than firing as one block. */
+    html.motion .stagger > * { transition-delay: calc(var(--i, 0) * 70ms); }
+
+    /* Parallax inside the photo frames. */
+    html.motion .par-frame img { transform: translate3d(0, calc(var(--par, 0) * -1px), 0); }
+
     @media (max-width: 1024px) {
       .cards-grid, .quality-grid { grid-template-columns: repeat(2, 1fr); }
-      .milestones-grid, .stats { grid-template-columns: repeat(2, 1fr); }
+      .quality-item { padding-right: 2rem; }
+      .quality-item:nth-child(2n) { padding-right: 0; }
+      .stats, .band-stats { grid-template-columns: repeat(2, 1fr); }
       .footer-top { grid-template-columns: repeat(2, 1fr); }
       .footer-brand { grid-column: 1 / -1; }
     }
@@ -405,7 +507,8 @@
       .facts { grid-template-columns: repeat(2, 1fr); gap: 1.25rem 1.5rem; }
     }
     @media (max-width: 640px) {
-      .cards-grid, .quality-grid, .milestones-grid, .stats { grid-template-columns: 1fr; }
+      .cards-grid, .quality-grid, .stats, .band-stats { grid-template-columns: 1fr; }
+      .quality-item { padding-right: 0; }
       .trust-tiles { grid-template-columns: 1fr; }
       .container { width: calc(100% - 2rem); }
       .footer-top { grid-template-columns: 1fr; }
@@ -434,9 +537,16 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+      .route, .rail { display: none; }
       *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
     }
   </style>
+  <script>
+    /* Runs before first paint so revealed content never flashes into place. */
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+      document.documentElement.classList.add("motion");
+    }
+  </script>
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
@@ -524,6 +634,26 @@
     </div>
   </div>
 
+  <!-- Route: scroll progress strand + waypoint rail -->
+  <div class="route" aria-hidden="true">
+    <div class="route-fill"></div>
+    <div class="route-spark"></div>
+  </div>
+
+  <nav class="rail" aria-label="Section progress">
+    <span class="rail-track" aria-hidden="true"></span>
+    <span class="rail-fill" aria-hidden="true"></span>
+    <ul>
+      <li><a href="#about"><span class="rail-idx">01</span><span class="rail-dot" aria-hidden="true"></span><span class="rail-name" data-i18n="nav.about">About</span></a></li>
+      <li><a href="#services"><span class="rail-idx">02</span><span class="rail-dot" aria-hidden="true"></span><span class="rail-name" data-i18n="nav.services">Services</span></a></li>
+      <li><a href="#why"><span class="rail-idx">03</span><span class="rail-dot" aria-hidden="true"></span><span class="rail-name" data-i18n="nav.why">Why us</span></a></li>
+      <li><a href="#team"><span class="rail-idx">04</span><span class="rail-dot" aria-hidden="true"></span><span class="rail-name" data-i18n="nav.team">Team</span></a></li>
+      <li><a href="#qshe"><span class="rail-idx">05</span><span class="rail-dot" aria-hidden="true"></span><span class="rail-name" data-i18n="nav.quality">Quality</span></a></li>
+      <li><a href="#milestones"><span class="rail-idx">06</span><span class="rail-dot" aria-hidden="true"></span><span class="rail-name" data-i18n="nav.milestones">Milestones</span></a></li>
+      <li><a href="#contact"><span class="rail-idx">07</span><span class="rail-dot" aria-hidden="true"></span><span class="rail-name" data-i18n="nav.contact">Contact</span></a></li>
+    </ul>
+  </nav>
+
   <main id="main">
     <!-- Hero -->
     <header class="hero" id="home" data-scrub="pin">
@@ -537,9 +667,9 @@
             <a class="btn btn--ghost" href="#services" data-i18n="hero.cta2">Explore services</a>
           </div>
           <ul class="facts">
-            <li><strong>100+</strong><span data-i18n="fact.team">Professionals &amp; field experts</span></li>
-            <li><strong>200+ km</strong><span data-i18n="fact.km">Fibre deployed in 3 years</span></li>
-            <li><strong>99.9%</strong><span data-i18n="fact.uptime">Network uptime</span></li>
+            <li><strong data-count="100" data-suffix="+">100+</strong><span data-i18n="fact.team">Professionals &amp; field experts</span></li>
+            <li><strong data-count="200" data-suffix="+ km">200+ km</strong><span data-i18n="fact.km">Fibre deployed in 3 years</span></li>
+            <li><strong data-count="99.9" data-decimals="1" data-suffix="%">99.9%</strong><span data-i18n="fact.uptime">Network uptime</span></li>
             <li><strong data-i18n="fact.coverage">National</strong><span data-i18n="fact.coverage.sub">Cities and rural regions</span></li>
           </ul>
         </div>
@@ -549,24 +679,24 @@
     <!-- Trust strip -->
     <section class="section section--tight" id="clients" aria-labelledby="clients-title">
       <div class="container">
-        <h2 class="trust-title" id="clients-title" data-i18n="trust.title">Trusted by clients and partners across Malaysia's telecom sector</h2>
+        <h2 class="trust-title sig" id="clients-title" data-i18n="trust.title">Trusted by clients and partners across Malaysia's telecom sector</h2>
         <div class="trust-cols">
           <div>
-            <p class="trust-label" data-i18n="trust.clients">CLIENTELE</p>
-            <ul class="trust-tiles">
-              <li data-i18n="trust.c1">National telco carriers</li>
-              <li data-i18n="trust.c2">Infrastructure developers</li>
-              <li data-i18n="trust.c3">Municipal governments</li>
-              <li data-i18n="trust.c4">Enterprise customers</li>
+            <p class="trust-label sig" data-i18n="trust.clients">Clientele</p>
+            <ul class="trust-tiles stagger">
+              <li class="sig" data-i18n="trust.c1">National telco carriers</li>
+              <li class="sig" data-i18n="trust.c2">Infrastructure developers</li>
+              <li class="sig" data-i18n="trust.c3">Municipal governments</li>
+              <li class="sig" data-i18n="trust.c4">Enterprise customers</li>
             </ul>
           </div>
           <div>
-            <p class="trust-label" data-i18n="trust.partners">PARTNERS</p>
-            <ul class="trust-tiles">
-              <li data-i18n="trust.p1">Fibre cable manufacturers</li>
-              <li data-i18n="trust.p2">Civil &amp; electrical engineering firms</li>
-              <li data-i18n="trust.p3">IT &amp; network design consultants</li>
-              <li data-i18n="trust.p4">International equipment vendors</li>
+            <p class="trust-label sig" data-i18n="trust.partners">Partners</p>
+            <ul class="trust-tiles stagger">
+              <li class="sig" data-i18n="trust.p1">Fibre cable manufacturers</li>
+              <li class="sig" data-i18n="trust.p2">Civil &amp; electrical engineering firms</li>
+              <li class="sig" data-i18n="trust.p3">IT &amp; network design consultants</li>
+              <li class="sig" data-i18n="trust.p4">International equipment vendors</li>
             </ul>
           </div>
         </div>
@@ -576,64 +706,70 @@
     <!-- About -->
     <section class="section section--alt" id="about" aria-labelledby="about-title">
       <div class="container about-grid">
-        <div class="about-copy">
+        <div class="about-copy sig">
           <span class="section-index" data-i18n="about.index">01</span>
           <h2 class="section-title" id="about-title" data-i18n="about.title">About us</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
           <p style="margin-top:1.4rem" data-i18n="about.body1">Founded in 2018 in Pasir Mas, Kelantan, SH Global Solution builds fibre-optic and civil infrastructure for telecom operators, developers, and governments across Malaysia.</p>
           <p data-i18n="about.body2">Our mission is to design, build, and maintain advanced communication networks that empower communities, businesses, and governments — on time, within budget, and to the highest quality standards.</p>
         </div>
-        <img class="about-img" src="images/2149212625.jpg" alt="Fibres of light carrying data through an optical cable" loading="lazy" width="800" height="600">
+        <div class="par-frame about-img sig"><img src="images/2149212625.jpg" alt="Fibres of light carrying data through an optical cable" loading="lazy" width="800" height="600"></div>
       </div>
     </section>
 
     <!-- Services -->
     <section class="section" id="services" aria-labelledby="services-title">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head sig">
           <span class="section-index" data-i18n="services.index">02</span>
           <h2 class="section-title" id="services-title" data-i18n="services.title">What we do</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
           <p class="section-intro" data-i18n="services.intro">End-to-end fibre and civil works — from network design and cable laying to splicing, testing, and long-term maintenance — built for performance with minimal downtime.</p>
         </div>
-        <div class="cards-grid">
-          <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600" alt="Single-mode fibre optic cabling" loading="lazy" width="600" height="375">
+        <div class="cards-grid stagger">
+          <article class="service-card sig">
+            <div class="svc-media"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800" alt="Single-mode fibre optic cabling" loading="lazy" width="600" height="450"></div>
+            <div class="svc-bar" aria-hidden="true"></div>
             <div class="service-body">
               <h3 data-i18n="svc.1.title">FTTH (Fiber to the Home) Projects</h3>
               <p data-i18n="svc.1.desc">We offer complete FTTH solutions, including network design, fiber laying, splicing, termination, and testing. Our projects ensure high-speed internet connectivity for residential, commercial, and institutional clients.</p>
             </div>
           </article>
-          <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?q=80&w=600" alt="Multi-mode fibre cables" loading="lazy" width="600" height="375">
+          <article class="service-card sig">
+            <div class="svc-media"><img src="https://images.unsplash.com/photo-1625276254563-f0fbbf66a5e7?q=80&w=800&auto=format&fit=crop" alt="Cable bundle drawn through a duct" loading="lazy" width="600" height="450"></div>
+            <div class="svc-bar" aria-hidden="true"></div>
             <div class="service-body">
               <h3 data-i18n="svc.2.title">OSP &amp; ODN Projects</h3>
               <p data-i18n="svc.2.desc">Our outside plant and optical distribution network services include trenching, ducting, cable pulling, joint closures, and connectivity to end users. We provide end-to-end support from site survey to final commissioning.</p>
             </div>
           </article>
-          <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1771046831228-54766bba552b?q=80&w=1170&auto=format&fit=crop" alt="Armoured fibre optic cable" loading="lazy" width="600" height="375">
+          <article class="service-card sig">
+            <div class="svc-media"><img src="https://images.unsplash.com/photo-1655251128253-6612015fbcc9?q=80&w=900&auto=format&fit=crop" alt="Communication towers carrying high-capacity network traffic" loading="lazy" width="600" height="450"></div>
+            <div class="svc-bar" aria-hidden="true"></div>
             <div class="service-body">
               <h3 data-i18n="svc.3.title">CB &amp; Titan Projects</h3>
               <p data-i18n="svc.3.desc">We deliver high-capacity network solutions involving cable broadband and Titan infrastructure, integrating copper and fiber-based systems to serve high-density urban and suburban areas.</p>
             </div>
           </article>
-          <article class="service-card">
-            <img src="https://plus.unsplash.com/premium_photo-1723921279485-7c301ade629f?q=80&w=1008&auto=format&fit=crop" alt="Network maintenance and inspection" loading="lazy" width="600" height="375">
+          <article class="service-card sig">
+            <div class="svc-media"><img src="https://images.unsplash.com/photo-1581092919535-7146ff1a590b?q=80&w=900&auto=format&fit=crop" alt="Technician inspecting a network distribution panel" loading="lazy" width="600" height="450"></div>
+            <div class="svc-bar" aria-hidden="true"></div>
             <div class="service-body">
               <h3 data-i18n="svc.4.title">Network Maintenance Services</h3>
               <p data-i18n="svc.4.desc">We provide comprehensive network maintenance programs, including preventive inspections, emergency repairs, service level agreements (SLAs), and system upgrades to ensure 24/7 reliability.</p>
             </div>
           </article>
-          <article class="service-card">
-            <img src="https://plus.unsplash.com/premium_photo-1681989499796-df9ee5ec9853?q=80&w=1170&auto=format&fit=crop" alt="Civil engineering construction work" loading="lazy" width="600" height="375">
+          <article class="service-card sig">
+            <div class="svc-media"><img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=900&auto=format&fit=crop" alt="Crew working on reinforced concrete structures" loading="lazy" width="600" height="450"></div>
+            <div class="svc-bar" aria-hidden="true"></div>
             <div class="service-body">
               <h3 data-i18n="svc.5.title">Civil Engineering Works</h3>
               <p data-i18n="svc.5.desc">Our civil work division handles the physical infrastructure, such as duct installations, pole erection, chamber construction, manholes, and concrete structures required for telecom networks.</p>
             </div>
           </article>
-          <article class="service-card">
-            <img src="https://plus.unsplash.com/premium_photo-1661628877080-da645b4ff7da?q=80&w=1170&auto=format&fit=crop" alt="Fibre optic splicing tools and termination" loading="lazy" width="600" height="375">
+          <article class="service-card sig">
+            <div class="svc-media"><img src="https://images.unsplash.com/photo-1594915440248-1e419eba6611?q=80&w=900&auto=format&fit=crop" alt="Optical distribution frame with fibre patch cords" loading="lazy" width="600" height="450"></div>
+            <div class="svc-bar" aria-hidden="true"></div>
             <div class="service-body">
               <h3 data-i18n="svc.6.title">Fiber Termination &amp; Splicing</h3>
               <p data-i18n="svc.6.desc">We carry out precise fiber optic splicing and termination using high-accuracy tools and certified technicians, ensuring seamless data transmission with minimal loss and maximum performance.</p>
@@ -646,18 +782,18 @@
     <!-- Why us + stats -->
     <section class="section section--alt" id="why" aria-labelledby="why-title">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head sig">
           <span class="section-index" data-i18n="why.index">03</span>
           <h2 class="section-title" id="why-title" data-i18n="why.title">Why clients choose us</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
           <p class="section-intro" data-i18n="why.intro">Technical depth plus disciplined project management — practical, scalable solutions built for long-term success.</p>
         </div>
         <div class="why-grid">
-          <figure class="why-media">
-            <img src="https://images.unsplash.com/photo-1606765962248-7ff407b51667?q=80&w=800&auto=format&fit=crop" alt="Optical distribution frame with fibre patch cords" loading="lazy" width="800" height="533">
+          <figure class="par-frame why-media sig">
+            <img src="https://images.unsplash.com/photo-1606765962248-7ff407b51667?q=80&w=900&auto=format&fit=crop" alt="Optical distribution frame with fibre patch cords" loading="lazy" width="800" height="533">
             <figcaption class="badge" aria-hidden="true" id="why-count">01</figcaption>
           </figure>
-          <div class="reasons">
+          <div class="reasons sig">
             <div class="reason" data-n="01"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r1">End-to-end delivery — one partner from survey to handover.</p></div>
             <div class="reason" data-n="02"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r2">Trained engineering and field teams for large-scale deployments.</p></div>
             <div class="reason" data-n="03"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r3">Strict quality control and safety on every site.</p></div>
@@ -666,11 +802,11 @@
             <div class="reason" data-n="06"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r6">Client-focused, solution-driven, and accountable.</p></div>
           </div>
         </div>
-        <div class="stats">
-          <div><span class="stat">99.9%</span><h3 data-i18n="stats.1.t">Network uptime</h3><p data-i18n="stats.1.d">Across all maintenance service agreements.</p></div>
-          <div><span class="stat">200+ km</span><h3 data-i18n="stats.2.t">Fibre deployed</h3><p data-i18n="stats.2.d">FTTH and OSP fibre in the last three years.</p></div>
-          <div><span class="stat">24/7</span><h3 data-i18n="stats.3.t">Maintenance</h3><p data-i18n="stats.3.d">Inspections, emergency repairs, and upgrades.</p></div>
-          <div><span class="stat" data-i18n="stats.4.s">End-to-end</span><h3 data-i18n="stats.4.t">Project delivery</h3><p data-i18n="stats.4.d">Survey and design through to long-term support.</p></div>
+        <div class="stats stagger">
+          <div class="sig"><span class="stat" data-count="99.9" data-decimals="1" data-suffix="%">99.9%</span><h3 data-i18n="stats.1.t">Network uptime</h3><p data-i18n="stats.1.d">Across all maintenance service agreements.</p></div>
+          <div class="sig"><span class="stat" data-count="200" data-suffix="+ km">200+ km</span><h3 data-i18n="stats.2.t">Fibre deployed</h3><p data-i18n="stats.2.d">FTTH and OSP fibre in the last three years.</p></div>
+          <div class="sig"><span class="stat">24/7</span><h3 data-i18n="stats.3.t">Maintenance</h3><p data-i18n="stats.3.d">Inspections, emergency repairs, and upgrades.</p></div>
+          <div class="sig"><span class="stat" data-i18n="stats.4.s">End-to-end</span><h3 data-i18n="stats.4.t">Project delivery</h3><p data-i18n="stats.4.d">Survey and design through to long-term support.</p></div>
         </div>
       </div>
     </section>
@@ -678,13 +814,13 @@
     <!-- Team & organisation -->
     <section class="section" id="team" aria-labelledby="team-title">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head sig">
           <span class="section-index" data-i18n="team.index">04</span>
           <h2 class="section-title" id="team-title" data-i18n="team.title">Our team</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
           <p class="section-intro" data-i18n="team.intro">Leadership, project delivery, and four field teams — the people behind every project we deliver.</p>
         </div>
-        <div class="orgchart">
+        <div class="orgchart sig">
           <div class="orgchart-inner">
             <div class="org-tree">
               <ul>
@@ -728,36 +864,39 @@
     <!-- Quality & safety -->
     <section class="section section--alt" id="qshe" aria-labelledby="qshe-title">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head sig">
           <span class="section-index" data-i18n="qshe.index">05</span>
           <h2 class="section-title" id="qshe-title" data-i18n="qshe.title">Quality &amp; safety</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
           <p class="section-intro" data-i18n="qshe.intro">Every project runs under documented quality, safety, and environmental controls — because how we build matters as much as what we build.</p>
         </div>
-        <div class="quality-grid">
-          <div class="quality-item"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.1.t">Daily safety briefings</h3><p data-i18n="q.1.d">Briefings and equipment inspections before work starts on site.</p></div>
-          <div class="quality-item"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.2.t">Certified PPE</h3><p data-i18n="q.2.d">Certified personal protective equipment in use on every site.</p></div>
-          <div class="quality-item"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.3.t">Certified technicians</h3><p data-i18n="q.3.d">Splicing and termination by certified technicians using calibrated tools.</p></div>
-          <div class="quality-item"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.4.t">Independent audits</h3><p data-i18n="q.4.d">Internal and third-party audits verify quality at each stage.</p></div>
-          <div class="quality-item"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.5.t">Validated networks</h3><p data-i18n="q.5.d">OTDR and end-to-end testing confirm performance before handover.</p></div>
-          <div class="quality-item"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.6.t">Environmental care</h3><p data-i18n="q.6.d">Protection protocols at all project sites, from start to finish.</p></div>
+        <div class="quality-grid stagger">
+          <div class="quality-item sig"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.1.t">Daily safety briefings</h3><p data-i18n="q.1.d">Briefings and equipment inspections before work starts on site.</p></div>
+          <div class="quality-item sig"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.2.t">Certified PPE</h3><p data-i18n="q.2.d">Certified personal protective equipment in use on every site.</p></div>
+          <div class="quality-item sig"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.3.t">Certified technicians</h3><p data-i18n="q.3.d">Splicing and termination by certified technicians using calibrated tools.</p></div>
+          <div class="quality-item sig"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.4.t">Independent audits</h3><p data-i18n="q.4.d">Internal and third-party audits verify quality at each stage.</p></div>
+          <div class="quality-item sig"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.5.t">Validated networks</h3><p data-i18n="q.5.d">OTDR and end-to-end testing confirm performance before handover.</p></div>
+          <div class="quality-item sig"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.6.t">Environmental care</h3><p data-i18n="q.6.d">Protection protocols at all project sites, from start to finish.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- Milestones -->
-    <section class="section" id="milestones" aria-labelledby="milestones-title">
+    <!-- Track record — full-bleed band -->
+    <section class="band" id="milestones" aria-labelledby="milestones-title">
+      <div class="band-bg" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop" alt="" loading="lazy" width="1600" height="900">
+      </div>
       <div class="container">
-        <div class="section-head">
+        <div class="section-head sig">
           <span class="section-index" data-i18n="ms.index">06</span>
           <h2 class="section-title" id="milestones-title" data-i18n="ms.title">Track record</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
         </div>
-        <div class="milestones-grid">
-          <article class="milestone"><span class="stat">200+ km</span><h3 data-i18n="ms.1.t">Fibre deployed</h3><p data-i18n="ms.1.d">FTTH and OSP fibre delivered in the last three years.</p></article>
-          <article class="milestone"><span class="stat">99.9%</span><h3 data-i18n="ms.2.t">Network uptime</h3><p data-i18n="ms.2.d">Across all maintenance service agreements.</p></article>
-          <article class="milestone"><span class="stat">CB &amp; Titan</span><h3 data-i18n="ms.3.t">Strategic projects</h3><p data-i18n="ms.3.d">Delivered with leading telecom providers.</p></article>
-          <article class="milestone"><span class="stat" data-i18n="ms.4.s">Low turnover</span><h3 data-i18n="ms.4.t">Retained expertise</h3><p data-i18n="ms.4.d">A skilled technical team that stays, so knowledge stays.</p></article>
+        <div class="band-stats stagger">
+          <div class="sig"><span class="stat" data-count="200" data-suffix="+ km">200+ km</span><h3 data-i18n="ms.1.t">Fibre deployed</h3><p data-i18n="ms.1.d">FTTH and OSP fibre delivered in the last three years.</p></div>
+          <div class="sig"><span class="stat" data-count="99.9" data-decimals="1" data-suffix="%">99.9%</span><h3 data-i18n="ms.2.t">Network uptime</h3><p data-i18n="ms.2.d">Across all maintenance service agreements.</p></div>
+          <div class="sig"><span class="stat">CB &amp; Titan</span><h3 data-i18n="ms.3.t">Strategic projects</h3><p data-i18n="ms.3.d">Delivered with leading telecom providers.</p></div>
+          <div class="sig"><span class="stat" data-i18n="ms.4.s">Low turnover</span><h3 data-i18n="ms.4.t">Retained expertise</h3><p data-i18n="ms.4.d">A skilled technical team that stays, so knowledge stays.</p></div>
         </div>
       </div>
     </section>
@@ -765,23 +904,23 @@
     <!-- Contact -->
     <section class="section section--alt" id="contact" aria-labelledby="contact-title">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head sig">
           <span class="section-index" data-i18n="contact.index">07</span>
           <h2 class="section-title" id="contact-title" data-i18n="contact.title">Get in touch</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
           <p class="section-intro" data-i18n="contact.intro">Let's talk about your project. We'll respond with a plan and timeline.</p>
         </div>
-        <div class="contact-grid">
-          <div class="contact-info">
+        <div class="contact-grid stagger">
+          <div class="contact-info sig">
             <h3 data-i18n="contact.office">Visit our office</h3>
             <p data-i18n="contact.office.sub">Our central hub for fibre engineering and client support.</p>
-            <div class="info-item"><span class="info-label" data-i18n="contact.address">ADDRESS</span>Lot 1806, Taman Mekasa, 17000 Pasir Mas, Kelantan</div>
-            <div class="info-item"><span class="info-label" data-i18n="contact.phone">PHONE</span><a href="tel:+601112987138">+60 111 2987 138</a></div>
-            <div class="info-item"><span class="info-label" data-i18n="contact.email">EMAIL</span><a href="mailto:shglobalsolution28@gmail.com">shglobalsolution28@gmail.com</a></div>
+            <div class="info-item"><span class="info-label" data-i18n="contact.address">Address</span>Lot 1806, Taman Mekasa, 17000 Pasir Mas, Kelantan</div>
+            <div class="info-item"><span class="info-label" data-i18n="contact.phone">Phone</span><a href="tel:+601112987138">+60 111 2987 138</a></div>
+            <div class="info-item"><span class="info-label" data-i18n="contact.email">Email</span><a href="mailto:shglobalsolution28@gmail.com">shglobalsolution28@gmail.com</a></div>
             <div class="info-item"><span class="info-label">Facebook</span><a href="https://www.facebook.com/share/15ZDBGQLBR/">SH Global Solution</a></div>
             <div class="contact-cta"><a class="btn btn--primary" href="https://wa.me/601112987138" data-i18n="contact.cta">Chat on WhatsApp</a></div>
           </div>
-          <iframe class="map" title="Map to the SH Global Solution office in Taman Mekasar, Kelantan" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126950.10829554437!2d102.0671408572774!3d6.104979479866142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b6a5b2860e18dd%3A0x8fe20f13492d53eb!2sBlok%20C%2C%20Taman%20Mekasar!5e0!3m2!1sen!2smy!4v1777295839058!5m2!1sen!2smy" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <iframe class="map sig" title="Map to the SH Global Solution office in Taman Mekasar, Kelantan" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126950.10829554437!2d102.0671408572774!3d6.104979479866142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b6a5b2860e18dd%3A0x8fe20f13492d53eb!2sBlok%20C%2C%20Taman%20Mekasar!5e0!3m2!1sen!2smy!4v1777295839058!5m2!1sen!2smy" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -807,7 +946,7 @@
           </div>
         </div>
         <div class="footer-col">
-          <h3 data-i18n="footer.company">COMPANY</h3>
+          <h3 data-i18n="footer.company">Company</h3>
           <ul>
             <li><a href="#about" data-i18n="nav.about">About</a></li>
             <li><a href="#why" data-i18n="nav.why">Why us</a></li>
@@ -816,7 +955,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h3 data-i18n="footer.services">SERVICES</h3>
+          <h3 data-i18n="footer.services">Services</h3>
           <ul>
             <li><a href="#services" data-i18n="svc.1.title">FTTH Projects</a></li>
             <li><a href="#services" data-i18n="svc.2.title">OSP &amp; ODN Projects</a></li>
@@ -825,7 +964,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h3 data-i18n="footer.contact">CONTACT</h3>
+          <h3 data-i18n="footer.contact">Contact</h3>
           <ul>
             <li><span class="muted">Lot 1806, Taman Mekasa,<br>17000 Pasir Mas, Kelantan</span></li>
             <li><a href="tel:+601112987138">+60 111 2987 138</a></li>
@@ -873,7 +1012,7 @@
           "a11y.skip": "Skip to content",
           "nav.about": "About", "nav.services": "Services", "nav.why": "Why us", "nav.quality": "Quality",
           "nav.team": "Team", "nav.milestones": "Milestones", "nav.contact": "Contact", "nav.quote": "Request a quote",
-          "mob.navigate": "NAVIGATE", "mob.contact": "CONTACT",
+          "mob.navigate": "Navigate", "mob.contact": "Contact",
           "hero.eyebrow": "Est. 2018 · Pasir Mas, Kelantan",
           "hero.title1": "Fibre infrastructure", "hero.title2": "for a connected Malaysia",
           "hero.sub": "We design, build, and maintain the fibre and civil networks that carry Malaysia's connectivity — delivered on time, to spec, and safely.",
@@ -881,7 +1020,7 @@
           "fact.team": "Professionals & field experts", "fact.km": "Fibre deployed in 3 years",
           "fact.uptime": "Network uptime", "fact.coverage": "National", "fact.coverage.sub": "Cities and rural regions",
           "trust.title": "Trusted by clients and partners across Malaysia's telecom sector",
-          "trust.clients": "CLIENTELE", "trust.partners": "PARTNERS",
+          "trust.clients": "Clientele", "trust.partners": "Partners",
           "trust.c1": "National telco carriers", "trust.c2": "Infrastructure developers",
           "trust.c3": "Municipal governments", "trust.c4": "Enterprise customers",
           "trust.p1": "Fibre cable manufacturers", "trust.p2": "Civil & electrical engineering firms",
@@ -891,7 +1030,7 @@
           "about.body2": "Our mission is to design, build, and maintain advanced communication networks that empower communities, businesses, and governments — on time, within budget, and to the highest quality standards.",
           "services.index": "02", "services.title": "What we do",
           "services.intro": "End-to-end fibre and civil works — from network design and cable laying to splicing, testing, and long-term maintenance — built for performance with minimal downtime.",
-          "svc.col.fiber": "FIBER & NETWORK", "svc.col.infra": "INFRASTRUCTURE",
+          "svc.col.fiber": "Fiber & network", "svc.col.infra": "Infrastructure",
           "svc.1.title": "FTTH (Fiber to the Home) Projects",
           "svc.1.desc": "We offer complete FTTH solutions, including network design, fiber laying, splicing, termination, and testing. Our projects ensure high-speed internet connectivity for residential, commercial, and institutional clients.",
           "svc.2.title": "OSP & ODN Projects",
@@ -943,10 +1082,10 @@
           "contact.index": "07", "contact.title": "Get in touch",
           "contact.intro": "Let's talk about your project. We'll respond with a plan and timeline.",
           "contact.office": "Visit our office", "contact.office.sub": "Our central hub for fibre engineering and client support.",
-          "contact.address": "ADDRESS", "contact.phone": "PHONE", "contact.email": "EMAIL", "contact.cta": "Chat on WhatsApp",
+          "contact.address": "Address", "contact.phone": "Phone", "contact.email": "Email", "contact.cta": "Chat on WhatsApp",
           "quote.title": "Request a quote", "quote.body": "Tell us your site and scope — we'll come back with a plan and timeline.", "quote.cta": "Start on WhatsApp",
           "footer.tagline": "Fibre optic and civil infrastructure for Malaysia's telecom sector. Proudly built in Kelantan since 2018.",
-          "footer.company": "COMPANY", "footer.services": "SERVICES", "footer.contact": "CONTACT",
+          "footer.company": "Company", "footer.services": "Services", "footer.contact": "Contact",
           "legal.copy": "© 2026 SH Global Solution. All Rights Reserved.",
           "legal.reg": "Registered in Malaysia · Pasir Mas, Kelantan"
         },
@@ -954,7 +1093,7 @@
           "a11y.skip": "Langkau ke kandungan",
           "nav.about": "Perihal", "nav.services": "Perkhidmatan", "nav.why": "Kenapa kami", "nav.quality": "Kualiti",
           "nav.team": "Pasukan", "nav.milestones": "Pencapaian", "nav.contact": "Hubungi", "nav.quote": "Minta sebut harga",
-          "mob.navigate": "NAVIGASI", "mob.contact": "HUBUNGI",
+          "mob.navigate": "Navigasi", "mob.contact": "Hubungi",
           "hero.eyebrow": "Ditubuhkan 2018 · Pasir Mas, Kelantan",
           "hero.title1": "Infrastruktur fiber", "hero.title2": "untuk Malaysia yang terhubung",
           "hero.sub": "Kami merekabentuk, membina dan menyelenggara rangkaian fiber dan kerja awam yang menyokong konektiviti Malaysia — siap tepat pada masa, mengikut spesifikasi, dan selamat.",
@@ -962,7 +1101,7 @@
           "fact.team": "Profesional & pakar lapangan", "fact.km": "Fiber dipasang dalam 3 tahun",
           "fact.uptime": "Masa operasi rangkaian", "fact.coverage": "Seluruh negara", "fact.coverage.sub": "Bandar dan luar bandar",
           "trust.title": "Dipercayai oleh pelanggan dan rakan kongsi dalam sektor telekomunikasi Malaysia",
-          "trust.clients": "PELANGGAN", "trust.partners": "RAKAN KONGSI",
+          "trust.clients": "Pelanggan", "trust.partners": "Rakan kongsi",
           "trust.c1": "Pengendali telekomunikasi nasional", "trust.c2": "Pemaju infrastruktur",
           "trust.c3": "Kerajaan tempatan", "trust.c4": "Pelanggan korporat",
           "trust.p1": "Pengeluar kabel fiber", "trust.p2": "Firma kejuruteraan awam & elektrik",
@@ -972,7 +1111,7 @@
           "about.body2": "Misi kami adalah merekabentuk, membina dan menyelenggara rangkaian komunikasi termaju yang memperkasa komuniti, perniagaan dan kerajaan — tepat pada masa, dalam bajet, dan pada standard kualiti tertinggi.",
           "services.index": "02", "services.title": "Apa yang kami lakukan",
           "services.intro": "Kerja fiber dan awam hujung-ke-hujung — dari reka bentuk rangkaian dan penggelaran kabel hingga penyambungan, ujian dan penyelenggaraan jangka panjang — dibina untuk prestasi dengan masa henti minimum.",
-          "svc.col.fiber": "FIBER & RANGKAIAN", "svc.col.infra": "INFRASTRUKTUR",
+          "svc.col.fiber": "Fiber & rangkaian", "svc.col.infra": "Infrastruktur",
           "svc.1.title": "Projek FTTH (Fiber ke Rumah)",
           "svc.1.desc": "Kami menawarkan penyelesaian FTTH lengkap, termasuk reka bentuk rangkaian, penggelaran fiber, penyambungan, pengakhiran dan ujian. Projek kami memastikan konektiviti internet berkelajuan tinggi untuk pelanggan kediaman, komersial dan institusi.",
           "svc.2.title": "Projek OSP & ODN",
@@ -1024,10 +1163,10 @@
           "contact.index": "07", "contact.title": "Hubungi kami",
           "contact.intro": "Mari bincangkan projek anda. Kami akan membalas dengan pelan dan jadual.",
           "contact.office": "Lawati pejabat kami", "contact.office.sub": "Hab utama kami untuk kejuruteraan fiber dan sokongan pelanggan.",
-          "contact.address": "ALAMAT", "contact.phone": "TELEFON", "contact.email": "E-MEL", "contact.cta": "Sembang di WhatsApp",
+          "contact.address": "Alamat", "contact.phone": "Telefon", "contact.email": "E-mel", "contact.cta": "Sembang di WhatsApp",
           "quote.title": "Minta sebut harga", "quote.body": "Beritahu kami tapak dan skop anda — kami akan balas dengan pelan dan jadual.", "quote.cta": "Mula di WhatsApp",
           "footer.tagline": "Infrastruktur fiber optik dan kerja awam untuk sektor telekomunikasi Malaysia. Dibina dengan bangga di Kelantan sejak 2018.",
-          "footer.company": "SYARIKAT", "footer.services": "PERKHIDMATAN", "footer.contact": "HUBUNGI",
+          "footer.company": "Syarikat", "footer.services": "Perkhidmatan", "footer.contact": "Hubungi",
           "legal.copy": "© 2026 SH Global Solution. Hak cipta terpelihara.",
           "legal.reg": "Berdaftar di Malaysia · Pasir Mas, Kelantan"
         }
@@ -1100,16 +1239,52 @@
         window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
       });
 
-      /* ---------- Motion: pinned hero scrub + sticky why panel ---------- */
+      /* ---------- Motion: route progress, hero scrub, sticky why panel ---------- */
       var motionMQ = window.matchMedia("(prefers-reduced-motion: no-preference)");
       var heroPin = document.querySelector('.hero[data-scrub="pin"]');
       var whyReasons = Array.prototype.slice.call(document.querySelectorAll("#why .reason"));
       var whyCount = document.getElementById("why-count");
+      var railLinks = Array.prototype.slice.call(document.querySelectorAll(".rail a"));
+      var railTargets = railLinks.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+      var parFrames = Array.prototype.slice.call(document.querySelectorAll(".par-frame"));
       var motionTick = false;
+
+      /* Groups stagger their reveal rather than firing as one block. */
+      Array.prototype.forEach.call(document.querySelectorAll(".stagger"), function (group) {
+        Array.prototype.forEach.call(group.children, function (child, i) { child.style.setProperty("--i", i); });
+      });
+
+      /* Count-up for figures, driven by the reveal below. */
+      function countUp(scope) {
+        if (!scope) return;
+        Array.prototype.forEach.call(scope.querySelectorAll("[data-count]"), function (el) {
+          if (el.getAttribute("data-counted")) return;
+          el.setAttribute("data-counted", "1");
+          var to = parseFloat(el.getAttribute("data-count"));
+          var dec = parseInt(el.getAttribute("data-decimals") || "0", 10);
+          var suffix = el.getAttribute("data-suffix") || "";
+          var start = null;
+          function step(now) {
+            if (start === null) start = now;
+            var t = Math.min(1, (now - start) / 1100);
+            var eased = 1 - Math.pow(1 - t, 3);
+            el.textContent = (to * eased).toFixed(dec) + suffix;
+            if (t < 1) requestAnimationFrame(step);
+            else el.textContent = to.toFixed(dec) + suffix;
+          }
+          el.textContent = (0).toFixed(dec) + suffix;
+          requestAnimationFrame(step);
+        });
+      }
 
       function motionFrame() {
         if (!motionMQ.matches) return;
         var vh = window.innerHeight;
+        var y = window.scrollY || window.pageYOffset;
+
+        /* Route: overall progress drives the strand and the waypoint rail. */
+        var docH = document.documentElement.scrollHeight - vh;
+        root.style.setProperty("--route", (docH > 0 ? Math.max(0, Math.min(1, y / docH)) : 0).toFixed(4));
 
         /* Hero: --p runs 0 to 1 across the pinned scroll; CSS does the rest. */
         if (heroPin) {
@@ -1117,6 +1292,20 @@
           var span = rect.height - vh;
           var p = span > 0 ? Math.max(0, Math.min(1, -rect.top / span)) : 0;
           heroPin.style.setProperty("--p", p.toFixed(4));
+        }
+
+        /* Waypoints: the last section to cross the reading line is current. */
+        var line = vh * 0.35, current = -1;
+        for (var k = 0; k < railTargets.length; k++) {
+          if (railTargets[k] && railTargets[k].getBoundingClientRect().top <= line) current = k;
+        }
+        for (var m = 0; m < railLinks.length; m++) railLinks[m].classList.toggle("is-current", m === current);
+
+        /* Parallax inside the photo frames. */
+        for (var n = 0; n < parFrames.length; n++) {
+          var fr = parFrames[n].getBoundingClientRect();
+          if (fr.bottom < -80 || fr.top > vh + 80) continue;
+          parFrames[n].style.setProperty("--par", ((fr.top + fr.height / 2 - vh / 2) / vh * 34).toFixed(1));
         }
 
         /* Why us: highlight the reason nearest the reading line. */
@@ -1139,6 +1328,24 @@
       if (motionMQ.addEventListener) motionMQ.addEventListener("change", onMotion); else motionMQ.addListener(onMotion);
       window.addEventListener("scroll", onMotion, { passive: true });
       window.addEventListener("resize", onMotion);
+
+      /* ---------- Signal reveal: content powers on as the route reaches it ---------- */
+      if (root.classList.contains("motion")) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("in");
+            countUp(entry.target);
+            io.unobserve(entry.target);
+          });
+        }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
+        Array.prototype.forEach.call(document.querySelectorAll(".sig"), function (el) { io.observe(el); });
+        /* The hero is on screen at load, so its figures count as the page settles. */
+        countUp(heroPin || document.body);
+      } else {
+        Array.prototype.forEach.call(document.querySelectorAll(".sig"), function (el) { el.classList.add("in"); });
+      }
+
       motionFrame();
     })();
   </script>
