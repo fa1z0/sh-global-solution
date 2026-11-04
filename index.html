@@ -10,12 +10,45 @@
   <meta property="og:description" content="Connecting the future, Building the network.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop">
   <title>SH Global Solution — Fibre & Civil Infrastructure, Malaysia</title>
+  <link rel="canonical" href="https://fa1z0.github.io/sh-global-solution/">
+  <meta property="og:url" content="https://fa1z0.github.io/sh-global-solution/">
+  <meta property="og:site_name" content="SH Global Solution">
+  <meta property="og:locale" content="en_MY">
+  <meta property="og:locale:alternate" content="ms_MY">
+  <meta property="og:image:alt" content="Fibre optic cabling carrying network traffic">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SH Global Solution">
+  <meta name="twitter:description" content="Fibre optic and civil infrastructure for Malaysia's telecommunications sector.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop">
   <link rel="icon" href="images/logo.png">
   <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SH Global Solution",
+    "url": "https://fa1z0.github.io/sh-global-solution/",
+    "logo": "https://fa1z0.github.io/sh-global-solution/images/logo.png",
+    "description": "Fibre-optic and civil infrastructure contractor serving Malaysia's telecommunications sector: FTTH, OSP/ODN, cable broadband, network maintenance and civil works.",
+    "foundingDate": "2018",
+    "telephone": "+601112987138",
+    "email": "shglobalsolution28@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Lot 1806, Taman Mekasa",
+      "postalCode": "17000",
+      "addressLocality": "Pasir Mas",
+      "addressRegion": "Kelantan",
+      "addressCountry": "MY"
+    },
+    "areaServed": { "@type": "Country", "name": "Malaysia" },
+    "sameAs": ["https://www.facebook.com/share/15ZDBGQLBR/"]
+  }
+  </script>
   <style>
     :root {
       --font-sans: "Satoshi", "Helvetica Neue", Arial, sans-serif;
@@ -159,7 +192,7 @@
     .panel-list a { display: block; text-decoration: none; font-size: 0.94rem; font-weight: 500; color: var(--text); padding: 0.45rem 0.55rem; border-radius: 6px; transition: background-color 0.15s ease, color 0.15s ease; }
     .panel-list a:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--accent); }
     .feature { background: linear-gradient(150deg, color-mix(in srgb, var(--accent) 16%, transparent), color-mix(in srgb, var(--violet) 26%, transparent)); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; }
-    .feature h4 { font-size: 1.05rem; font-weight: 900; }
+    .feature h4, .feature-title { font-size: 1.05rem; font-weight: 900; }
     .feature p { font-size: 0.88rem; color: var(--muted); flex: 1; }
 
     .nav-actions { display: flex; align-items: center; gap: 0.5rem; flex: 1 1 0; justify-content: flex-end; }
@@ -246,6 +279,7 @@
       min-height: calc(100vh - var(--nav-h)); padding: clamp(3.5rem, 8vh, 5.5rem) 0;
     }
     .hero-inner { position: relative; z-index: 2; }
+    .hero-eyebrow { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 1.1rem; }
     .hero-title { font-size: clamp(2.3rem, 6.2vw, 4.6rem); font-weight: 900; line-height: 1.06; letter-spacing: -0.03em; max-width: 20ch; margin-inline: auto; }
     .hero-sub { max-width: 60ch; margin: 1.4rem auto 0; color: var(--muted); font-size: clamp(1.02rem, 1.6vw, 1.16rem); }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 1.6rem; }
@@ -284,6 +318,8 @@
     /* These two masters carry wide empty margins, so they need a larger draw size. */
     .logo-cell--sapura img { height: 42px; }
     .logo-cell--allo img { height: 46px; }
+    /* Supply-chain depth, closing the clients strip. */
+    .trust-partners { margin-top: 1.75rem; color: var(--muted); font-size: 0.92rem; line-height: 1.6; max-width: 78ch; }
 
     /* Previous projects — a filterable record of the 45 contracts in the profile. */
     .track-sub { color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.12rem); max-width: 68ch; margin: -1rem 0 1.5rem; }
@@ -314,6 +350,27 @@
     .about-copy p { color: var(--muted); font-size: clamp(1.06rem, 1.6vw, 1.2rem); line-height: 1.75; }
     .about-copy p + p { margin-top: 1.1rem; }
     .about-img { width: 100%; aspect-ratio: 4 / 3; }
+
+    /* Core values — a compact six-up strip under the About copy. The tick colours
+       cycle the fibre code so the strip reads as part of the page, not a bolted-on list. */
+    .values { margin-top: clamp(2rem, 5vw, 3.25rem); border-top: 1px solid var(--border); padding-top: 1.5rem; }
+    .values-title, .community-title { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 1.1rem; }
+    .values-grid { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.35rem 2rem; }
+    .values-grid li { position: relative; padding-left: 1.1rem; }
+    .values-grid li::before { content: ""; position: absolute; left: 0; top: 0.42em; width: 8px; height: 8px; border-radius: 2px; background: var(--fib-1); }
+    .values-grid li:nth-child(2)::before { background: var(--fib-2); }
+    .values-grid li:nth-child(3)::before { background: var(--fib-3); }
+    .values-grid li:nth-child(4)::before { background: var(--fib-4); }
+    .values-grid li:nth-child(5)::before { background: var(--fib-2); }
+    .values-grid li:nth-child(6)::before { background: var(--fib-1); }
+    .values-grid strong { display: block; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.15rem; }
+    .values-grid span { font-size: 0.9rem; line-height: 1.55; color: var(--muted); }
+
+    /* Community — CSR commitments close the quality & safety section. */
+    .community { margin-top: clamp(2rem, 5vw, 3rem); border-top: 1px solid var(--border); padding-top: 1.5rem; }
+    .community-list { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem 2rem; }
+    .community-list li { position: relative; padding-left: 1.1rem; font-size: 0.9rem; line-height: 1.55; color: var(--muted); }
+    .community-list li::before { content: ""; position: absolute; left: 0; top: 0.5em; width: 8px; height: 8px; border-radius: 2px; background: var(--accent); }
     /* Parallax frame — a slightly taller image inside a fixed-ratio window. */
     .par-frame { position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-2); }
     .par-frame > img { width: 100%; height: 116%; object-fit: cover; display: block; }
@@ -416,7 +473,7 @@
     .info-item .info-label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; font-weight: 500; display: block; color: var(--muted); margin-bottom: 0.12rem; }
     .info-item a { color: var(--accent); font-weight: 500; text-decoration: none; }
     .info-item a:hover { text-decoration: underline; }
-    .contact-cta { margin-top: 1.5rem; }
+    .contact-cta { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
     .map { border: 1px solid var(--border); border-radius: var(--radius); width: 100%; min-height: 320px; height: 100%; background: var(--bg-2); }
 
     /* Footer */
@@ -431,7 +488,6 @@
     .footer-col a:hover { color: var(--accent); }
     .footer-col .muted { color: var(--muted); }
     .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.25rem; padding: 1.4rem 0 1.9rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.88rem; }
-    .footer-bottom .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--border); }
 
     .to-top {
       position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 80; width: 44px; height: 44px;
@@ -562,9 +618,10 @@
       .why-grid { grid-template-columns: 1fr; }
       .why-media img { aspect-ratio: 16 / 10; }
       .facts { grid-template-columns: repeat(2, 1fr); gap: 1.25rem 1.5rem; }
+      .values-grid, .community-list { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
-      .cards-grid, .quality-grid, .stats, .band-stats { grid-template-columns: 1fr; }
+      .cards-grid, .quality-grid, .stats, .band-stats, .values-grid, .community-list { grid-template-columns: 1fr; }
       .quality-item { padding-right: 0; }
       .logo-cell { padding: 0 1.4rem; min-width: 120px; }
       .logo-cell img { height: 28px; }
@@ -660,6 +717,34 @@
       .route, .rail { display: none; }
       *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
     }
+    /* Print — tender panels often print a page to compare contractors, so remap
+       the palette to ink, drop the chrome, and let the contract record run full
+       length. Remapping the tokens (rather than forcing colours on each rule)
+       keeps every dark-theme rule legible on paper. */
+    @media print {
+      html, html[data-theme="dark"], html[data-theme="light"] {
+        color-scheme: light;
+        --bg: #FFFFFF; --bg-2: #FFFFFF; --card: #FFFFFF; --panel: #FFFFFF;
+        --text: #111111; --muted: #333333; --border: rgba(0, 0, 0, 0.35);
+      }
+      body { background: #fff; color: #111; font-size: 10.5pt; }
+      .route, .rail, .to-top, .nav, .mobile-nav, .skip, .hero-grid, .panel,
+      .hero-actions, .marquee, .footer-social, .map, .band-bg, .fib, .fib-band,
+      .btn, .track-filters, .org-hint { display: none !important; }
+      .hero, .hero-sticky { height: auto !important; position: static !important; padding: 0 0 1rem !important; background: #fff !important; }
+      .section, .band, .section--alt { padding: 1.1rem 0 !important; background: #fff !important; }
+      .hero-title { font-size: 26pt; }
+      .service-card .svc-media, .par-frame { display: none !important; }
+      .table-card, .table-scroll { max-height: none !important; overflow: visible !important; border: none !important; }
+      .track-table { min-width: 0 !important; font-size: 8.5pt; }
+      .track-table thead { display: table-header-group; }
+      .track-table tr { break-inside: avoid; }
+      .orgchart, .orgchart-inner { overflow: visible !important; min-width: 0 !important; }
+      .values-grid { grid-template-columns: repeat(3, 1fr) !important; }
+      .community-list { grid-template-columns: repeat(2, 1fr) !important; }
+      .sig, .stagger > * { opacity: 1 !important; transform: none !important; }
+      a { color: #111 !important; text-decoration: none; }
+    }
   </style>
   <script>
     /* Runs before first paint so revealed content never flashes into place. */
@@ -669,9 +754,19 @@
   </script>
 </head>
 <body>
+  <noscript>
+    <style>
+      /* Without JS the hamburger cannot open the overlay, so put the menu in flow. */
+      @media (max-width: 1023px) {
+        .hamburger { display: none !important; }
+        .mobile-nav { position: static; opacity: 1; visibility: visible; transform: none; overflow: visible; padding: 1rem 1.5rem 1.5rem; }
+        .mobile-cta { display: none; }
+      }
+    </style>
+  </noscript>
   <a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
-  <nav class="nav" aria-label="Main">
+  <nav class="nav" aria-label="Main" data-i18n-aria="a11y.main">
     <div class="container nav-inner">
       <a class="brand" href="#home">
         <img src="images/logo.png" alt="" width="38" height="38">
@@ -685,14 +780,14 @@
             <span data-i18n="nav.services">Services</span>
             <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <div class="panel" id="panel-services" role="region" aria-label="Services">
+          <div class="panel" id="panel-services" role="region" aria-label="Services" data-i18n-aria="a11y.services">
             <div class="panel-grid">
               <div>
-                <p class="panel-col-title" data-i18n="svc.col.fiber">Fiber &amp; network</p>
+                <p class="panel-col-title" data-i18n="svc.col.fiber">Fibre &amp; network</p>
                 <div class="panel-list">
                   <a href="#services" data-i18n="svc.1.title">FTTH Projects</a>
                   <a href="#services" data-i18n="svc.2.title">OSP &amp; ODN Projects</a>
-                  <a href="#services" data-i18n="svc.6.title">Fiber Termination &amp; Splicing</a>
+                  <a href="#services" data-i18n="svc.6.title">Fibre Termination &amp; Splicing</a>
                 </div>
               </div>
               <div>
@@ -704,7 +799,7 @@
                 </div>
               </div>
               <div class="feature">
-                <h4 data-i18n="quote.title">Request a quote</h4>
+                <p class="feature-title" data-i18n="quote.title">Request a quote</p>
                 <p data-i18n="quote.body">Tell us your site and scope — we'll come back with a plan and timeline.</p>
                 <a class="btn btn--primary btn--sm" href="https://wa.me/601112987138" data-i18n="quote.cta">Start on WhatsApp</a>
               </div>
@@ -721,7 +816,7 @@
           <button class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
           <button class="lang-btn" data-lang="ms" aria-pressed="false">BM</button>
         </div>
-        <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Switch colour theme" aria-pressed="true">
+        <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Switch colour theme" aria-pressed="true" data-i18n-aria="a11y.theme">
           <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
           <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         </button>
@@ -748,7 +843,7 @@
     </div>
   </nav>
 
-  <div class="mobile-nav" id="mobile-nav" aria-label="Mobile menu">
+  <div class="mobile-nav" id="mobile-nav" aria-label="Mobile menu" data-i18n-aria="a11y.mobileMenu">
     <div class="mobile-group">
       <h3 data-i18n="mob.navigate">Navigate</h3>
       <a href="#about" data-i18n="nav.about">About</a>
@@ -775,7 +870,7 @@
     <div class="route-spark"></div>
   </div>
 
-  <nav class="rail" aria-label="Section progress">
+  <nav class="rail" aria-label="Section progress" data-i18n-aria="a11y.progress">
     <span class="rail-track" aria-hidden="true"></span>
     <span class="rail-fill" aria-hidden="true"></span>
     <ul>
@@ -795,8 +890,9 @@
       <div class="hero-grid" aria-hidden="true"><div class="hero-grid-in"></div></div>
       <div class="hero-sticky">
         <div class="container hero-inner">
-          <h1 class="hero-title"><span data-i18n="hero.title1">Fibre infrastructure</span><br><span data-i18n="hero.title2">for a connected Malaysia</span></h1>
-          <p class="hero-sub hero-fade" data-i18n="hero.sub">We design, build, and maintain the fibre and civil networks that carry Malaysia's connectivity — delivered on time, to spec, and safely.</p>
+          <p class="hero-eyebrow hero-fade" data-i18n="hero.eyebrow">Est. 2018 · Pasir Mas, Kelantan</p>
+          <h1 class="hero-title"><span data-i18n="hero.title1">Fibre infrastructure</span> <br><span data-i18n="hero.title2">for a connected Malaysia</span></h1>
+          <p class="hero-sub hero-fade" data-i18n="hero.sub">We design, build and maintain the fibre and civil infrastructure that underpins Malaysia's networks — delivered on time, to specification and safely.</p>
           <div class="hero-actions hero-fade">
             <a class="btn btn--primary" href="https://wa.me/601112987138" data-i18n="hero.cta1">Request a quote</a>
             <a class="btn btn--ghost" href="#services" data-i18n="hero.cta2">Explore services</a>
@@ -816,10 +912,10 @@
       <div class="container">
         <div class="trust-head">
           <h2 class="trust-title sig" id="clients-title" data-i18n="trust.title">Proven on Malaysia's biggest networks</h2>
-          <p class="trust-sub sig" data-i18n="trust.sub">Carriers and brands served across 45 delivered contracts — the full project record is listed below.</p>
+          <p class="trust-sub sig" data-i18n="trust.sub">National carriers, infrastructure developers, municipal governments and enterprise customers — 45 contracts delivered; the full project record is listed below.</p>
         </div>
       </div>
-      <div class="marquee sig" role="list" aria-label="Clients">
+      <div class="marquee sig" role="list" aria-label="Clients" data-i18n-aria="a11y.clients">
         <div class="marquee-track">
           <div class="logo-cell" role="listitem"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Maxis_2022_Wordmark.svg" alt="Maxis" loading="eager"></div>
           <div class="logo-cell" role="listitem"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Telekom_Malaysia_logo_%282023%29.svg" alt="Telekom Malaysia" loading="eager"></div>
@@ -851,6 +947,9 @@
           <div class="logo-cell logo-cell--allo"><img src="https://www.allo.my/wp-content/uploads/2024/09/Allo-Logo-Purple-2-1-1.svg" alt="" loading="eager"></div>
         </div>
       </div>
+      <div class="container">
+        <p class="trust-partners sig" data-i18n="trust.partners">Supported by long-standing partnerships with fibre cable manufacturers, civil and electrical engineering firms, IT and network design consultants and international equipment vendors.</p>
+      </div>
     </section>
 
     <!-- About -->
@@ -860,10 +959,24 @@
           <span class="section-index" data-i18n="about.index">01</span>
           <h2 class="section-title" id="about-title" data-i18n="about.title">About us</h2>
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          <p style="margin-top:1.4rem" data-i18n="about.body1">Founded in 2018 in Pasir Mas, Kelantan, SH Global Solution builds fibre-optic and civil infrastructure for telecom operators, developers, and governments across Malaysia.</p>
-          <p data-i18n="about.body2">Our mission is to design, build, and maintain advanced communication networks that empower communities, businesses, and governments — on time, within budget, and to the highest quality standards.</p>
+          <p style="margin-top:1.4rem" data-i18n="about.body1">Founded in 2018 in Pasir Mas, Kelantan, SH Global Solution was established to bridge the digital divide — building fibre-optic and civil infrastructure for national carriers, infrastructure developers, municipal governments and enterprise customers across Malaysia.</p>
+          <p data-i18n="about.body2">We cover the full project life cycle: design and planning, deployment, testing, maintenance and long-term support — with a mission to build advanced communication networks that empower communities, businesses and government, on time, within budget and to the highest quality standards.</p>
+          <p data-i18n="about.body3">Looking ahead, we are preparing for 5G rollout support — including backhaul and small cell infrastructure — and expanding into underserved regions.</p>
         </div>
         <div class="par-frame about-img sig"><img src="images/2149212625.jpg" alt="Fibres of light carrying data through an optical cable" loading="lazy" width="800" height="600"></div>
+      </div>
+      <div class="container">
+        <div class="values sig">
+          <p class="values-title" data-i18n="about.values.title">Our core values</p>
+          <ul class="values-grid">
+            <li><strong data-i18n="val.1.t">Integrity</strong><span data-i18n="val.1.d">We work honestly, transparently and ethically.</span></li>
+            <li><strong data-i18n="val.2.t">Commitment to quality</strong><span data-i18n="val.2.d">The highest standards in workmanship, planning and execution.</span></li>
+            <li><strong data-i18n="val.3.t">Customer centricity</strong><span data-i18n="val.3.d">Solutions tailored to each client's goals.</span></li>
+            <li><strong data-i18n="val.4.t">Innovation</strong><span data-i18n="val.4.d">Better methods and tools to improve every outcome.</span></li>
+            <li><strong data-i18n="val.5.t">Teamwork</strong><span data-i18n="val.5.d">Collaboration and mutual respect get the best results.</span></li>
+            <li><strong data-i18n="val.6.t">Safety</strong><span data-i18n="val.6.d">The safety of our people and the public comes first.</span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -881,8 +994,8 @@
             <div class="svc-media"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800" alt="Single-mode fibre optic cabling" loading="lazy" width="600" height="450"></div>
             <div class="svc-bar" aria-hidden="true"></div>
             <div class="service-body">
-              <h3 data-i18n="svc.1.title">FTTH (Fiber to the Home) Projects</h3>
-              <p data-i18n="svc.1.desc">We offer complete FTTH solutions, including network design, fiber laying, splicing, termination, and testing. Our projects ensure high-speed internet connectivity for residential, commercial, and institutional clients.</p>
+              <h3 data-i18n="svc.1.title">FTTH (Fibre to the Home) Projects</h3>
+              <p data-i18n="svc.1.desc">We offer complete FTTH solutions, including network design, fibre laying, splicing, termination, and testing. Our projects ensure high-speed internet connectivity for residential, commercial, and institutional clients.</p>
             </div>
           </article>
           <article class="service-card sig">
@@ -898,7 +1011,7 @@
             <div class="svc-bar" aria-hidden="true"></div>
             <div class="service-body">
               <h3 data-i18n="svc.3.title">CB &amp; Titan Projects</h3>
-              <p data-i18n="svc.3.desc">We deliver high-capacity network solutions involving cable broadband and Titan infrastructure, integrating copper and fiber-based systems to serve high-density urban and suburban areas.</p>
+              <p data-i18n="svc.3.desc">We deliver high-capacity network solutions involving cable broadband and Titan infrastructure, integrating copper and fibre-based systems to serve high-density urban and suburban areas.</p>
             </div>
           </article>
           <article class="service-card sig">
@@ -921,8 +1034,8 @@
             <div class="svc-media"><img src="https://images.unsplash.com/photo-1594915440248-1e419eba6611?q=80&w=900&auto=format&fit=crop" alt="Optical distribution frame with fibre patch cords" loading="lazy" width="600" height="450"></div>
             <div class="svc-bar" aria-hidden="true"></div>
             <div class="service-body">
-              <h3 data-i18n="svc.6.title">Fiber Termination &amp; Splicing</h3>
-              <p data-i18n="svc.6.desc">We carry out precise fiber optic splicing and termination using high-accuracy tools and certified technicians, ensuring seamless data transmission with minimal loss and maximum performance.</p>
+              <h3 data-i18n="svc.6.title">Fibre Termination &amp; Splicing</h3>
+              <p data-i18n="svc.6.desc">We carry out precise fibre optic splicing and termination using high-accuracy tools and certified technicians, ensuring seamless data transmission with minimal loss and maximum performance.</p>
             </div>
           </article>
         </div>
@@ -948,7 +1061,7 @@
             <div class="reason" data-n="02"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r2">Trained engineering and field teams for large-scale deployments.</p></div>
             <div class="reason" data-n="03"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r3">Strict quality control and safety on every site.</p></div>
             <div class="reason" data-n="04"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r4">Timelines met, even in challenging terrain.</p></div>
-            <div class="reason" data-n="05"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r5">Financial strength to run several projects at once.</p></div>
+            <div class="reason" data-n="05"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r5">Steady financial standing to run concurrent projects.</p></div>
             <div class="reason" data-n="06"><span class="tick" aria-hidden="true"></span><p data-i18n="why.r6">Client-focused, solution-driven, and accountable.</p></div>
           </div>
         </div>
@@ -1028,6 +1141,15 @@
           <div class="quality-item sig"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.5.t">Validated networks</h3><p data-i18n="q.5.d">OTDR and end-to-end testing confirm performance before handover.</p></div>
           <div class="quality-item sig"><span class="tick" aria-hidden="true"></span><h3 data-i18n="q.6.t">Environmental care</h3><p data-i18n="q.6.d">Protection protocols at all project sites, from start to finish.</p></div>
         </div>
+        <div class="community sig">
+          <p class="community-title" data-i18n="comm.title">In the community</p>
+          <ul class="community-list">
+            <li data-i18n="comm.1">Training and employment for local youth</li>
+            <li data-i18n="comm.2">Vocational education in fibre and telecom</li>
+            <li data-i18n="comm.3">Eco-friendly initiatives and tree-planting</li>
+            <li data-i18n="comm.4">Free connectivity support for community centres</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -1059,10 +1181,11 @@
           <div class="fib" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
         </div>
         <p class="track-sub sig" data-i18n="track.sub">45 contracts delivered — fibre, wireless and solar works nationwide, as listed in our company profile.</p>
-        <div class="track-filters sig" role="group" aria-label="Filter projects">
+        <div class="track-filters sig" role="group" aria-label="Filter projects" data-i18n-aria="a11y.filters">
           <button class="chip is-on" data-filter="all" aria-pressed="true" data-i18n="track.f.all">All · 45</button>
           <button class="chip" data-filter="telecom" aria-pressed="false" data-i18n="track.f.telecom">Fibre &amp; wireless · 37</button>
           <button class="chip" data-filter="solar" aria-pressed="false" data-i18n="track.f.solar">Solar &amp; power · 8</button>
+          <button class="chip" data-filter="public" aria-pressed="false" data-i18n="track.f.public">Public-sector sites · 4</button>
         </div>
         <div class="table-card sig">
           <div class="table-scroll">
@@ -1103,14 +1226,14 @@
                 <tr data-cat="telecom"><td class="num">32</td><td class="client">Time Dotcom Bhd</td><td>Operation of RBS Sites Taman Gembira</td></tr>
                 <tr data-cat="telecom"><td class="num">33</td><td class="client">Time Dotcom Bhd</td><td>Operation of RBS Sites Holiday Plaza</td></tr>
                 <tr data-cat="telecom"><td class="num">34</td><td class="client">Time Dotcom Bhd</td><td>Operation of RBS Sites R&amp;F Tanjung Puteri</td></tr>
-                <tr data-cat="solar"><td class="num">35</td><td class="client">Balai Polis Pulau Maung</td><td>JV Project Solar Installation Covered</td></tr>
-                <tr data-cat="solar"><td class="num">36</td><td class="client">SK Padang Midin</td><td>JV Project Solar Installation Covered</td></tr>
+                <tr data-cat="solar" data-sector="public"><td class="num">35</td><td class="client">Balai Polis Pulau Maung</td><td>JV Project Solar Installation Covered</td></tr>
+                <tr data-cat="solar" data-sector="public"><td class="num">36</td><td class="client">SK Padang Midin</td><td>JV Project Solar Installation Covered</td></tr>
                 <tr data-cat="solar"><td class="num">37</td><td class="client">Sri Seremban Residences</td><td>JV Project Solar Installation Covered</td></tr>
                 <tr data-cat="telecom"><td class="num">38</td><td class="client">Time Dotcom Bhd</td><td>Operation of RBS Sites Medini 9</td></tr>
                 <tr data-cat="telecom"><td class="num">39</td><td class="client">Time Dotcom Bhd</td><td>Operation of RBS Sites Bukit Indah</td></tr>
                 <tr data-cat="telecom"><td class="num">40</td><td class="client">Time Dotcom Bhd</td><td>Operation of RBS Sites Pahlawan Apartment</td></tr>
-                <tr data-cat="solar"><td class="num">41</td><td class="client">Penang Library</td><td>PV Project Solar Installation Covered</td></tr>
-                <tr data-cat="solar"><td class="num">42</td><td class="client">Jabatan Negeri Perlis</td><td>PV Project Solar Installation Covered</td></tr>
+                <tr data-cat="solar" data-sector="public"><td class="num">41</td><td class="client">Penang Library</td><td>PV Project Solar Installation Covered</td></tr>
+                <tr data-cat="solar" data-sector="public"><td class="num">42</td><td class="client">Jabatan Negeri Perlis</td><td>PV Project Solar Installation Covered</td></tr>
                 <tr data-cat="solar"><td class="num">43</td><td class="client">United Solar Sdn Bhd</td><td>PV Project Solar Installation Covered Lembah Setia</td></tr>
                 <tr data-cat="solar"><td class="num">44</td><td class="client">United Solar Sdn Bhd</td><td>PV Project Solar Installation Covered Batu Dua Lama</td></tr>
                 <tr data-cat="solar"><td class="num">45</td><td class="client">United Solar Sdn Bhd</td><td>PV Project Solar Installation Covered Jalan Besar Arau</td></tr>
@@ -1138,7 +1261,10 @@
             <div class="info-item"><span class="info-label" data-i18n="contact.phone">Phone</span><a href="tel:+601112987138">+60 111 2987 138</a></div>
             <div class="info-item"><span class="info-label" data-i18n="contact.email">Email</span><a href="mailto:shglobalsolution28@gmail.com">shglobalsolution28@gmail.com</a></div>
             <div class="info-item"><span class="info-label">Facebook</span><a href="https://www.facebook.com/share/15ZDBGQLBR/">SH Global Solution</a></div>
-            <div class="contact-cta"><a class="btn btn--primary" href="https://wa.me/601112987138" data-i18n="contact.cta">Chat on WhatsApp</a></div>
+            <div class="contact-cta">
+              <a class="btn btn--primary" href="https://wa.me/601112987138" data-i18n="contact.cta">Chat on WhatsApp</a>
+              <a class="btn btn--ghost" href="mailto:shglobalsolution28@gmail.com?subject=Company%20profile%20request&amp;body=Please%20send%20the%20SH%20Global%20Solution%20company%20profile." data-i18n="contact.profile">Request company profile</a>
+            </div>
           </div>
           <iframe class="map sig" title="Map to the SH Global Solution office in Taman Mekasar, Kelantan" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126950.10829554437!2d102.0671408572774!3d6.104979479866142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b6a5b2860e18dd%3A0x8fe20f13492d53eb!2sBlok%20C%2C%20Taman%20Mekasar!5e0!3m2!1sen!2smy!4v1777295839058!5m2!1sen!2smy" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
@@ -1194,13 +1320,11 @@
       </div>
       <div class="footer-bottom">
         <span data-i18n="legal.copy">© 2026 SH Global Solution. All Rights Reserved.</span>
-        <span class="sep" aria-hidden="true"></span>
-        <span data-i18n="legal.reg">Registered in Malaysia · Pasir Mas, Kelantan</span>
       </div>
     </div>
   </footer>
 
-  <button class="to-top" id="to-top" aria-label="Back to top">
+  <button class="to-top" id="to-top" aria-label="Back to top" data-i18n-aria="a11y.top">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
 
@@ -1219,7 +1343,10 @@
       }
       var storedTheme = null;
       try { storedTheme = localStorage.getItem("theme"); } catch (e) {}
-      applyTheme(storedTheme === "light" ? "light" : "dark");
+      if (storedTheme !== "light" && storedTheme !== "dark") {
+        storedTheme = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      }
+      applyTheme(storedTheme);
       themeBtn.addEventListener("click", function () {
         var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
         applyTheme(next);
@@ -1230,57 +1357,66 @@
       var I18N = {
         en: {
           "a11y.skip": "Skip to content",
+          "a11y.main": "Main", "a11y.services": "Services", "a11y.theme": "Switch colour theme",
+          "a11y.mobileMenu": "Mobile menu", "a11y.progress": "Section progress",
+          "a11y.clients": "Clients", "a11y.filters": "Filter projects", "a11y.top": "Back to top",
+          "menu.open": "Open menu", "menu.close": "Close menu",
           "nav.about": "About", "nav.services": "Services", "nav.why": "Why us", "nav.quality": "Quality",
           "nav.team": "Team", "nav.milestones": "Milestones", "nav.contact": "Contact", "nav.quote": "Request a quote",
           "mob.navigate": "Navigate", "mob.contact": "Contact",
           "hero.eyebrow": "Est. 2018 · Pasir Mas, Kelantan",
           "hero.title1": "Fibre infrastructure", "hero.title2": "for a connected Malaysia",
-          "hero.sub": "We design, build, and maintain the fibre and civil networks that carry Malaysia's connectivity — delivered on time, to spec, and safely.",
+          "hero.sub": "We design, build and maintain the fibre and civil infrastructure that underpins Malaysia's networks — delivered on time, to specification and safely.",
           "hero.cta1": "Request a quote", "hero.cta2": "Explore services",
           "fact.team": "Professionals & field experts", "fact.km": "Fibre deployed in 3 years",
           "fact.uptime": "Network uptime", "fact.coverage": "National", "fact.coverage.sub": "Cities and rural regions",
-          "trust.title": "Proven on Malaysia's biggest networks",
-          "trust.sub": "Carriers and brands served across 45 delivered contracts — the full project record is listed below.",
+          "trust.title": "Proven on Malaysia's leading networks",
+          "trust.sub": "National carriers, infrastructure developers, municipal governments and enterprise customers — 45 contracts delivered; the full project record is listed below.",
+          "trust.partners": "Supported by long-standing partnerships with fibre cable manufacturers, civil and electrical engineering firms, IT and network design consultants and international equipment vendors.",
           "track.title": "Previous projects",
           "track.sub": "45 contracts delivered — fibre, wireless and solar works nationwide, as listed in our company profile.",
           "track.f.all": "All · 45", "track.f.telecom": "Fibre & wireless · 37", "track.f.solar": "Solar & power · 8",
+          "track.f.public": "Public-sector sites · 4",
           "track.th.no": "No", "track.th.client": "Client", "track.th.contract": "Contract title",
           "about.index": "01", "about.title": "About us",
-          "about.body1": "Founded in 2018 in Pasir Mas, Kelantan, SH Global Solution builds fibre-optic and civil infrastructure for telecom operators, developers, and governments across Malaysia.",
-          "about.body2": "Our mission is to design, build, and maintain advanced communication networks that empower communities, businesses, and governments — on time, within budget, and to the highest quality standards.",
+          "about.body1": "Founded in 2018 in Pasir Mas, Kelantan, SH Global Solution was established to bridge the digital divide — building fibre-optic and civil infrastructure for national carriers, infrastructure developers, municipal governments and enterprise customers across Malaysia.",
+          "about.body2": "We cover the full project life cycle: design and planning, deployment, testing, maintenance and long-term support — with a mission to build advanced communication networks that empower communities, businesses and government, on time, within budget and to the highest quality standards.",
+          "about.body3": "Looking ahead, we are preparing for 5G rollout support — including backhaul and small cell infrastructure — and expanding into underserved regions.",
+          "about.values.title": "Our core values",
+          "val.1.t": "Integrity", "val.1.d": "We work honestly, transparently and ethically.",
+          "val.2.t": "Commitment to quality", "val.2.d": "The highest standards in workmanship, planning and execution.",
+          "val.3.t": "Customer centricity", "val.3.d": "Solutions tailored to each client's goals.",
+          "val.4.t": "Innovation", "val.4.d": "Better methods and tools to improve every outcome.",
+          "val.5.t": "Teamwork", "val.5.d": "Collaboration and mutual respect get the best results.",
+          "val.6.t": "Safety", "val.6.d": "The safety of our people and the public comes first.",
           "services.index": "02", "services.title": "What we do",
           "services.intro": "End-to-end fibre and civil works — from network design and cable laying to splicing, testing, and long-term maintenance — built for performance with minimal downtime.",
-          "svc.col.fiber": "Fiber & network", "svc.col.infra": "Infrastructure",
-          "svc.1.title": "FTTH (Fiber to the Home) Projects",
-          "svc.1.desc": "We offer complete FTTH solutions, including network design, fiber laying, splicing, termination, and testing. Our projects ensure high-speed internet connectivity for residential, commercial, and institutional clients.",
+          "svc.col.fiber": "Fibre & network", "svc.col.infra": "Infrastructure",
+          "svc.1.title": "FTTH (Fibre to the Home) Projects",
+          "svc.1.desc": "We offer complete FTTH solutions, including network design, fibre laying, splicing, termination, and testing. Our projects ensure high-speed internet connectivity for residential, commercial, and institutional clients.",
           "svc.2.title": "OSP & ODN Projects",
           "svc.2.desc": "Our outside plant and optical distribution network services include trenching, ducting, cable pulling, joint closures, and connectivity to end users. We provide end-to-end support from site survey to final commissioning.",
           "svc.3.title": "CB & Titan Projects",
-          "svc.3.desc": "We deliver high-capacity network solutions involving cable broadband and Titan infrastructure, integrating copper and fiber-based systems to serve high-density urban and suburban areas.",
+          "svc.3.desc": "We deliver high-capacity network solutions involving cable broadband and Titan infrastructure, integrating copper and fibre-based systems to serve high-density urban and suburban areas.",
           "svc.4.title": "Network Maintenance Services",
           "svc.4.desc": "We provide comprehensive network maintenance programs, including preventive inspections, emergency repairs, service level agreements (SLAs), and system upgrades to ensure 24/7 reliability.",
           "svc.5.title": "Civil Engineering Works",
           "svc.5.desc": "Our civil work division handles the physical infrastructure, such as duct installations, pole erection, chamber construction, manholes, and concrete structures required for telecom networks.",
-          "svc.6.title": "Fiber Termination & Splicing",
-          "svc.6.desc": "We carry out precise fiber optic splicing and termination using high-accuracy tools and certified technicians, ensuring seamless data transmission with minimal loss and maximum performance.",
+          "svc.6.title": "Fibre Termination & Splicing",
+          "svc.6.desc": "We carry out precise fibre optic splicing and termination using high-accuracy tools and certified technicians, ensuring seamless data transmission with minimal loss and maximum performance.",
           "why.index": "03", "why.title": "Why clients choose us",
           "why.intro": "Technical depth plus disciplined project management — practical, scalable solutions built for long-term success.",
           "why.r1": "End-to-end delivery — one partner from survey to handover.",
           "why.r2": "Trained engineering and field teams for large-scale deployments.",
           "why.r3": "Strict quality control and safety on every site.",
           "why.r4": "Timelines met, even in challenging terrain.",
-          "why.r5": "Financial strength to run several projects at once.",
+          "why.r5": "Steady financial standing to run concurrent projects.",
           "why.r6": "Client-focused, solution-driven, and accountable.",
           "stats.1.t": "Network uptime", "stats.1.d": "Across all maintenance service agreements.",
           "stats.2.t": "Fibre deployed", "stats.2.d": "FTTH and OSP fibre in the last three years.",
           "stats.3.t": "Maintenance", "stats.3.d": "Inspections, emergency repairs, and upgrades.",
           "stats.4.s": "End-to-end", "stats.4.t": "Project delivery", "stats.4.d": "Survey and design through to long-term support.",
           "team.index": "04", "team.title": "Our team", "team.intro": "The expert minds driving the future of connectivity.",
-          "role.director": "Director", "role.ceo": "Chief Executive Officer", "role.projdir": "Project Director",
-          "role.finance": "Finance Manager", "role.procurement": "Procurement Manager", "role.wayleave": "Wayleave Manager",
-          "role.planner": "Planner", "role.pm": "Project Manager",
-          "org.index": "05", "org.title": "Organisation chart",
-          "org.intro": "Leadership, project delivery, and four field teams — the structure behind every project we deliver.",
           "org.director": "Director", "org.ceo": "Chief Executive Officer", "org.projdir": "Project Director",
           "org.wayleave": "Wayleave Manager", "org.planner": "Planner", "org.pm": "Project Manager",
           "org.finance": "Finance Manager", "org.procurement": "Procurement Manager", "org.supervisor": "Site Supervisor",
@@ -1289,11 +1425,16 @@
           "qshe.index": "05", "qshe.title": "Quality & safety",
           "qshe.intro": "Every project runs under documented quality, safety, and environmental controls — because how we build matters as much as what we build.",
           "q.1.t": "Daily safety briefings", "q.1.d": "Briefings and equipment inspections before work starts on site.",
-          "q.2.t": "Certified PPE", "q.2.d": "Certified personal protective equipment in use on every site.",
+          "q.2.t": "Certified PPE", "q.2.d": "Personal protective equipment on every site is certified and inspected.",
           "q.3.t": "Certified technicians", "q.3.d": "Splicing and termination by certified technicians using calibrated tools.",
           "q.4.t": "Independent audits", "q.4.d": "Internal and third-party audits verify quality at each stage.",
           "q.5.t": "Validated networks", "q.5.d": "OTDR and end-to-end testing confirm performance before handover.",
           "q.6.t": "Environmental care", "q.6.d": "Protection protocols at all project sites, from start to finish.",
+          "comm.title": "In the community",
+          "comm.1": "Training and employment for local youth",
+          "comm.2": "Vocational education in fibre and telecom",
+          "comm.3": "Eco-friendly initiatives and tree-planting",
+          "comm.4": "Free connectivity support for community centres",
           "ms.index": "06", "ms.title": "Track record",
           "ms.1.t": "Fibre deployed", "ms.1.d": "FTTH and OSP fibre delivered in the last three years.",
           "ms.2.t": "Network uptime", "ms.2.d": "Across all maintenance service agreements.",
@@ -1303,37 +1444,51 @@
           "contact.intro": "Let's talk about your project. We'll respond with a plan and timeline.",
           "contact.office": "Visit our office", "contact.office.sub": "Our central hub for fibre engineering and client support.",
           "contact.address": "Address", "contact.phone": "Phone", "contact.email": "Email", "contact.cta": "Chat on WhatsApp",
+          "contact.profile": "Request company profile",
           "quote.title": "Request a quote", "quote.body": "Tell us your site and scope — we'll come back with a plan and timeline.", "quote.cta": "Start on WhatsApp",
           "footer.tagline": "Fibre optic and civil infrastructure for Malaysia's telecom sector. Proudly built in Kelantan since 2018.",
           "footer.company": "Company", "footer.services": "Services", "footer.contact": "Contact",
-          "legal.copy": "© 2026 SH Global Solution. All Rights Reserved.",
-          "legal.reg": "Registered in Malaysia · Pasir Mas, Kelantan"
+          "legal.copy": "© 2026 SH Global Solution. All Rights Reserved."
         },
         ms: {
           "a11y.skip": "Langkau ke kandungan",
+          "a11y.main": "Utama", "a11y.services": "Perkhidmatan", "a11y.theme": "Tukar tema warna",
+          "a11y.mobileMenu": "Menu mudah alih", "a11y.progress": "Kemajuan bahagian",
+          "a11y.clients": "Pelanggan", "a11y.filters": "Tapis projek", "a11y.top": "Kembali ke atas",
+          "menu.open": "Buka menu", "menu.close": "Tutup menu",
           "nav.about": "Perihal", "nav.services": "Perkhidmatan", "nav.why": "Kenapa kami", "nav.quality": "Kualiti",
           "nav.team": "Pasukan", "nav.milestones": "Pencapaian", "nav.contact": "Hubungi", "nav.quote": "Minta sebut harga",
           "mob.navigate": "Navigasi", "mob.contact": "Hubungi",
           "hero.eyebrow": "Ditubuhkan 2018 · Pasir Mas, Kelantan",
           "hero.title1": "Infrastruktur fiber", "hero.title2": "untuk Malaysia yang terhubung",
-          "hero.sub": "Kami merekabentuk, membina dan menyelenggara rangkaian fiber dan kerja awam yang menyokong konektiviti Malaysia — siap tepat pada masa, mengikut spesifikasi, dan selamat.",
+          "hero.sub": "Kami merekabentuk, membina dan menyelenggara infrastruktur fiber dan kerja awam yang menjadi asas rangkaian Malaysia — siap tepat pada masa, mengikut spesifikasi dan selamat.",
           "hero.cta1": "Minta sebut harga", "hero.cta2": "Lihat perkhidmatan",
           "fact.team": "Profesional & pakar lapangan", "fact.km": "Fiber dipasang dalam 3 tahun",
           "fact.uptime": "Masa operasi rangkaian", "fact.coverage": "Seluruh negara", "fact.coverage.sub": "Bandar dan luar bandar",
-          "trust.title": "Terbukti di rangkaian terbesar Malaysia",
-          "trust.sub": "Syarikat telekomunikasi dan jenama yang kami berkhidmat melalui 45 kontrak — rekod penuh projek disenaraikan di bawah.",
+          "trust.title": "Terbukti di rangkaian terkemuka Malaysia",
+          "trust.sub": "Pengendali nasional, pemaju infrastruktur, pihak berkuasa tempatan dan pelanggan perusahaan — 45 kontrak disiapkan; rekod penuh projek disenaraikan di bawah.",
+          "trust.partners": "Disokong oleh perkongsian jangka panjang dengan pengeluar kabel fiber, firma kejuruteraan awam dan elektrik, perunding reka bentuk IT dan rangkaian, serta vendor peralatan antarabangsa.",
           "track.title": "Projek-projek lepas",
           "track.sub": "45 kontrak disiapkan — kerja fiber, wayarles dan solar di seluruh negara, seperti dalam profil syarikat kami.",
           "track.f.all": "Semua · 45", "track.f.telecom": "Fiber & wayarles · 37", "track.f.solar": "Solar & tenaga · 8",
+          "track.f.public": "Tapak sektor awam · 4",
           "track.th.no": "No", "track.th.client": "Pelanggan", "track.th.contract": "Tajuk kontrak",
           "about.index": "01", "about.title": "Tentang kami",
-          "about.body1": "Ditubuhkan pada 2018 di Pasir Mas, Kelantan, SH Global Solution membina infrastruktur fiber optik dan kerja awam untuk pengendali telekomunikasi, pemaju dan kerajaan di seluruh Malaysia.",
-          "about.body2": "Misi kami adalah merekabentuk, membina dan menyelenggara rangkaian komunikasi termaju yang memperkasa komuniti, perniagaan dan kerajaan — tepat pada masa, dalam bajet, dan pada standard kualiti tertinggi.",
+          "about.body1": "Ditubuhkan pada 2018 di Pasir Mas, Kelantan, SH Global Solution diasaskan untuk merapatkan jurang digital — membina infrastruktur fiber optik dan kerja awam untuk pengendali nasional, pemaju infrastruktur, pihak berkuasa tempatan dan pelanggan perusahaan di seluruh Malaysia.",
+          "about.body2": "Kami merangkumi kitaran hayat projek sepenuhnya: reka bentuk dan perancangan, pelaksanaan, ujian, penyelenggaraan dan sokongan jangka panjang — dengan misi membina rangkaian komunikasi termaju yang memperkasa komuniti, perniagaan dan kerajaan, tepat pada masa, dalam bajet dan pada standard kualiti tertinggi.",
+          "about.body3": "Melihat ke hadapan, kami bersedia menyokong pelancaran 5G — termasuk infrastruktur backhaul dan small cell — serta berkembang ke wilayah yang kurang mendapat liputan.",
+          "about.values.title": "Nilai teras kami",
+          "val.1.t": "Integriti", "val.1.d": "Kami bekerja dengan jujur, telus dan beretika.",
+          "val.2.t": "Komitmen terhadap kualiti", "val.2.d": "Standard tertinggi dalam mutu kerja, perancangan dan pelaksanaan.",
+          "val.3.t": "Berfokuskan pelanggan", "val.3.d": "Penyelesaian yang disesuaikan dengan matlamat setiap pelanggan.",
+          "val.4.t": "Inovasi", "val.4.d": "Kaedah dan alat yang lebih baik untuk meningkatkan setiap hasil.",
+          "val.5.t": "Kerja berpasukan", "val.5.d": "Kerjasama dan saling menghormati menghasilkan yang terbaik.",
+          "val.6.t": "Keselamatan", "val.6.d": "Keselamatan kakitangan dan orang awam diutamakan.",
           "services.index": "02", "services.title": "Apa yang kami lakukan",
           "services.intro": "Kerja fiber dan awam hujung-ke-hujung — dari reka bentuk rangkaian dan penggelaran kabel hingga penyambungan, ujian dan penyelenggaraan jangka panjang — dibina untuk prestasi dengan masa henti minimum.",
           "svc.col.fiber": "Fiber & rangkaian", "svc.col.infra": "Infrastruktur",
           "svc.1.title": "Projek FTTH (Fiber ke Rumah)",
-          "svc.1.desc": "Kami menawarkan penyelesaian FTTH lengkap, termasuk reka bentuk rangkaian, penggelaran fiber, penyambungan, pengakhiran dan ujian. Projek kami memastikan konektiviti internet berkelajuan tinggi untuk pelanggan kediaman, komersial dan institusi.",
+          "svc.1.desc": "Kami menawarkan penyelesaian FTTH lengkap, termasuk reka bentuk rangkaian, penggelaran fiber, penyambungan, pengakhiran dan ujian. Projek kami memastikan sambungan internet berkelajuan tinggi untuk pelanggan kediaman, komersial dan institusi.",
           "svc.2.title": "Projek OSP & ODN",
           "svc.2.desc": "Perkhidmatan outside plant dan rangkaian pengedaran optik kami merangkumi penggalian, pendukaan, penarikan kabel, penutupan sambungan dan sambungan ke pengguna akhir. Kami menyediakan sokongan hujung-ke-hujung dari tinjauan tapak hingga pentauliahan akhir.",
           "svc.3.title": "Projek CB & Titan",
@@ -1350,18 +1505,13 @@
           "why.r2": "Pasukan kejuruteraan dan lapangan terlatih untuk projek berskala besar.",
           "why.r3": "Kawalan kualiti dan keselamatan yang ketat di setiap tapak.",
           "why.r4": "Jadual dipatuhi, walaupun di medan yang mencabar.",
-          "why.r5": "Kedudukan kewangan kukuh untuk menjalankan beberapa projek serentak.",
+          "why.r5": "Kedudukan kewangan yang stabil untuk menjalankan projek serentak.",
           "why.r6": "Fokus kepada pelanggan, berasaskan penyelesaian dan bertanggungjawab.",
           "stats.1.t": "Masa operasi rangkaian", "stats.1.d": "Merentasi semua perjanjian penyelenggaraan.",
           "stats.2.t": "Fiber dipasang", "stats.2.d": "Fiber FTTH dan OSP dalam tiga tahun lepas.",
           "stats.3.t": "Penyelenggaraan", "stats.3.d": "Pemeriksaan, pembaikan kecemasan dan naik taraf.",
           "stats.4.s": "Hujung-ke-hujung", "stats.4.t": "Penghantaran projek", "stats.4.d": "Tinjauan dan reka bentuk hingga sokongan jangka panjang.",
-          "team.index": "04", "team.title": "Pasukan kami", "team.intro": "Pemikir pakar yang memacu masa depan konektiviti.",
-          "role.director": "Pengarah", "role.ceo": "Ketua Pegawai Eksekutif", "role.projdir": "Pengarah Projek",
-          "role.finance": "Pengurus Kewangan", "role.procurement": "Pengurus Perolehan", "role.wayleave": "Pengurus Wayleave",
-          "role.planner": "Perancang", "role.pm": "Pengurus Projek",
-          "org.index": "05", "org.title": "Carta organisasi",
-          "org.intro": "Kepimpinan, penyampaian projek dan empat pasukan lapangan — struktur di sebalik setiap projek yang kami laksanakan.",
+          "team.index": "04", "team.title": "Pasukan kami", "team.intro": "Pemikir pakar yang memacu masa depan rangkaian.",
           "org.director": "Pengarah", "org.ceo": "Ketua Pegawai Eksekutif", "org.projdir": "Pengarah Projek",
           "org.wayleave": "Pengurus Wayleave", "org.planner": "Perancang", "org.pm": "Pengurus Projek",
           "org.finance": "Pengurus Kewangan", "org.procurement": "Pengurus Perolehan", "org.supervisor": "Penyelia Tapak",
@@ -1370,11 +1520,16 @@
           "qshe.index": "05", "qshe.title": "Kualiti & keselamatan",
           "qshe.intro": "Setiap projek dijalankan di bawah kawalan kualiti, keselamatan dan alam sekitar yang terdokumentasi — kerana cara kami membina sama penting dengan apa yang kami bina.",
           "q.1.t": "Taklimat keselamatan harian", "q.1.d": "Taklimat dan pemeriksaan peralatan sebelum kerja bermula di tapak.",
-          "q.2.t": "PPE bertauliah", "q.2.d": "Peralatan perlindungan diri bertauliah digunakan di setiap tapak.",
+          "q.2.t": "PPE bertauliah", "q.2.d": "Peralatan perlindungan diri di setiap tapak diperakui dan diperiksa.",
           "q.3.t": "Juruteknik bertauliah", "q.3.d": "Penyambungan dan pengakhiran oleh juruteknik bertauliah menggunakan alat yang ditentukur.",
           "q.4.t": "Audit bebas", "q.4.d": "Audit dalaman dan pihak ketiga mengesahkan kualiti pada setiap peringkat.",
           "q.5.t": "Rangkaian divalidasi", "q.5.d": "Ujian OTDR dan hujung-ke-hujung mengesahkan prestasi sebelum penyerahan.",
           "q.6.t": "Penjagaan alam sekitar", "q.6.d": "Protokol perlindungan di semua tapak projek, dari mula hingga akhir.",
+          "comm.title": "Bersama komuniti",
+          "comm.1": "Latihan dan pekerjaan untuk belia tempatan",
+          "comm.2": "Pendidikan vokasional dalam bidang fiber dan telekomunikasi",
+          "comm.3": "Inisiatif mesra alam dan penanaman pokok",
+          "comm.4": "Sokongan sambungan internet percuma untuk pusat komuniti",
           "ms.index": "06", "ms.title": "Rekod pencapaian",
           "ms.1.t": "Fiber dipasang", "ms.1.d": "Fiber FTTH dan OSP dihantar dalam tiga tahun lepas.",
           "ms.2.t": "Masa operasi rangkaian", "ms.2.d": "Merentasi semua perjanjian penyelenggaraan.",
@@ -1384,21 +1539,29 @@
           "contact.intro": "Mari bincangkan projek anda. Kami akan membalas dengan pelan dan jadual.",
           "contact.office": "Lawati pejabat kami", "contact.office.sub": "Hab utama kami untuk kejuruteraan fiber dan sokongan pelanggan.",
           "contact.address": "Alamat", "contact.phone": "Telefon", "contact.email": "E-mel", "contact.cta": "Sembang di WhatsApp",
+          "contact.profile": "Minta profil syarikat",
           "quote.title": "Minta sebut harga", "quote.body": "Beritahu kami tapak dan skop anda — kami akan balas dengan pelan dan jadual.", "quote.cta": "Mula di WhatsApp",
           "footer.tagline": "Infrastruktur fiber optik dan kerja awam untuk sektor telekomunikasi Malaysia. Dibina dengan bangga di Kelantan sejak 2018.",
           "footer.company": "Syarikat", "footer.services": "Perkhidmatan", "footer.contact": "Hubungi",
-          "legal.copy": "© 2026 SH Global Solution. Hak cipta terpelihara.",
-          "legal.reg": "Berdaftar di Malaysia · Pasir Mas, Kelantan"
+          "legal.copy": "© 2026 SH Global Solution. Hak cipta terpelihara."
         }
       };
       var langBtns = Array.prototype.slice.call(document.querySelectorAll(".lang-btn"));
+      var currentLang = "en";
       function applyLang(lang) {
         var dict = I18N[lang] || I18N.en;
+        currentLang = lang === "ms" ? "ms" : "en";
         document.querySelectorAll("[data-i18n]").forEach(function (el) {
           var key = el.getAttribute("data-i18n");
           if (dict[key] != null) el.textContent = dict[key];
         });
-        root.setAttribute("lang", lang === "ms" ? "ms" : "en");
+        document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+          var k = el.getAttribute("data-i18n-aria");
+          if (dict[k] != null) el.setAttribute("aria-label", dict[k]);
+        });
+        var mb = document.getElementById("menu-btn");
+        if (mb) mb.setAttribute("aria-label", dict[mb.getAttribute("aria-expanded") === "true" ? "menu.close" : "menu.open"]);
+        root.setAttribute("lang", currentLang);
         langBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
       }
       var storedLang = null;
@@ -1422,7 +1585,9 @@
             b.setAttribute("aria-pressed", String(on));
           });
           var f = btn.getAttribute("data-filter");
-          trackRows.forEach(function (row) { row.hidden = f !== "all" && row.getAttribute("data-cat") !== f; });
+          trackRows.forEach(function (row) {
+            row.hidden = f !== "all" && row.getAttribute("data-cat") !== f && row.getAttribute("data-sector") !== f;
+          });
         });
       });
 
@@ -1457,7 +1622,8 @@
       function setMobile(open) {
         mobileNav.classList.toggle("open", open);
         menuBtn.setAttribute("aria-expanded", String(open));
-        menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        var d = I18N[currentLang] || I18N.en;
+        menuBtn.setAttribute("aria-label", d[open ? "menu.close" : "menu.open"]);
         document.body.style.overflow = open ? "hidden" : "";
       }
       menuBtn.addEventListener("click", function () { setMobile(!mobileNav.classList.contains("open")); });
